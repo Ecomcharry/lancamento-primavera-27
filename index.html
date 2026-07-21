@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Inside the Look</title>
 
@@ -13,31 +16,76 @@
 
 <body>
 
-    <!-- BANNER 1 -->
+    <!-- ==========================
+    BANNER 1
+    =========================== -->
+
     <section class="hero">
-        <img src="./images/banner-1.jpg" alt="Banner 1">
+
+        <img
+            src="./images/banner-1.jpg"
+            alt="Inside the Look"
+        >
+
     </section>
 
 
-    <!-- BANNER 2 -->
+    <!-- ==========================
+    BANNER 2
+    =========================== -->
+
     <section class="banner banner-normal">
-        <img src="./images/banner-2.jpg" alt="Banner 2">
+
+        <img
+            src="./images/banner-2.jpg"
+            alt="Banner Inside the Look"
+            loading="lazy"
+        >
+
     </section>
 
 
-    <!-- BANNER 3 -->
+    <!-- ==========================
+    BANNER 3 COM LINK
+    =========================== -->
+
     <section class="banner banner-small">
-        <img src="./images/banner-3.jpg" alt="Banner 3">
+
+        <a
+            href="https://www.charry.com.br/products/blusa-reta-lisa-com-gola-2?variant=45374858461254"
+            aria-label="Conhecer a Blusa Reta Lisa com Gola"
+        >
+
+            <img
+                src="./images/banner-3.jpg"
+                alt="Blusa Reta Lisa com Gola"
+                loading="lazy"
+            >
+
+        </a>
+
     </section>
 
 
-    <!-- BANNER 4 -->
+    <!-- ==========================
+    BANNER 4
+    =========================== -->
+
     <section class="banner banner-small">
-        <img src="./images/banner-4.jpg" alt="Banner 4">
+
+        <img
+            src="./images/banner-4.jpg"
+            alt="Banner coleção Charry"
+            loading="lazy"
+        >
+
     </section>
 
 
-    <!-- CARROSSEL -->
+    <!-- ==========================
+    CARROSSEL COM LINK
+    =========================== -->
+
     <section class="instagram-carousel">
 
         <div class="carousel-area">
@@ -45,34 +93,64 @@
             <button
                 class="arrow prev"
                 type="button"
-                aria-label="Imagem anterior"
+                aria-label="Mostrar imagem anterior"
                 onclick="prevSlide()"
             >
                 ‹
             </button>
 
-            <div class="carousel-box">
 
-                <div class="carousel-track">
+            <a
+                href="https://www.charry.com.br/products/calca-ballon-lisa-1?variant=45374855708742"
+                class="carousel-product-link"
+                aria-label="Conhecer a Calça Ballon Lisa"
+            >
 
-                    <img src="./images/foto-1.jpg" alt="Foto 1">
+                <div class="carousel-box">
 
-                    <img src="./images/foto-2.jpg" alt="Foto 2">
+                    <div class="carousel-track">
 
-                    <img src="./images/foto-3.JPG" alt="Foto 3">
+                        <img
+                            src="./images/foto-1.jpg"
+                            alt="Calça Ballon Lisa - Foto 1"
+                            loading="lazy"
+                        >
 
-                    <img src="./images/foto-4.JPG" alt="Foto 4">
+                        <img
+                            src="./images/foto-2.jpg"
+                            alt="Calça Ballon Lisa - Foto 2"
+                            loading="lazy"
+                        >
 
-                    <img src="./images/foto-5.jpg" alt="Foto 5">
+                        <img
+                            src="./images/foto-3.jpg"
+                            alt="Calça Ballon Lisa - Foto 3"
+                            loading="lazy"
+                        >
+
+                        <img
+                            src="./images/foto-4.JPG"
+                            alt="Calça Ballon Lisa - Foto 4"
+                            loading="lazy"
+                        >
+
+                        <img
+                            src="./images/foto-5.jpg"
+                            alt="Calça Ballon Lisa - Foto 5"
+                            loading="lazy"
+                        >
+
+                    </div>
 
                 </div>
 
-            </div>
+            </a>
+
 
             <button
                 class="arrow next"
                 type="button"
-                aria-label="Próxima imagem"
+                aria-label="Mostrar próxima imagem"
                 onclick="nextSlide()"
             >
                 ›
@@ -81,90 +159,188 @@
         </div>
 
 
-        <div class="dots">
+        <div class="dots" aria-hidden="true">
+
             <span class="active"></span>
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
             <span></span>
+
         </div>
 
     </section>
 
 
-    <!-- VÍDEO + BANNER 5 -->
+    <!-- ==========================
+    VÍDEO + BANNER 5 COM LINK
+    =========================== -->
+
     <section class="video-banner">
 
-        <div class="video-box">
+        <a
+            href="https://www.charry.com.br/products/lenco-pareo-liso-com-franja?variant=45309853892678"
+            class="video-product-link"
+            aria-label="Conhecer o Lenço Pareô Liso com Franja"
+        >
 
-            <video autoplay muted loop playsinline>
-                <source src="./images/video.mp4" type="video/mp4">
+            <div class="video-box">
 
-                Seu navegador não suporta vídeos.
-            </video>
+                <video
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                >
 
-        </div>
+                    <source
+                        src="./images/video.mp4"
+                        type="video/mp4"
+                    >
+
+                    Seu navegador não suporta a reprodução deste vídeo.
+
+                </video>
+
+            </div>
+
+        </a>
 
 
-        <div class="banner5-box">
-            <img src="./images/banner-5.jpg" alt="Banner 5">
-        </div>
+        <a
+            href="https://www.charry.com.br/products/lenco-pareo-liso-com-franja?variant=45309853892678"
+            class="banner5-product-link"
+            aria-label="Conhecer o Lenço Pareô Liso com Franja"
+        >
+
+            <div class="banner5-box">
+
+                <img
+                    src="./images/banner-5.jpg"
+                    alt="Lenço Pareô Liso com Franja"
+                    loading="lazy"
+                >
+
+            </div>
+
+        </a>
 
     </section>
 
 
-    <!-- BANNER 6 -->
+    <!-- ==========================
+    BANNER 6
+    =========================== -->
+
     <section class="banner banner-normal">
-        <img src="./images/banner-6.jpg" alt="Banner 6">
+
+        <img
+            src="./images/banner-6.jpg"
+            alt="Banner coleção Charry"
+            loading="lazy"
+        >
+
     </section>
 
 
-    <!-- FEED INSTAGRAM -->
+    <!-- ==========================
+    FEED DE IMAGENS
+    =========================== -->
+
     <section class="instagram-feed">
 
-        <img src="./images/foto-6.jpg" alt="Foto 6">
+        <img
+            src="./images/foto-6.jpg"
+            alt="Charry - Foto 6"
+            loading="lazy"
+        >
 
-        <img src="./images/foto-7.jpg" alt="Foto 7">
+        <img
+            src="./images/foto-7.jpg"
+            alt="Charry - Foto 7"
+            loading="lazy"
+        >
 
-        <!-- No GitHub estes arquivos estão como jpeg -->
-        <img src="./images/foto-8.jpeg" alt="Foto 8">
+        <img
+            src="./images/foto-8.jpeg"
+            alt="Charry - Foto 8"
+            loading="lazy"
+        >
 
-        <img src="./images/foto-9.jpeg" alt="Foto 9">
+        <img
+            src="./images/foto-9.jpeg"
+            alt="Charry - Foto 9"
+            loading="lazy"
+        >
 
-        <img src="./images/foto-10.JPG" alt="Foto 10">
+        <img
+            src="./images/foto-10.jpg"
+            alt="Charry - Foto 10"
+            loading="lazy"
+        >
 
-        <img src="./images/foto-11.JPG" alt="Foto 11">
+        <img
+            src="./images/foto-11.jpg"
+            alt="Charry - Foto 11"
+            loading="lazy"
+        >
 
-        <img src="./images/foto-12.JPG" alt="Foto 12">
+        <img
+            src="./images/foto-12.jpg"
+            alt="Charry - Foto 12"
+            loading="lazy"
+        >
 
-        <img src="./images/foto-13.JPG" alt="Foto 13">
+        <img
+            src="./images/foto-13.jpg"
+            alt="Charry - Foto 13"
+            loading="lazy"
+        >
 
-        <img src="./images/foto-14.jpg" alt="Foto 14">
+        <img
+            src="./images/foto-14.jpg"
+            alt="Charry - Foto 14"
+            loading="lazy"
+        >
 
-        <img src="./images/foto-15.jpg" alt="Foto 15">
-
-         <img src="./images/foto-16.JPG" alt="Foto 16">
-
-        <img src="./images/foto-17.JPG" alt="Foto 17">
+        <img
+            src="./images/foto-15.jpg"
+            alt="Charry - Foto 15"
+            loading="lazy"
+        >
 
     </section>
 
 
-    <!-- BANNER 7 COM LINK PARA WHATSAPP -->
+    <!-- ==========================
+    BANNER 7 COM LINK PARA WHATSAPP
+    =========================== -->
+
     <section class="banner banner-normal">
 
         <a
             href="https://chat.whatsapp.com/LM0r58rotgbGuj0oB4m6Rk"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Entrar no grupo da Charry no WhatsApp"
         >
-            <img src="./images/banner-7.jpg" alt="Banner 7">
+
+            <img
+                src="./images/banner-7.jpg"
+                alt="Entre no grupo da Charry no WhatsApp"
+                loading="lazy"
+            >
+
         </a>
 
     </section>
 
 
-    <!-- Arquivo JavaScript -->
     <script src="./script.js"></script>
 
 </body>
