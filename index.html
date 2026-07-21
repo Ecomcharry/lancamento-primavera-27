@@ -2,318 +2,167 @@
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Inside the Look</title>
 
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="./style.css">
 </head>
-
 
 <body>
 
-
-<!-- BANNER 1 -->
-
-<section class="hero">
-
-    <img src="./images/banner-1.jpg" alt="Banner 1">
-
-</section>
+    <!-- BANNER 1 -->
+    <section class="hero">
+        <img src="./images/banner-1.jpg" alt="Banner 1">
+    </section>
 
 
+    <!-- BANNER 2 -->
+    <section class="banner banner-normal">
+        <img src="./images/banner-2.jpg" alt="Banner 2">
+    </section>
 
 
-<!-- BANNER 2 -->
-
-<section class="banner banner-normal">
-
-    <img src="./images/banner-2.jpg" alt="Banner 2">
-
-</section>
+    <!-- BANNER 3 -->
+    <section class="banner banner-small">
+        <img src="./images/banner-3.jpg" alt="Banner 3">
+    </section>
 
 
+    <!-- BANNER 4 -->
+    <section class="banner banner-small">
+        <img src="./images/banner-4.jpg" alt="Banner 4">
+    </section>
 
 
-<!-- BANNER 3 -->
+    <!-- CARROSSEL -->
+    <section class="instagram-carousel">
 
-<section class="banner banner-small">
+        <div class="carousel-area">
 
-    <img src="./images/banner-3.jpg" alt="Banner 3">
+            <button
+                class="arrow prev"
+                type="button"
+                aria-label="Imagem anterior"
+                onclick="prevSlide()"
+            >
+                ‹
+            </button>
 
-</section>
+            <div class="carousel-box">
 
+                <div class="carousel-track">
 
+                    <img src="./images/foto-1.jpg" alt="Foto 1">
 
+                    <img src="./images/foto-2.jpg" alt="Foto 2">
 
-<!-- BANNER 4 -->
+                    <img src="./images/foto-3.jpg" alt="Foto 3">
 
-<section class="banner banner-small">
+                    <!-- No GitHub este arquivo está com JPG maiúsculo -->
+                    <img src="./images/foto-4.JPG" alt="Foto 4">
 
-    <img src="./images/banner-4.jpg" alt="Banner 4">
+                    <img src="./images/foto-5.jpg" alt="Foto 5">
 
-</section>
-
-
-
-
-<!-- CARROSSEL -->
-
-<section class="instagram-carousel">
-
-
-    <div class="carousel-area">
-
-
-        <button class="arrow prev" onclick="prevSlide()">
-
-            ‹
-
-        </button>
-
-
-
-
-        <div class="carousel-box">
-
-
-            <div class="carousel-track">
-
-
-                <img src="./images/foto-1.jpg" alt="Foto 1">
-
-                <img src="./images/foto-2.jpg" alt="Foto 2">
-
-                <img src="./images/foto-3.jpg" alt="Foto 3">
-
-                <img src="./images/foto-4.jpg" alt="Foto 4">
-
-                <img src="./images/foto-5.jpg" alt="Foto 5">
-
+                </div>
 
             </div>
 
+            <button
+                class="arrow next"
+                type="button"
+                aria-label="Próxima imagem"
+                onclick="nextSlide()"
+            >
+                ›
+            </button>
 
         </div>
 
 
+        <div class="dots">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
+    </section>
 
-        <button class="arrow next" onclick="nextSlide()">
 
-            ›
+    <!-- VÍDEO + BANNER 5 -->
+    <section class="video-banner">
 
-        </button>
+        <div class="video-box">
 
+            <video autoplay muted loop playsinline>
+                <source src="./images/video.mp4" type="video/mp4">
 
-    </div>
+                Seu navegador não suporta vídeos.
+            </video>
 
+        </div>
 
 
+        <div class="banner5-box">
+            <img src="./images/banner-5.jpg" alt="Banner 5">
+        </div>
 
-    <div class="dots">
+    </section>
 
 
-        <span class="active"></span>
+    <!-- BANNER 6 -->
+    <section class="banner banner-normal">
+        <img src="./images/banner-6.jpg" alt="Banner 6">
+    </section>
 
-        <span></span>
 
-        <span></span>
+    <!-- FEED INSTAGRAM -->
+    <section class="instagram-feed">
 
-        <span></span>
+        <img src="./images/foto-6.jpg" alt="Foto 6">
 
-        <span></span>
+        <img src="./images/foto-7.jpg" alt="Foto 7">
 
+        <!-- No GitHub estes arquivos estão como jpeg -->
+        <img src="./images/foto-8.jpeg" alt="Foto 8">
 
-    </div>
+        <img src="./images/foto-9.jpeg" alt="Foto 9">
 
+        <img src="./images/foto-10.jpg" alt="Foto 10">
 
-</section>
+        <img src="./images/foto-11.jpg" alt="Foto 11">
 
+        <img src="./images/foto-12.jpg" alt="Foto 12">
 
+        <img src="./images/foto-13.jpg" alt="Foto 13">
 
+        <img src="./images/foto-14.jpg" alt="Foto 14">
 
-<!-- VIDEO + BANNER 5 -->
+        <img src="./images/foto-15.jpg" alt="Foto 15">
 
-<section class="video-banner">
+    </section>
 
 
-    <div class="video-box">
+    <!-- BANNER 7 COM LINK PARA WHATSAPP -->
+    <section class="banner banner-normal">
 
+        <a
+            href="https://chat.whatsapp.com/LM0r58rotgbGuj0oB4m6Rk"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <img src="./images/banner-7.jpg" alt="Banner 7">
+        </a>
 
-        <video autoplay muted loop playsinline>
+    </section>
 
-            <source src="./images/video.mp4" type="video/mp4">
 
-        </video>
-
-
-    </div>
-
-
-
-
-    <div class="banner5-box">
-
-
-        <img src="./images/banner-5.jpg" alt="Banner 5">
-
-
-    </div>
-
-
-</section>
-
-
-
-
-<!-- BANNER 6 -->
-
-<section class="banner banner-normal">
-
-    <img src="./images/banner-6.jpg" alt="Banner 6">
-
-</section>
-
-
-
-
-<!-- FEED INSTAGRAM -->
-
-<section class="instagram-feed">
-
-
-    <img src="./images/foto-6.jpg" alt="Foto 6">
-
-    <img src="./images/foto-7.jpg" alt="Foto 7">
-
-    <img src="./images/foto-8.jpg" alt="Foto 8">
-
-    <img src="./images/foto-9.jpg" alt="Foto 9">
-
-    <img src="./images/foto-10.jpg" alt="Foto 10">
-
-    <img src="./images/foto-11.jpg" alt="Foto 11">
-
-    <img src="./images/foto-12.jpg" alt="Foto 12">
-
-    <img src="./images/foto-13.jpg" alt="Foto 13">
-
-    <img src="./images/foto-14.jpg" alt="Foto 14">
-
-    <img src="./images/foto-15.jpg" alt="Foto 15">
-
-
-</section>
-
-
-
-
-<!-- BANNER 7 COM LINK PARA WHATSAPP -->
-
-<section class="banner banner-normal">
-
-
-    <a href="https://chat.whatsapp.com/LM0r58rotgbGuj0oB4m6Rk" target="_blank">
-
-
-        <img src="./images/banner-7.jpg" alt="Banner 7">
-
-
-    </a>
-
-
-</section>
-
-
-
-
-<script>
-
-
-    let slide = 0;
-
-
-    const track = document.querySelector(".carousel-track");
-
-    const dots = document.querySelectorAll(".dots span");
-
-    const total = 5;
-
-
-
-
-    function showSlide() {
-
-
-        track.style.transform = `translateX(-${slide * 100}%)`;
-
-
-
-
-        dots.forEach(dot => {
-
-            dot.classList.remove("active");
-
-        });
-
-
-
-
-        dots[slide].classList.add("active");
-
-
-    }
-
-
-
-
-    function nextSlide() {
-
-
-        slide++;
-
-
-        if (slide >= total) {
-
-            slide = 0;
-
-        }
-
-
-        showSlide();
-
-
-    }
-
-
-
-
-    function prevSlide() {
-
-
-        slide--;
-
-
-        if (slide < 0) {
-
-            slide = total - 1;
-
-        }
-
-
-        showSlide();
-
-
-    }
-
-
-</script>
-
+    <!-- Arquivo JavaScript -->
+    <script src="./script.js"></script>
 
 </body>
 
