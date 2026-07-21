@@ -65,6 +65,7 @@ FONTES
 
 
 
+
 /* ==========================
 BANNERS
 ========================== */
@@ -82,13 +83,11 @@ BANNERS
 .hero img,
 .banner img {
 
-
     width:100%;
 
     height:auto;
 
     display:block;
-
 
 }
 
@@ -96,9 +95,7 @@ BANNERS
 
 .banner {
 
-
     margin-top:1cm;
-
 
 }
 
@@ -115,24 +112,21 @@ CARROSSEL
 
 .instagram-carousel {
 
-
     margin-top:1cm;
 
     text-align:center;
 
-
 }
+
 
 
 
 
 .carousel-area {
 
-
     position:relative;
 
     width:100%;
-
 
 }
 
@@ -140,45 +134,42 @@ CARROSSEL
 
 
 
-/* TAMANHO PEQUENO CENTRALIZADO */
+/* TAMANHO DO CARROSSEL */
 
 
 .carousel-box {
 
+    width:360px;
 
-    width:400px;
-
-    height:500px;
+    height:450px;
 
     overflow:hidden;
 
     margin:0 auto;
 
-
 }
+
 
 
 
 
 .carousel-track {
 
-
     display:flex;
 
     transition:transform .5s ease;
-
 
 }
 
 
 
 
+
 .carousel-track img {
 
+    width:360px;
 
-    width:400px;
-
-    height:500px;
+    height:450px;
 
     flex:0 0 100%;
 
@@ -186,8 +177,8 @@ CARROSSEL
 
     display:block;
 
-
 }
+
 
 
 
@@ -200,7 +191,6 @@ SETAS
 
 
 .arrow {
-
 
     position:absolute;
 
@@ -224,9 +214,7 @@ SETAS
 
 .prev {
 
-
-    left:calc(50% - 250px);
-
+    left:calc(50% - 220px);
 
 }
 
@@ -234,9 +222,7 @@ SETAS
 
 .next {
 
-
-    right:calc(50% - 250px);
-
+    right:calc(50% - 220px);
 
 }
 
@@ -253,7 +239,6 @@ BOLINHAS
 
 .dots {
 
-
     display:flex;
 
     justify-content:center;
@@ -262,13 +247,11 @@ BOLINHAS
 
     margin-top:20px;
 
-
 }
 
 
 
 .dots span {
-
 
     width:7px;
 
@@ -278,16 +261,13 @@ BOLINHAS
 
     background:#D0D0D0;
 
-
 }
 
 
 
 .dots .active {
 
-
     background:#1E1E1E;
-
 
 }
 
@@ -307,11 +287,9 @@ MOBILE
 
     .carousel-box {
 
-
         width:300px;
 
         height:375px;
-
 
     }
 
@@ -319,11 +297,9 @@ MOBILE
 
     .carousel-track img {
 
-
         width:300px;
 
         height:375px;
-
 
     }
 
@@ -331,9 +307,7 @@ MOBILE
 
     .prev {
 
-
-        left:25px;
-
+        left:20px;
 
     }
 
@@ -341,9 +315,7 @@ MOBILE
 
     .next {
 
-
-        right:25px;
-
+        right:20px;
 
     }
 
