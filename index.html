@@ -4,6 +4,7 @@
 <head>
 
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Inside the Look</title>
@@ -16,106 +17,135 @@
 <body>
 
 
-    <!-- Banner 1 -->
 
-    <section class="hero">
+<!-- BANNER 1 -->
 
-        <img src="./images/banner-1.jpg" alt="Banner Principal">
+<section class="hero">
 
-    </section>
+    <img src="./images/banner-1.jpg" alt="Banner Principal">
 
-
-
-    <!-- Banner 2 -->
-
-    <section class="banner">
-
-        <img src="./images/banner-2.jpg" alt="Banner Secundário">
-
-    </section>
-
-
-
-    <!-- Banner 3 -->
-
-    <section class="banner">
-
-        <img src="./images/banner-3.jpg" alt="Banner Terciário">
-
-    </section>
+</section>
 
 
 
 
+<!-- BANNER 2 -->
 
-    <!-- Texto + Carrossel -->
+<section class="banner">
 
-    <section class="instagram-carousel">
+    <img src="./images/banner-2.jpg" alt="Banner 2">
 
-
-        <h2>
-            QUANDO UM LOOK É MONOCROMÁTICO, A RIQUEZA VISUAL VEM DAS TEXTURAS.
-        </h2>
+</section>
 
 
 
-        <div class="carousel-wrapper">
+
+<!-- BANNER 3 -->
+
+<section class="banner">
+
+    <img src="./images/banner-3.jpg" alt="Banner 3">
+
+</section>
 
 
-            <button class="arrow left" onclick="moveSlide(-1)">
-                ‹
-            </button>
+
+
+<!-- BANNER 4 -->
+
+<section class="banner">
+
+    <img src="./images/banner-4.jpg" alt="Banner 4">
+
+</section>
 
 
 
-            <div class="carousel">
 
 
-                <img src="./images/foto-1.jpg" alt="Look 1">
 
-                <img src="./images/foto-2.jpg" alt="Look 2">
+<!-- CARROSSEL -->
 
-                <img src="./images/foto-3.jpg" alt="Look 3">
+<section class="instagram-carousel">
 
-                <img src="./images/foto-4.jpg" alt="Look 4">
 
-                <img src="./images/foto-5.jpg" alt="Look 5">
+    <h2>
+        QUANDO UM LOOK É MONOCROMÁTICO, A RIQUEZA VISUAL VEM DAS TEXTURAS.
+    </h2>
+
+
+
+    <div class="carousel-area">
+
+
+        <button class="arrow prev" onclick="prevSlide()">
+
+            ‹
+
+        </button>
+
+
+
+
+        <div class="carousel-box">
+
+
+            <div class="carousel-track">
+
+
+                <img src="./images/foto-1.jpg">
+
+                <img src="./images/foto-2.jpg">
+
+                <img src="./images/foto-3.jpg">
+
+                <img src="./images/foto-4.jpg">
+
+                <img src="./images/foto-5.jpg">
 
 
             </div>
 
 
-
-            <button class="arrow right" onclick="moveSlide(1)">
-                ›
-            </button>
-
-
-
         </div>
 
 
 
 
-        <div class="dots">
+        <button class="arrow next" onclick="nextSlide()">
+
+            ›
+
+        </button>
 
 
-            <span class="dot active"></span>
-
-            <span class="dot"></span>
-
-            <span class="dot"></span>
-
-            <span class="dot"></span>
-
-            <span class="dot"></span>
-
-
-        </div>
+    </div>
 
 
 
-    </section>
+
+
+    <div class="dots">
+
+
+        <span class="active"></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+
+    </div>
+
+
+
+</section>
+
+
 
 
 
@@ -123,42 +153,22 @@
 <script>
 
 
-let currentSlide = 0;
+let slide = 0;
 
 
-const carousel = document.querySelector(".carousel");
+const track = document.querySelector(".carousel-track");
 
-const dots = document.querySelectorAll(".dot");
+const dots = document.querySelectorAll(".dots span");
 
-const totalSlides = document.querySelectorAll(".carousel img").length;
-
-
-
-function moveSlide(direction){
-
-
-    currentSlide += direction;
+const total = 5;
 
 
 
-    if(currentSlide < 0){
 
-        currentSlide = totalSlides - 1;
-
-    }
+function showSlide(){
 
 
-
-    if(currentSlide >= totalSlides){
-
-        currentSlide = 0;
-
-    }
-
-
-
-    carousel.style.transform = 
-    `translateX(-${currentSlide * 100}%)`;
+    track.style.transform = `translateX(-${slide * 100}%)`;
 
 
 
@@ -170,7 +180,50 @@ function moveSlide(direction){
 
 
 
-    dots[currentSlide].classList.add("active");
+    dots[slide].classList.add("active");
+
+
+}
+
+
+
+
+function nextSlide(){
+
+
+    slide++;
+
+
+    if(slide >= total){
+
+        slide = 0;
+
+    }
+
+
+    showSlide();
+
+
+}
+
+
+
+
+
+function prevSlide(){
+
+
+    slide--;
+
+
+    if(slide < 0){
+
+        slide = total - 1;
+
+    }
+
+
+    showSlide();
 
 
 }
@@ -178,6 +231,7 @@ function moveSlide(direction){
 
 
 </script>
+
 
 
 
