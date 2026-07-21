@@ -8,12 +8,14 @@
     box-sizing: border-box;
 }
 
+
 body {
 
     background: #FFFFFF;
     color: #1E1E1E;
 
 }
+
 
 
 /* ==========================
@@ -49,8 +51,10 @@ body {
    BANNERS
 ========================== */
 
-.hero img,
-.banner-2 img {
+
+/* Banner principal */
+
+.hero img {
 
     width: 100%;
 
@@ -59,9 +63,22 @@ body {
 }
 
 
+
+/* Banner 2, 3 e próximos */
+
+.banner img {
+
+    width: 100%;
+
+    display: block;
+
+}
+
+
+
 /* Espaçamento de 1cm entre banners */
 
-.banner-2 {
+.banner {
 
     margin-top: 1cm;
 
@@ -76,7 +93,7 @@ body {
 @media (max-width: 900px) {
 
 
-    .banner-2 {
+    .banner {
 
         margin-top: 20px;
 
