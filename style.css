@@ -2,29 +2,21 @@
 RESET
 ========================== */
 
-
 * {
 
-    margin:0;
-
-    padding:0;
-
-    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 
 }
-
 
 
 body {
 
-    background:#FFFFFF;
-
-    color:#1E1E1E;
+    background: #FFFFFF;
+    color: #1E1E1E;
 
 }
-
-
-
 
 
 
@@ -32,26 +24,20 @@ body {
 FONTES
 ========================== */
 
-
 @font-face {
 
-    font-family:"GothamLight";
-
-    src:url("./fonts/GothamLight.otf");
+    font-family: "GothamLight";
+    src: url("./fonts/GothamLight.otf");
 
 }
 
 
-
 @font-face {
 
-    font-family:"GothamMedium";
-
-    src:url("./fonts/GothamMedium.otf");
+    font-family: "GothamMedium";
+    src: url("./fonts/GothamMedium.otf");
 
 }
-
-
 
 
 
@@ -65,7 +51,7 @@ BANNERS
 .hero,
 .banner {
 
-    width:100%;
+    width: 100%;
 
 }
 
@@ -74,11 +60,9 @@ BANNERS
 .hero img,
 .banner img {
 
-    width:100%;
-
-    height:auto;
-
-    display:block;
+    width: 100%;
+    height: auto;
+    display: block;
 
 }
 
@@ -86,7 +70,7 @@ BANNERS
 
 .banner-normal {
 
-    margin-top:1cm;
+    margin-top: 1cm;
 
 }
 
@@ -94,10 +78,9 @@ BANNERS
 
 .banner-small {
 
-    margin-top:12px;
+    margin-top: 12px;
 
 }
-
 
 
 
@@ -112,9 +95,8 @@ CARROSSEL
 
 .instagram-carousel {
 
-    margin-top:1cm;
-
-    text-align:center;
+    margin-top: 1cm;
+    text-align: center;
 
 }
 
@@ -122,9 +104,8 @@ CARROSSEL
 
 .carousel-area {
 
-    position:relative;
-
-    width:100%;
+    position: relative;
+    width: 100%;
 
 }
 
@@ -132,13 +113,10 @@ CARROSSEL
 
 .carousel-box {
 
-    width:360px;
-
-    height:450px;
-
-    overflow:hidden;
-
-    margin:0 auto;
+    width: 360px;
+    height: 450px;
+    overflow: hidden;
+    margin: 0 auto;
 
 }
 
@@ -146,9 +124,8 @@ CARROSSEL
 
 .carousel-track {
 
-    display:flex;
-
-    transition:transform .5s ease;
+    display: flex;
+    transition: transform .5s ease;
 
 }
 
@@ -156,15 +133,11 @@ CARROSSEL
 
 .carousel-track img {
 
-    width:360px;
-
-    height:450px;
-
-    flex:0 0 100%;
-
-    object-fit:cover;
-
-    display:block;
+    width: 360px;
+    height: 450px;
+    flex: 0 0 100%;
+    object-fit: cover;
+    display: block;
 
 }
 
@@ -172,28 +145,21 @@ CARROSSEL
 
 
 
-
-
-/* SETAS */
+/* ==========================
+SETAS
+========================== */
 
 
 .arrow {
 
-    position:absolute;
-
-    top:50%;
-
-    transform:translateY(-50%);
-
-    border:none;
-
-    background:none;
-
-    font-size:45px;
-
-    cursor:pointer;
-
-    z-index:10;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    font-size: 45px;
+    cursor: pointer;
+    z-index: 10;
 
 }
 
@@ -201,7 +167,7 @@ CARROSSEL
 
 .prev {
 
-    left:calc(50% - 220px);
+    left: calc(50% - 220px);
 
 }
 
@@ -209,7 +175,7 @@ CARROSSEL
 
 .next {
 
-    right:calc(50% - 220px);
+    right: calc(50% - 220px);
 
 }
 
@@ -218,18 +184,18 @@ CARROSSEL
 
 
 
-/* BOLINHAS */
+
+/* ==========================
+BOLINHAS
+========================== */
 
 
 .dots {
 
-    display:flex;
-
-    justify-content:center;
-
-    gap:10px;
-
-    margin-top:20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
 
 }
 
@@ -237,13 +203,10 @@ CARROSSEL
 
 .dots span {
 
-    width:7px;
-
-    height:7px;
-
-    border-radius:50%;
-
-    background:#D0D0D0;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #D0D0D0;
 
 }
 
@@ -251,10 +214,9 @@ CARROSSEL
 
 .dots .active {
 
-    background:#1E1E1E;
+    background: #1E1E1E;
 
 }
-
 
 
 
@@ -269,66 +231,48 @@ VIDEO + BANNER 5
 
 .video-banner {
 
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:15px;
-
-    margin-top:3cm;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 3cm;
 
 }
 
 
 
-
-
-/* vídeo menor */
-
+/* VIDEO */
 
 .video-box {
 
-    width:280px;
-
-    height:350px;
-
-    overflow:hidden;
+    width: 320px;
+    height: 400px;
+    overflow: hidden;
 
 }
-
-
-
-
-
-/* banner maior */
-
-
-.banner5-box {
-
-    width:360px;
-
-    height:450px;
-
-    overflow:hidden;
-
-}
-
-
 
 
 
 .video-box video {
 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 
-    width:100%;
+}
 
-    height:100%;
 
-    object-fit:cover;
 
-    display:block;
+
+
+/* BANNER 5 */
+
+.banner5-box {
+
+    width: 360px;
+    height: 450px;
+    overflow: hidden;
 
 }
 
@@ -336,16 +280,12 @@ VIDEO + BANNER 5
 
 .banner5-box img {
 
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    display:block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 
 }
-
 
 
 
@@ -364,17 +304,19 @@ MOBILE
 
     .banner-small {
 
-        margin-top:8px;
+        margin-top: 8px;
 
     }
 
 
 
+
+    /* Carrossel */
+
     .carousel-box {
 
-        width:300px;
-
-        height:375px;
+        width: 300px;
+        height: 375px;
 
     }
 
@@ -382,9 +324,8 @@ MOBILE
 
     .carousel-track img {
 
-        width:300px;
-
-        height:375px;
+        width: 300px;
+        height: 375px;
 
     }
 
@@ -392,7 +333,7 @@ MOBILE
 
     .prev {
 
-        left:20px;
+        left: 20px;
 
     }
 
@@ -400,20 +341,21 @@ MOBILE
 
     .next {
 
-        right:20px;
+        right: 20px;
 
     }
 
 
 
 
+
+    /* Video + Banner */
+
     .video-banner {
 
-        flex-direction:column;
-
-        gap:15px;
-
-        margin-top:2cm;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 2cm;
 
     }
 
@@ -421,9 +363,8 @@ MOBILE
 
     .video-box {
 
-        width:280px;
-
-        height:350px;
+        width: 300px;
+        height: 375px;
 
     }
 
@@ -431,12 +372,20 @@ MOBILE
 
     .banner5-box {
 
-        width:300px;
-
-        height:375px;
+        width: 300px;
+        height: auto;
 
     }
 
+
+
+    .banner5-box img {
+
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+
+    }
 
 
 }
