@@ -43,8 +43,6 @@ FONTES
 
 
 
-
-
 /* ==========================
 BANNERS
 ========================== */
@@ -58,7 +56,6 @@ BANNERS
 }
 
 
-
 .hero img,
 .banner img {
 
@@ -69,6 +66,13 @@ BANNERS
 }
 
 
+.banner a {
+
+    display: block;
+    cursor: pointer;
+
+}
+
 
 .banner-normal {
 
@@ -77,15 +81,11 @@ BANNERS
 }
 
 
-
 .banner-small {
 
     margin-top: 12px;
 
 }
-
-
-
 
 
 
@@ -103,14 +103,12 @@ CARROSSEL
 }
 
 
-
 .carousel-area {
 
     position: relative;
     width: 100%;
 
 }
-
 
 
 .carousel-box {
@@ -125,7 +123,6 @@ CARROSSEL
 }
 
 
-
 .carousel-track {
 
     display: flex;
@@ -133,7 +130,6 @@ CARROSSEL
     transition: transform .5s ease;
 
 }
-
 
 
 .carousel-track img {
@@ -149,9 +145,6 @@ CARROSSEL
     display: block;
 
 }
-
-
-
 
 
 
@@ -182,7 +175,6 @@ SETAS
 }
 
 
-
 .prev {
 
     left: calc(50% - 220px);
@@ -190,15 +182,11 @@ SETAS
 }
 
 
-
 .next {
 
     right: calc(50% - 220px);
 
 }
-
-
-
 
 
 
@@ -221,7 +209,6 @@ BOLINHAS
 }
 
 
-
 .dots span {
 
     width: 7px;
@@ -235,16 +222,11 @@ BOLINHAS
 }
 
 
-
 .dots .active {
 
     background: #1E1E1E;
 
 }
-
-
-
-
 
 
 
@@ -256,7 +238,6 @@ VIDEO + BANNER 5
 
 .video-banner {
 
-
     display: flex;
 
     justify-content: center;
@@ -267,10 +248,7 @@ VIDEO + BANNER 5
 
     margin-top: 3cm;
 
-
 }
-
-
 
 
 
@@ -280,20 +258,16 @@ VIDEO + BANNER 5
 
 .video-box {
 
-
     width: 320px;
 
     height: 400px;
 
     overflow: hidden;
 
-
 }
 
 
-
 .video-box video {
-
 
     width: 100%;
 
@@ -303,10 +277,7 @@ VIDEO + BANNER 5
 
     display: block;
 
-
 }
-
-
 
 
 
@@ -316,16 +287,12 @@ VIDEO + BANNER 5
 
 .banner5-box {
 
-
     width: 360px;
-
 
 }
 
 
-
 .banner5-box img {
-
 
     width: 100%;
 
@@ -333,12 +300,55 @@ VIDEO + BANNER 5
 
     display: block;
 
-
 }
 
 
 
 
+/* ==========================
+FEED INSTAGRAM
+========================== */
+
+
+.instagram-feed {
+
+    max-width: 900px;
+
+    margin: 1cm auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 180px);
+
+    justify-content: center;
+
+    gap: 14px;
+
+}
+
+
+.instagram-feed img {
+
+    width: 180px;
+
+    height: 225px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.3s ease;
+
+    cursor: pointer;
+
+}
+
+
+.instagram-feed img:hover {
+
+    transform: scale(1.03);
+
+}
 
 
 
@@ -348,8 +358,7 @@ MOBILE
 ========================== */
 
 
-@media(max-width:900px){
-
+@media(max-width:900px) {
 
 
     .banner-small {
@@ -361,65 +370,47 @@ MOBILE
 
 
 
-
-
-    /* Carrossel */
+    /* CARROSSEL */
 
 
     .carousel-box {
 
-
         width: 300px;
 
         height: 375px;
 
-
     }
-
 
 
     .carousel-track img {
 
-
         width: 300px;
 
         height: 375px;
 
-
     }
-
 
 
     .prev {
 
-
         left: 20px;
 
-
     }
-
 
 
     .next {
 
-
         right: 20px;
-
 
     }
 
 
 
 
-
-
-
-
-    /* Video + Banner */
+    /* VIDEO + BANNER */
 
 
     .video-banner {
-
 
         flex-direction: column;
 
@@ -427,115 +418,55 @@ MOBILE
 
         margin-top: 2cm;
 
-
     }
 
 
-
-
-
     .video-box {
-
 
         width: 300px;
 
         height: 375px;
 
-
     }
-
-
-
 
 
     .banner5-box {
 
-
         width: 300px;
-
 
     }
 
 
-
-
-
     .banner5-box img {
-
 
         width: 100%;
 
         height: auto;
 
-
     }
 
 
 
-}
 
-/* ==========================
-FEED INSTAGRAM
-========================== */
-
-.instagram-feed{
-
-    max-width:900px;
-
-    margin:1cm auto;
-
-    display:grid;
-
-    grid-template-columns:repeat(4, 180px);
-
-    justify-content:center;
-
-    gap:14px;
-
-}
-
-.instagram-feed img{
-
-    width:180px;
-
-    height:225px;
-
-    object-fit:cover;
-
-    display:block;
-
-    transition:0.3s ease;
-
-    cursor:pointer;
-
-}
-
-.instagram-feed img:hover{
-
-    transform:scale(1.03);
-
-}
+    /* FEED INSTAGRAM */
 
 
+    .instagram-feed {
 
-/* MOBILE */
+        grid-template-columns: repeat(2, 150px);
 
-@media(max-width:900px){
-
-    .instagram-feed{
-
-        grid-template-columns:repeat(2,150px);
-
-        gap:12px;
+        gap: 12px;
 
     }
 
-    .instagram-feed img{
 
-        width:150px;
+    .instagram-feed img {
 
-        height:188px;
+        width: 150px;
+
+        height: 188px;
 
     }
+
 
 }
