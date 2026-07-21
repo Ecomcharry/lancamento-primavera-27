@@ -2,31 +2,183 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Inside the Look</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
+
     <!-- Banner 1 -->
+
     <section class="hero">
+
         <img src="./images/banner-1.jpg" alt="Banner Principal">
+
     </section>
+
 
 
     <!-- Banner 2 -->
+
     <section class="banner">
+
         <img src="./images/banner-2.jpg" alt="Banner Secundário">
+
     </section>
+
 
 
     <!-- Banner 3 -->
+
     <section class="banner">
+
         <img src="./images/banner-3.jpg" alt="Banner Terciário">
+
     </section>
+
+
+
+
+
+    <!-- Texto + Carrossel -->
+
+    <section class="instagram-carousel">
+
+
+        <h2>
+            QUANDO UM LOOK É MONOCROMÁTICO, A RIQUEZA VISUAL VEM DAS TEXTURAS.
+        </h2>
+
+
+
+        <div class="carousel-wrapper">
+
+
+            <button class="arrow left" onclick="moveSlide(-1)">
+                ‹
+            </button>
+
+
+
+            <div class="carousel">
+
+
+                <img src="./images/foto-1.jpg" alt="Look 1">
+
+                <img src="./images/foto-2.jpg" alt="Look 2">
+
+                <img src="./images/foto-3.jpg" alt="Look 3">
+
+                <img src="./images/foto-4.jpg" alt="Look 4">
+
+                <img src="./images/foto-5.jpg" alt="Look 5">
+
+
+            </div>
+
+
+
+            <button class="arrow right" onclick="moveSlide(1)">
+                ›
+            </button>
+
+
+
+        </div>
+
+
+
+
+        <div class="dots">
+
+
+            <span class="dot active"></span>
+
+            <span class="dot"></span>
+
+            <span class="dot"></span>
+
+            <span class="dot"></span>
+
+            <span class="dot"></span>
+
+
+        </div>
+
+
+
+    </section>
+
+
+
+
+<script>
+
+
+let currentSlide = 0;
+
+
+const carousel = document.querySelector(".carousel");
+
+const dots = document.querySelectorAll(".dot");
+
+const totalSlides = document.querySelectorAll(".carousel img").length;
+
+
+
+function moveSlide(direction){
+
+
+    currentSlide += direction;
+
+
+
+    if(currentSlide < 0){
+
+        currentSlide = totalSlides - 1;
+
+    }
+
+
+
+    if(currentSlide >= totalSlides){
+
+        currentSlide = 0;
+
+    }
+
+
+
+    carousel.style.transform = 
+    `translateX(-${currentSlide * 100}%)`;
+
+
+
+    dots.forEach(dot => {
+
+        dot.classList.remove("active");
+
+    });
+
+
+
+    dots[currentSlide].classList.add("active");
+
+
+}
+
+
+
+</script>
+
 
 
 </body>
