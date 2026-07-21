@@ -1,25 +1,18 @@
-/* ==========================
-RESET
-========================== */
+*{
 
+margin:0;
 
-* {
+padding:0;
 
-    margin:0;
-
-    padding:0;
-
-    box-sizing:border-box;
+box-sizing:border-box;
 
 }
 
 
 
-body {
+body{
 
-    background:#FFFFFF;
-
-    color:#1E1E1E;
+background:#fff;
 
 }
 
@@ -27,37 +20,24 @@ body {
 
 
 
-
-/* ==========================
-FONTES
-========================== */
+/* FONTES */
 
 
-@font-face {
+@font-face{
 
-    font-family:"Owners";
+font-family:GothamLight;
 
-    src:url("./fonts/OwnersTRIALWide-Regular.otf") format("opentype");
+src:url("./fonts/GothamLight.otf");
 
 }
 
 
 
-@font-face {
+@font-face{
 
-    font-family:"GothamLight";
+font-family:GothamMedium;
 
-    src:url("./fonts/GothamLight.otf") format("opentype");
-
-}
-
-
-
-@font-face {
-
-    font-family:"GothamMedium";
-
-    src:url("./fonts/GothamMedium.otf") format("opentype");
+src:url("./fonts/GothamMedium.otf");
 
 }
 
@@ -66,70 +46,46 @@ FONTES
 
 
 
-
-/* ==========================
+/* ==================
 BANNERS
-========================== */
+================== */
 
 
 .hero,
-.banner {
+.banner{
 
-    width:100%;
+width:100%;
 
 }
 
 
 
 .hero img,
-.banner img {
+.banner img{
 
-    width:100%;
+width:100%;
 
-    height:auto;
+height:auto;
 
-    display:block;
-
-}
-
-
-
-
-
-/* Banner 1 para Banner 2 */
-
-.banner-normal {
-
-    margin-top:1cm;
+display:block;
 
 }
 
 
 
 
+.banner-normal{
 
-/* Banner 2 para 3 e 3 para 4 */
-
-.banner-small {
-
-    margin-top:12px;
+margin-top:1cm;
 
 }
 
 
 
 
+.banner-small{
 
-
-
-/* Banner 4 para carrossel */
-
-
-.instagram-carousel {
-
-    margin-top:1cm;
-
-    text-align:center;
+margin-top:12px;
 
 }
 
@@ -138,36 +94,17 @@ BANNERS
 
 
 
-
-
-
-/* ==========================
+/* ==================
 CARROSSEL
-========================== */
+================== */
 
 
-.carousel-area {
-
-    position:relative;
-
-    width:100%;
-
-}
+.instagram-carousel{
 
 
+margin-top:1cm;
 
-
-
-.carousel-box {
-
-
-    width:360px;
-
-    height:450px;
-
-    overflow:hidden;
-
-    margin:0 auto;
+text-align:center;
 
 
 }
@@ -175,13 +112,12 @@ CARROSSEL
 
 
 
+.carousel-area{
 
-.carousel-track {
 
+position:relative;
 
-    display:flex;
-
-    transition:transform .5s ease;
+width:100%;
 
 
 }
@@ -189,19 +125,16 @@ CARROSSEL
 
 
 
+.carousel-box{
 
-.carousel-track img {
 
+width:360px;
 
-    width:360px;
+height:450px;
 
-    height:450px;
+overflow:hidden;
 
-    flex:0 0 100%;
-
-    object-fit:cover;
-
-    display:block;
+margin:auto;
 
 
 }
@@ -210,52 +143,31 @@ CARROSSEL
 
 
 
+.carousel-track{
 
 
+display:flex;
 
-/* ==========================
-SETAS
-========================== */
-
-
-.arrow {
-
-
-    position:absolute;
-
-    top:50%;
-
-    transform:translateY(-50%);
-
-    background:none;
-
-    border:none;
-
-    font-size:45px;
-
-    cursor:pointer;
-
-    z-index:10;
+transition:.5s ease;
 
 
 }
 
 
 
-.prev {
+
+.carousel-track img{
 
 
-    left:calc(50% - 220px);
+width:360px;
 
+height:450px;
 
-}
+flex:0 0 100%;
 
+object-fit:cover;
 
-
-.next {
-
-
-    right:calc(50% - 220px);
+display:block;
 
 
 }
@@ -265,50 +177,44 @@ SETAS
 
 
 
+/* SETAS */
 
 
-/* ==========================
-BOLINHAS
-========================== */
+.arrow{
 
 
-.dots {
+position:absolute;
 
+top:50%;
 
-    display:flex;
+transform:translateY(-50%);
 
-    justify-content:center;
+background:none;
 
-    gap:10px;
+border:0;
 
-    margin-top:20px;
+font-size:45px;
 
+cursor:pointer;
 
-}
-
-
-
-.dots span {
-
-
-    width:7px;
-
-    height:7px;
-
-    border-radius:50%;
-
-    background:#D0D0D0;
+z-index:5;
 
 
 }
 
 
 
-.dots .active {
+.prev{
+
+left:calc(50% - 220px);
+
+}
 
 
-    background:#1E1E1E;
 
+.next{
+
+right:calc(50% - 220px);
 
 }
 
@@ -317,58 +223,212 @@ BOLINHAS
 
 
 
+/* BOLINHAS */
 
 
-/* ==========================
+.dots{
+
+
+display:flex;
+
+justify-content:center;
+
+gap:10px;
+
+margin-top:20px;
+
+
+}
+
+
+
+.dots span{
+
+
+width:7px;
+
+height:7px;
+
+background:#ccc;
+
+border-radius:50%;
+
+
+}
+
+
+
+.dots .active{
+
+
+background:#111;
+
+
+}
+
+
+
+
+
+
+
+/* ==================
+VIDEO + BANNER 5
+================== */
+
+
+.video-banner{
+
+
+display:flex;
+
+gap:20px;
+
+align-items:center;
+
+margin-top:1cm;
+
+padding:0 40px;
+
+
+}
+
+
+
+
+.video-box,
+.banner5-box{
+
+
+width:50%;
+
+}
+
+
+
+
+.video-box video{
+
+
+width:100%;
+
+height:auto;
+
+display:block;
+
+
+}
+
+
+
+.banner5-box img{
+
+
+width:100%;
+
+height:auto;
+
+display:block;
+
+
+}
+
+
+
+
+
+
+
+
+/* ==================
 MOBILE
-========================== */
+================== */
 
 
 @media(max-width:900px){
 
 
 
-    .carousel-box {
+.banner-small{
 
+margin-top:8px;
 
-        width:300px;
-
-        height:375px;
-
-
-    }
+}
 
 
 
-    .carousel-track img {
 
 
-        width:300px;
-
-        height:375px;
+.carousel-box{
 
 
-    }
+width:300px;
+
+height:375px;
 
 
-
-    .prev {
-
-
-        left:20px;
-
-
-    }
+}
 
 
 
-    .next {
+
+.carousel-track img{
 
 
-        right:20px;
+width:300px;
+
+height:375px;
 
 
-    }
+}
+
+
+
+
+
+.prev{
+
+left:20px;
+
+}
+
+
+
+.next{
+
+right:20px;
+
+}
+
+
+
+
+
+.video-banner{
+
+
+flex-direction:column;
+
+padding:0 20px;
+
+gap:15px;
+
+
+}
+
+
+
+
+
+.video-box,
+.banner5-box{
+
+
+width:100%;
+
+
+}
+
 
 
 }
