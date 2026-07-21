@@ -3,13 +3,13 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Inside the Look</title>
+    <title>Inside the Look</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -21,7 +21,7 @@
 
 <section class="hero">
 
-<img src="./images/banner-1.jpg" alt="Banner 1">
+    <img src="./images/banner-1.jpg" alt="Banner 1">
 
 </section>
 
@@ -32,7 +32,7 @@
 
 <section class="banner banner-normal">
 
-<img src="./images/banner-2.jpg" alt="Banner 2">
+    <img src="./images/banner-2.jpg" alt="Banner 2">
 
 </section>
 
@@ -43,7 +43,7 @@
 
 <section class="banner banner-small">
 
-<img src="./images/banner-3.jpg" alt="Banner 3">
+    <img src="./images/banner-3.jpg" alt="Banner 3">
 
 </section>
 
@@ -54,132 +54,121 @@
 
 <section class="banner banner-small">
 
-<img src="./images/banner-4.jpg" alt="Banner 4">
+    <img src="./images/banner-4.jpg" alt="Banner 4">
 
 </section>
-
-
 
 
 
 
 <!-- CARROSSEL -->
 
-
 <section class="instagram-carousel">
 
 
-<div class="carousel-area">
+    <div class="carousel-area">
 
 
-<button class="arrow prev" onclick="prevSlide()">
+        <button class="arrow prev" onclick="prevSlide()">
 
-‹
+            ‹
 
-</button>
-
-
-
-
-<div class="carousel-box">
-
-
-<div class="carousel-track">
-
-
-<img src="./images/foto-1.jpg" alt="Foto 1">
-
-<img src="./images/foto-2.jpg" alt="Foto 2">
-
-<img src="./images/foto-3.jpg" alt="Foto 3">
-
-<img src="./images/foto-4.jpg" alt="Foto 4">
-
-<img src="./images/foto-5.jpg" alt="Foto 5">
-
-
-</div>
-
-
-</div>
+        </button>
 
 
 
 
-
-<button class="arrow next" onclick="nextSlide()">
-
-›
-
-</button>
+        <div class="carousel-box">
 
 
-</div>
+            <div class="carousel-track">
+
+
+                <img src="./images/foto-1.jpg" alt="Foto 1">
+
+                <img src="./images/foto-2.jpg" alt="Foto 2">
+
+                <img src="./images/foto-3.jpg" alt="Foto 3">
+
+                <img src="./images/foto-4.jpg" alt="Foto 4">
+
+                <img src="./images/foto-5.jpg" alt="Foto 5">
+
+
+            </div>
+
+
+        </div>
 
 
 
 
+        <button class="arrow next" onclick="nextSlide()">
 
-<div class="dots">
+            ›
 
-
-<span class="active"></span>
-
-<span></span>
-
-<span></span>
-
-<span></span>
-
-<span></span>
+        </button>
 
 
-</div>
+    </div>
 
+
+
+
+    <div class="dots">
+
+
+        <span class="active"></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+
+    </div>
 
 
 </section>
-
-
-
-
 
 
 
 
 <!-- VIDEO + BANNER 5 -->
 
-
 <section class="video-banner">
 
 
-<div class="video-box">
+    <div class="video-box">
 
 
-<video autoplay muted loop playsinline>
+        <video autoplay muted loop playsinline>
 
-<source src="./images/video.mp4" type="video/mp4">
+            <source src="./images/video.mp4" type="video/mp4">
 
-</video>
-
-
-</div>
+        </video>
 
 
+    </div>
 
 
 
-<div class="banner5-box">
+
+    <div class="banner5-box">
 
 
-<img src="./images/banner-5.jpg" alt="Banner 5">
+        <img src="./images/banner-5.jpg" alt="Banner 5">
 
 
-</div>
-
+    </div>
 
 
 </section>
+
+
 
 
 <!-- BANNER 6 -->
@@ -192,9 +181,11 @@
 
 
 
+
 <!-- FEED INSTAGRAM -->
 
 <section class="instagram-feed">
+
 
     <img src="./images/foto-6.jpg" alt="Foto 6">
 
@@ -216,16 +207,25 @@
 
     <img src="./images/foto-15.jpg" alt="Foto 15">
 
-</section>
 
 </section>
 
 
-<!-- BANNER 7 -->
+
+
+<!-- BANNER 7 COM LINK PARA WHATSAPP -->
 
 <section class="banner banner-normal">
 
-    <img src="./images/banner-7.jpg" alt="Banner 7">
+
+    <a href="https://chat.whatsapp.com/LM0r58rotgbGuj0oB4m6Rk" target="_blank">
+
+
+        <img src="./images/banner-7.jpg" alt="Banner 7">
+
+
+    </a>
+
 
 </section>
 
@@ -235,83 +235,84 @@
 <script>
 
 
-let slide = 0;
+    let slide = 0;
 
 
-const track = document.querySelector(".carousel-track");
+    const track = document.querySelector(".carousel-track");
 
-const dots = document.querySelectorAll(".dots span");
+    const dots = document.querySelectorAll(".dots span");
 
-const total = 5;
-
-
-
-function showSlide(){
-
-
-track.style.transform = `translateX(-${slide * 100}%)`;
-
-
-
-dots.forEach(dot => {
-
-dot.classList.remove("active");
-
-});
-
-
-
-dots[slide].classList.add("active");
-
-
-}
+    const total = 5;
 
 
 
 
-function nextSlide(){
+    function showSlide() {
 
 
-slide++;
-
-
-if(slide >= total){
-
-slide = 0;
-
-}
-
-
-showSlide();
-
-
-}
+        track.style.transform = `translateX(-${slide * 100}%)`;
 
 
 
 
+        dots.forEach(dot => {
 
-function prevSlide(){
+            dot.classList.remove("active");
 
-
-slide--;
-
-
-if(slide < 0){
-
-slide = total - 1;
-
-}
+        });
 
 
-showSlide();
 
 
-}
+        dots[slide].classList.add("active");
+
+
+    }
+
+
+
+
+    function nextSlide() {
+
+
+        slide++;
+
+
+        if (slide >= total) {
+
+            slide = 0;
+
+        }
+
+
+        showSlide();
+
+
+    }
+
+
+
+
+    function prevSlide() {
+
+
+        slide--;
+
+
+        if (slide < 0) {
+
+            slide = total - 1;
+
+        }
+
+
+        showSlide();
+
+
+    }
 
 
 </script>
-
 
 
 </body>
