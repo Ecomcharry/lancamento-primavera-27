@@ -25,6 +25,8 @@ body {
 
 
 
+
+
 /* ==========================
 FONTES
 ========================== */
@@ -62,6 +64,7 @@ FONTES
 
 
 
+
 /* ==========================
 BANNERS
 ========================== */
@@ -79,11 +82,13 @@ BANNERS
 .hero img,
 .banner img {
 
+
     width:100%;
 
     height:auto;
 
     display:block;
+
 
 }
 
@@ -91,7 +96,9 @@ BANNERS
 
 .banner {
 
+
     margin-top:1cm;
+
 
 }
 
@@ -119,46 +126,10 @@ CARROSSEL
 
 
 
-
-/* FRASE */
-
-
-.instagram-carousel h2 {
-
-
-    font-family:"GothamLight";
-
-
-    font-size:22px;
-
-
-    font-weight:normal;
-
-
-    letter-spacing:2px;
-
-
-    text-transform:uppercase;
-
-
-    margin-bottom:40px;
-
-
-}
-
-
-
-
-
-
-/* ÁREA DAS FOTOS */
-
-
 .carousel-area {
 
 
     position:relative;
-
 
     width:100%;
 
@@ -169,20 +140,17 @@ CARROSSEL
 
 
 
+/* TAMANHO PEQUENO CENTRALIZADO */
+
+
 .carousel-box {
 
 
-    width:1080px;
+    width:400px;
 
-
-    height:1350px;
-
-
-    max-width:90%;
-
+    height:500px;
 
     overflow:hidden;
-
 
     margin:0 auto;
 
@@ -192,12 +160,10 @@ CARROSSEL
 
 
 
-
 .carousel-track {
 
 
     display:flex;
-
 
     transition:transform .5s ease;
 
@@ -207,21 +173,16 @@ CARROSSEL
 
 
 
-
 .carousel-track img {
 
 
-    width:1080px;
+    width:400px;
 
-
-    height:1350px;
-
+    height:500px;
 
     flex:0 0 100%;
 
-
     object-fit:cover;
-
 
     display:block;
 
@@ -233,9 +194,9 @@ CARROSSEL
 
 
 
-
-
-/* SETAS */
+/* ==========================
+SETAS
+========================== */
 
 
 .arrow {
@@ -243,27 +204,19 @@ CARROSSEL
 
     position:absolute;
 
-
     top:50%;
-
 
     transform:translateY(-50%);
 
-
     border:none;
-
 
     background:none;
 
-
-    font-size:60px;
-
+    font-size:45px;
 
     cursor:pointer;
 
-
     z-index:10;
-
 
 }
 
@@ -272,7 +225,7 @@ CARROSSEL
 .prev {
 
 
-    left:calc(50% - 620px);
+    left:calc(50% - 250px);
 
 
 }
@@ -282,7 +235,7 @@ CARROSSEL
 .next {
 
 
-    right:calc(50% - 620px);
+    right:calc(50% - 250px);
 
 
 }
@@ -292,7 +245,10 @@ CARROSSEL
 
 
 
-/* BOLINHAS */
+
+/* ==========================
+BOLINHAS
+========================== */
 
 
 .dots {
@@ -300,14 +256,11 @@ CARROSSEL
 
     display:flex;
 
-
     justify-content:center;
-
 
     gap:10px;
 
-
-    margin-top:25px;
+    margin-top:20px;
 
 
 }
@@ -317,14 +270,11 @@ CARROSSEL
 .dots span {
 
 
-    width:8px;
+    width:7px;
 
-
-    height:8px;
-
+    height:7px;
 
     border-radius:50%;
-
 
     background:#D0D0D0;
 
@@ -346,6 +296,7 @@ CARROSSEL
 
 
 
+
 /* ==========================
 MOBILE
 ========================== */
@@ -354,30 +305,12 @@ MOBILE
 @media(max-width:900px){
 
 
-
-    .instagram-carousel h2 {
-
-
-        font-size:15px;
-
-
-        padding:0 20px;
-
-
-    }
-
-
-
     .carousel-box {
 
 
-        width:100%;
+        width:300px;
 
-
-        height:auto;
-
-
-        aspect-ratio:4 / 5;
+        height:375px;
 
 
     }
@@ -387,13 +320,9 @@ MOBILE
     .carousel-track img {
 
 
-        width:100%;
+        width:300px;
 
-
-        height:auto;
-
-
-        aspect-ratio:4 / 5;
+        height:375px;
 
 
     }
@@ -403,7 +332,7 @@ MOBILE
     .prev {
 
 
-        left:10px;
+        left:25px;
 
 
     }
@@ -413,7 +342,7 @@ MOBILE
     .next {
 
 
-        right:10px;
+        right:25px;
 
 
     }
