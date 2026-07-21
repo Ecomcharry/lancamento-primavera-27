@@ -17,7 +17,6 @@
 <body>
 
 
-
 <!-- BANNER 1 -->
 
 <section class="hero">
@@ -31,7 +30,7 @@
 
 <!-- BANNER 2 -->
 
-<section class="banner">
+<section class="banner banner-normal">
 
     <img src="./images/banner-2.jpg" alt="Banner 2">
 
@@ -42,7 +41,7 @@
 
 <!-- BANNER 3 -->
 
-<section class="banner">
+<section class="banner banner-small">
 
     <img src="./images/banner-3.jpg" alt="Banner 3">
 
@@ -53,11 +52,12 @@
 
 <!-- BANNER 4 -->
 
-<section class="banner">
+<section class="banner banner-small">
 
     <img src="./images/banner-4.jpg" alt="Banner 4">
 
 </section>
+
 
 
 
@@ -73,11 +73,8 @@
 
 
         <button class="arrow prev" onclick="prevSlide()">
-
             ‹
-
         </button>
-
 
 
 
@@ -87,15 +84,15 @@
             <div class="carousel-track">
 
 
-                <img src="./images/foto-1.jpg" alt="Foto 1">
+                <img src="./images/foto-1.jpg" alt="Foto 1" loading="lazy">
 
-                <img src="./images/foto-2.jpg" alt="Foto 2">
+                <img src="./images/foto-2.jpg" alt="Foto 2" loading="lazy">
 
-                <img src="./images/foto-3.jpg" alt="Foto 3">
+                <img src="./images/foto-3.jpg" alt="Foto 3" loading="lazy">
 
-                <img src="./images/foto-4.jpg" alt="Foto 4">
+                <img src="./images/foto-4.jpg" alt="Foto 4" loading="lazy">
 
-                <img src="./images/foto-5.jpg" alt="Foto 5">
+                <img src="./images/foto-5.jpg" alt="Foto 5" loading="lazy">
 
 
             </div>
@@ -107,14 +104,11 @@
 
 
         <button class="arrow next" onclick="nextSlide()">
-
             ›
-
         </button>
 
 
     </div>
-
 
 
 
@@ -138,6 +132,7 @@
 
 
 </section>
+
 
 
 
@@ -222,7 +217,6 @@ function prevSlide(){
 
 
 }
-
 
 
 </script>
