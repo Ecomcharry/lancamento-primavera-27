@@ -1,3 +1,8 @@
+/* ==========================
+RESET
+========================== */
+
+
 *{
 
 margin:0;
@@ -12,7 +17,9 @@ box-sizing:border-box;
 
 body{
 
-background:#fff;
+background:#FFFFFF;
+
+color:#1E1E1E;
 
 }
 
@@ -20,7 +27,10 @@ background:#fff;
 
 
 
-/* FONTES */
+
+/* ==========================
+FONTES
+========================== */
 
 
 @font-face{
@@ -46,9 +56,11 @@ src:url("./fonts/GothamMedium.otf");
 
 
 
-/* ==================
+
+
+/* ==========================
 BANNERS
-================== */
+========================== */
 
 
 .hero,
@@ -63,14 +75,15 @@ width:100%;
 .hero img,
 .banner img{
 
+
 width:100%;
 
 height:auto;
 
 display:block;
 
-}
 
+}
 
 
 
@@ -79,7 +92,6 @@ display:block;
 margin-top:1cm;
 
 }
-
 
 
 
@@ -94,9 +106,10 @@ margin-top:12px;
 
 
 
-/* ==================
+
+/* ==========================
 CARROSSEL
-================== */
+========================== */
 
 
 .instagram-carousel{
@@ -108,6 +121,7 @@ text-align:center;
 
 
 }
+
 
 
 
@@ -125,6 +139,7 @@ width:100%;
 
 
 
+
 .carousel-box{
 
 
@@ -134,11 +149,10 @@ height:450px;
 
 overflow:hidden;
 
-margin:auto;
+margin:0 auto;
 
 
 }
-
 
 
 
@@ -148,7 +162,7 @@ margin:auto;
 
 display:flex;
 
-transition:.5s ease;
+transition:transform .5s ease;
 
 
 }
@@ -189,15 +203,15 @@ top:50%;
 
 transform:translateY(-50%);
 
-background:none;
+border:none;
 
-border:0;
+background:none;
 
 font-size:45px;
 
 cursor:pointer;
 
-z-index:5;
+z-index:10;
 
 
 }
@@ -249,9 +263,9 @@ width:7px;
 
 height:7px;
 
-background:#ccc;
-
 border-radius:50%;
+
+background:#D0D0D0;
 
 
 }
@@ -261,7 +275,7 @@ border-radius:50%;
 .dots .active{
 
 
-background:#111;
+background:#1E1E1E;
 
 
 }
@@ -272,9 +286,10 @@ background:#111;
 
 
 
-/* ==================
+
+/* ==========================
 VIDEO + BANNER 5
-================== */
+========================== */
 
 
 .video-banner{
@@ -282,16 +297,17 @@ VIDEO + BANNER 5
 
 display:flex;
 
-gap:20px;
+justify-content:center;
 
 align-items:center;
 
-margin-top:1cm;
+gap:15px;
 
-padding:0 40px;
+margin-top:3cm;
 
 
 }
+
 
 
 
@@ -300,7 +316,12 @@ padding:0 40px;
 .banner5-box{
 
 
-width:50%;
+width:360px;
+
+height:450px;
+
+overflow:hidden;
+
 
 }
 
@@ -312,12 +333,15 @@ width:50%;
 
 width:100%;
 
-height:auto;
+height:100%;
+
+object-fit:cover;
 
 display:block;
 
 
 }
+
 
 
 
@@ -326,7 +350,9 @@ display:block;
 
 width:100%;
 
-height:auto;
+height:100%;
+
+object-fit:cover;
 
 display:block;
 
@@ -340,9 +366,9 @@ display:block;
 
 
 
-/* ==================
+/* ==========================
 MOBILE
-================== */
+========================== */
 
 
 @media(max-width:900px){
@@ -354,7 +380,6 @@ MOBILE
 margin-top:8px;
 
 }
-
 
 
 
@@ -371,7 +396,6 @@ height:375px;
 
 
 
-
 .carousel-track img{
 
 
@@ -381,8 +405,6 @@ height:375px;
 
 
 }
-
-
 
 
 
@@ -404,18 +426,18 @@ right:20px;
 
 
 
+
 .video-banner{
 
 
 flex-direction:column;
 
-padding:0 20px;
-
 gap:15px;
+
+margin-top:2cm;
 
 
 }
-
 
 
 
@@ -424,7 +446,9 @@ gap:15px;
 .banner5-box{
 
 
-width:100%;
+width:300px;
+
+height:375px;
 
 
 }
