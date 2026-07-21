@@ -1,100 +1,156 @@
-/* RESET */
+/* ==========================
+   RESET
+========================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    background:#ffffff;
-    color:#1a1a1a;
+body {
+    background: #FFFFFF;
+    color: #1E1E1E;
 }
 
-/* FONTES */
+/* ==========================
+   FONTES
+========================== */
 
-@font-face{
-    font-family:'Owners';
-    src:url('fonts/OwnersTRIALWide-Regular.otf');
+@font-face {
+    font-family: "Owners";
+    src: url("./fonts/OwnersTRIALWide-Regular.otf") format("opentype");
 }
 
-@font-face{
-    font-family:'GothamLight';
-    src:url('fonts/GothamLight.otf');
+@font-face {
+    font-family: "GothamLight";
+    src: url("./fonts/GothamLight.otf") format("opentype");
 }
 
-@font-face{
-    font-family:'GothamMedium';
-    src:url('fonts/GothamMedium.otf');
+@font-face {
+    font-family: "GothamMedium";
+    src: url("./fonts/GothamMedium.otf") format("opentype");
 }
 
-/* BANNER */
+/* ==========================
+   BANNER
+========================== */
 
-.hero img{
-    width:100%;
-    display:block;
+.hero img {
+    width: 100%;
+    display: block;
 }
 
-/* PRIMEIRA SEÇÃO */
+/* ==========================
+   PRIMEIRA SEÇÃO
+========================== */
 
-.section-1{
+.section-1 {
 
-    max-width:1200px;
-    margin:1cm auto 120px auto;
+    max-width: 1200px;
 
-    display:flex;
-    align-items:center;
-    gap:70px;
+    margin: 1cm auto;
 
-    padding:0 40px;
+    display: flex;
 
-}
+    align-items: center;
 
-.image{
+    justify-content: space-between;
 
-    flex:1;
+    gap: 70px;
 
-}
-
-.image img{
-
-    width:100%;
-    display:block;
-
-}
-
-.content{
-
-    flex:1;
+    padding: 0 40px;
 
 }
 
-.content h2{
+/* Imagem */
 
-    font-family:'Owners';
-    font-size:42px;
-    font-weight:normal;
+.image {
 
-    margin-bottom:28px;
-
-    line-height:1.15;
+    flex: 1;
 
 }
 
-.content p{
+.image img {
 
-    font-family:'GothamLight';
+    width: 100%;
 
-    font-size:20px;
-
-    line-height:1.9;
-
-    color:#3b3b3b;
+    display: block;
 
 }
 
-.medium{
+/* Texto */
 
-    font-family:'GothamMedium';
+.content {
+
+    flex: 1;
+
+}
+
+.content h2 {
+
+    font-family: "Owners";
+
+    font-size: 48px;
+
+    font-weight: normal;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    line-height: 1.1;
+
+    margin-bottom: 30px;
+
+}
+
+.content p {
+
+    font-family: "GothamLight";
+
+    font-size: 22px;
+
+    line-height: 1.8;
+
+    color: #2A2A2A;
+
+}
+
+/* Palavras em destaque */
+
+.medium {
+
+    font-family: "GothamMedium";
+
+}
+
+/* ==========================
+   RESPONSIVO
+========================== */
+
+@media (max-width: 900px) {
+
+    .section-1 {
+
+        flex-direction: column;
+
+        gap: 40px;
+
+        padding: 0 25px;
+
+    }
+
+    .content h2 {
+
+        font-size: 34px;
+
+    }
+
+    .content p {
+
+        font-size: 18px;
+
+    }
 
 }
