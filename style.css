@@ -1,27 +1,77 @@
 /* ==========================
-   RESET
+RESET
 ========================== */
 
+
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
+
 
 
 body {
+
     background: #FFFFFF;
+
+    color: #1E1E1E;
+
 }
+
 
 
 /* ==========================
-   BANNERS
+FONTES
 ========================== */
+
+
+@font-face {
+
+    font-family: "Owners";
+
+    src: url("./fonts/OwnersTRIALWide-Regular.otf") format("opentype");
+
+}
+
+
+
+@font-face {
+
+    font-family: "GothamLight";
+
+    src: url("./fonts/GothamLight.otf") format("opentype");
+
+}
+
+
+
+@font-face {
+
+    font-family: "GothamMedium";
+
+    src: url("./fonts/GothamMedium.otf") format("opentype");
+
+}
+
+
+
+/* ==========================
+BANNERS
+========================== */
+
 
 .hero,
 .banner {
+
     width: 100%;
+
 }
+
 
 
 .hero img,
@@ -37,8 +87,6 @@ body {
 
 
 
-/* Espaçamento de 1cm entre banners */
-
 .banner {
 
     margin-top: 1cm;
@@ -48,15 +96,210 @@ body {
 
 
 /* ==========================
-   RESPONSIVO
+CARROSSEL INSTAGRAM
 ========================== */
 
-@media (max-width: 900px) {
 
-    .banner {
+.instagram-carousel {
 
-        margin-top: 20px;
+    margin-top: 1cm;
+
+    text-align: center;
+
+}
+
+
+
+/* Texto */
+
+.instagram-carousel h2 {
+
+
+    font-family: "GothamLight";
+
+    font-size: 22px;
+
+    font-weight: normal;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 40px;
+
+
+}
+
+
+
+
+/* Área do carrossel */
+
+
+.carousel-wrapper {
+
+    width: 100%;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+
+
+.carousel {
+
+    display: flex;
+
+    transition: transform 0.5s ease;
+
+}
+
+
+
+.carousel img {
+
+
+    width: 100%;
+
+    flex: 0 0 100%;
+
+    display: block;
+
+
+}
+
+
+
+
+
+/* Setas */
+
+
+.arrow {
+
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 5;
+
+    background: transparent;
+
+    border: none;
+
+    font-size: 55px;
+
+    cursor: pointer;
+
+    color: #1E1E1E;
+
+
+}
+
+
+
+.left {
+
+    left: 35px;
+
+}
+
+
+
+.right {
+
+    right: 35px;
+
+}
+
+
+
+
+
+/* Bolinhas */
+
+
+.dots {
+
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+
+}
+
+
+
+.dot {
+
+
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #D0D0D0;
+
+
+}
+
+
+
+.dot.active {
+
+
+    background: #1E1E1E;
+
+
+}
+
+
+
+
+
+/* ==========================
+RESPONSIVO
+========================== */
+
+
+@media(max-width:900px){
+
+
+
+    .instagram-carousel h2 {
+
+
+        font-size: 15px;
+
+        padding: 0 20px;
+
+        letter-spacing: 1px;
+
 
     }
+
+
+
+    .arrow {
+
+
+        font-size: 35px;
+
+
+    }
+
+
 
 }
