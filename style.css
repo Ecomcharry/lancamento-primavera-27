@@ -10,65 +10,26 @@
 
 
 body {
-
     background: #FFFFFF;
-    color: #1E1E1E;
-
 }
-
-
-
-/* ==========================
-   FONTES
-========================== */
-
-@font-face {
-
-    font-family: "Owners";
-    src: url("./fonts/OwnersTRIALWide-Regular.otf") format("opentype");
-
-}
-
-
-@font-face {
-
-    font-family: "GothamLight";
-    src: url("./fonts/GothamLight.otf") format("opentype");
-
-}
-
-
-@font-face {
-
-    font-family: "GothamMedium";
-    src: url("./fonts/GothamMedium.otf") format("opentype");
-
-}
-
 
 
 /* ==========================
    BANNERS
 ========================== */
 
-
-/* Banner principal */
-
-.hero img {
-
+.hero,
+.banner {
     width: 100%;
-
-    display: block;
-
 }
 
 
-
-/* Banner 2, 3 e próximos */
-
+.hero img,
 .banner img {
 
     width: 100%;
+
+    height: auto;
 
     display: block;
 
@@ -92,12 +53,10 @@ body {
 
 @media (max-width: 900px) {
 
-
     .banner {
 
         margin-top: 20px;
 
     }
-
 
 }
