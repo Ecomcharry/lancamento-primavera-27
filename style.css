@@ -27,6 +27,7 @@ body {
 
 
 
+
 /* ==========================
 FONTES
 ========================== */
@@ -93,7 +94,11 @@ BANNERS
 
 
 
-.banner {
+
+
+/* Banner 1 para Banner 2 */
+
+.banner-normal {
 
     margin-top:1cm;
 
@@ -103,11 +108,21 @@ BANNERS
 
 
 
+/* Banner 2 para 3 e 3 para 4 */
+
+.banner-small {
+
+    margin-top:12px;
+
+}
 
 
-/* ==========================
-CARROSSEL
-========================== */
+
+
+
+
+
+/* Banner 4 para carrossel */
 
 
 .instagram-carousel {
@@ -122,6 +137,15 @@ CARROSSEL
 
 
 
+
+
+
+
+/* ==========================
+CARROSSEL
+========================== */
+
+
 .carousel-area {
 
     position:relative;
@@ -134,10 +158,8 @@ CARROSSEL
 
 
 
-/* TAMANHO DO CARROSSEL */
-
-
 .carousel-box {
+
 
     width:360px;
 
@@ -147,6 +169,7 @@ CARROSSEL
 
     margin:0 auto;
 
+
 }
 
 
@@ -155,9 +178,11 @@ CARROSSEL
 
 .carousel-track {
 
+
     display:flex;
 
     transition:transform .5s ease;
+
 
 }
 
@@ -166,6 +191,7 @@ CARROSSEL
 
 
 .carousel-track img {
+
 
     width:360px;
 
@@ -177,7 +203,9 @@ CARROSSEL
 
     display:block;
 
+
 }
+
 
 
 
@@ -192,15 +220,16 @@ SETAS
 
 .arrow {
 
+
     position:absolute;
 
     top:50%;
 
     transform:translateY(-50%);
 
-    border:none;
-
     background:none;
+
+    border:none;
 
     font-size:45px;
 
@@ -208,13 +237,16 @@ SETAS
 
     z-index:10;
 
+
 }
 
 
 
 .prev {
 
+
     left:calc(50% - 220px);
+
 
 }
 
@@ -222,9 +254,12 @@ SETAS
 
 .next {
 
+
     right:calc(50% - 220px);
 
+
 }
+
 
 
 
@@ -239,6 +274,7 @@ BOLINHAS
 
 .dots {
 
+
     display:flex;
 
     justify-content:center;
@@ -247,11 +283,13 @@ BOLINHAS
 
     margin-top:20px;
 
+
 }
 
 
 
 .dots span {
+
 
     width:7px;
 
@@ -261,15 +299,19 @@ BOLINHAS
 
     background:#D0D0D0;
 
+
 }
 
 
 
 .dots .active {
 
+
     background:#1E1E1E;
 
+
 }
+
 
 
 
@@ -285,11 +327,14 @@ MOBILE
 @media(max-width:900px){
 
 
+
     .carousel-box {
+
 
         width:300px;
 
         height:375px;
+
 
     }
 
@@ -297,9 +342,11 @@ MOBILE
 
     .carousel-track img {
 
+
         width:300px;
 
         height:375px;
+
 
     }
 
@@ -307,7 +354,9 @@ MOBILE
 
     .prev {
 
+
         left:20px;
+
 
     }
 
@@ -315,7 +364,9 @@ MOBILE
 
     .next {
 
+
         right:20px;
+
 
     }
 
