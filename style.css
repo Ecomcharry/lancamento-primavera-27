@@ -24,6 +24,7 @@ body {
 FONTES
 ========================== */
 
+
 @font-face {
 
     font-family: "GothamLight";
@@ -38,6 +39,7 @@ FONTES
     src: url("./fonts/GothamMedium.otf");
 
 }
+
 
 
 
@@ -115,7 +117,9 @@ CARROSSEL
 
     width: 360px;
     height: 450px;
+
     overflow: hidden;
+
     margin: 0 auto;
 
 }
@@ -125,6 +129,7 @@ CARROSSEL
 .carousel-track {
 
     display: flex;
+
     transition: transform .5s ease;
 
 }
@@ -134,12 +139,18 @@ CARROSSEL
 .carousel-track img {
 
     width: 360px;
+
     height: 450px;
+
     flex: 0 0 100%;
+
     object-fit: cover;
+
     display: block;
 
 }
+
+
 
 
 
@@ -153,12 +164,19 @@ SETAS
 .arrow {
 
     position: absolute;
+
     top: 50%;
+
     transform: translateY(-50%);
+
     border: none;
+
     background: transparent;
+
     font-size: 45px;
+
     cursor: pointer;
+
     z-index: 10;
 
 }
@@ -193,8 +211,11 @@ BOLINHAS
 .dots {
 
     display: flex;
+
     justify-content: center;
+
     gap: 10px;
+
     margin-top: 20px;
 
 }
@@ -204,8 +225,11 @@ BOLINHAS
 .dots span {
 
     width: 7px;
+
     height: 7px;
+
     border-radius: 50%;
+
     background: #D0D0D0;
 
 }
@@ -224,6 +248,7 @@ BOLINHAS
 
 
 
+
 /* ==========================
 VIDEO + BANNER 5
 ========================== */
@@ -231,23 +256,37 @@ VIDEO + BANNER 5
 
 .video-banner {
 
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
     gap: 15px;
+
     margin-top: 3cm;
+
 
 }
 
 
 
+
+
+
 /* VIDEO */
+
 
 .video-box {
 
+
     width: 320px;
+
     height: 400px;
+
     overflow: hidden;
+
 
 }
 
@@ -255,12 +294,18 @@ VIDEO + BANNER 5
 
 .video-box video {
 
+
     width: 100%;
+
     height: 100%;
+
     object-fit: cover;
+
     display: block;
 
+
 }
+
 
 
 
@@ -268,11 +313,12 @@ VIDEO + BANNER 5
 
 /* BANNER 5 */
 
+
 .banner5-box {
 
+
     width: 360px;
-    height: 450px;
-    overflow: hidden;
+
 
 }
 
@@ -280,12 +326,16 @@ VIDEO + BANNER 5
 
 .banner5-box img {
 
+
     width: 100%;
-    height: 100%;
-    object-fit: contain;
+
+    height: auto;
+
     display: block;
 
+
 }
+
 
 
 
@@ -311,12 +361,18 @@ MOBILE
 
 
 
+
+
     /* Carrossel */
+
 
     .carousel-box {
 
+
         width: 300px;
+
         height: 375px;
+
 
     }
 
@@ -324,8 +380,11 @@ MOBILE
 
     .carousel-track img {
 
+
         width: 300px;
+
         height: 375px;
+
 
     }
 
@@ -333,7 +392,9 @@ MOBILE
 
     .prev {
 
+
         left: 20px;
+
 
     }
 
@@ -341,9 +402,14 @@ MOBILE
 
     .next {
 
+
         right: 20px;
 
+
     }
+
+
+
 
 
 
@@ -351,41 +417,59 @@ MOBILE
 
     /* Video + Banner */
 
+
     .video-banner {
 
+
         flex-direction: column;
+
         gap: 15px;
+
         margin-top: 2cm;
 
+
     }
+
+
 
 
 
     .video-box {
 
+
         width: 300px;
+
         height: 375px;
 
+
     }
+
+
 
 
 
     .banner5-box {
 
+
         width: 300px;
-        height: auto;
+
 
     }
+
+
 
 
 
     .banner5-box img {
 
+
         width: 100%;
+
         height: auto;
-        object-fit: contain;
+
 
     }
+
 
 
 }
