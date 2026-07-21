@@ -473,3 +473,53 @@ MOBILE
 
 
 }
+
+/* ==========================
+FEED INSTAGRAM
+========================== */
+
+.instagram-feed{
+
+    max-width:1200px;
+
+    margin:1cm auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:18px;
+
+    padding:0 20px;
+
+}
+
+.instagram-feed img{
+
+    width:100%;
+
+    aspect-ratio:4/5;
+
+    object-fit:cover;
+
+    display:block;
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .instagram-feed{
+
+        grid-template-columns:repeat(2,1fr);
+
+        gap:12px;
+
+        padding:0 15px;
+
+    }
+
+}
