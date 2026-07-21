@@ -6,6 +6,11 @@ const dots = document.querySelectorAll(".dots span");
 
 const total = carouselImages.length;
 
+
+/* ==========================
+EXIBIR IMAGEM ATUAL
+========================== */
+
 function showSlide() {
     if (!track || total === 0) {
         return;
@@ -22,6 +27,11 @@ function showSlide() {
     }
 }
 
+
+/* ==========================
+PRÓXIMA IMAGEM
+========================== */
+
 function nextSlide() {
     slide++;
 
@@ -32,6 +42,11 @@ function nextSlide() {
     showSlide();
 }
 
+
+/* ==========================
+IMAGEM ANTERIOR
+========================== */
+
 function prevSlide() {
     slide--;
 
@@ -41,3 +56,25 @@ function prevSlide() {
 
     showSlide();
 }
+
+
+/* ==========================
+NAVEGAÇÃO PELO TECLADO
+========================== */
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") {
+        prevSlide();
+    }
+
+    if (event.key === "ArrowRight") {
+        nextSlide();
+    }
+});
+
+
+/* ==========================
+ESTADO INICIAL
+========================== */
+
+showSlide();
