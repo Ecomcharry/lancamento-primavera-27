@@ -5,11 +5,11 @@ RESET
 
 * {
 
-    margin: 0;
+    margin:0;
 
-    padding: 0;
+    padding:0;
 
-    box-sizing: border-box;
+    box-sizing:border-box;
 
 }
 
@@ -17,9 +17,9 @@ RESET
 
 body {
 
-    background: #FFFFFF;
+    background:#FFFFFF;
 
-    color: #1E1E1E;
+    color:#1E1E1E;
 
 }
 
@@ -32,19 +32,9 @@ FONTES
 
 @font-face {
 
-    font-family: "Owners";
+    font-family:"Owners";
 
-    src: url("./fonts/OwnersTRIALWide-Regular.otf") format("opentype");
-
-}
-
-
-
-@font-face {
-
-    font-family: "GothamLight";
-
-    src: url("./fonts/GothamLight.otf") format("opentype");
+    src:url("./fonts/OwnersTRIALWide-Regular.otf") format("opentype");
 
 }
 
@@ -52,11 +42,23 @@ FONTES
 
 @font-face {
 
-    font-family: "GothamMedium";
+    font-family:"GothamLight";
 
-    src: url("./fonts/GothamMedium.otf") format("opentype");
+    src:url("./fonts/GothamLight.otf") format("opentype");
 
 }
+
+
+
+@font-face {
+
+    font-family:"GothamMedium";
+
+    src:url("./fonts/GothamMedium.otf") format("opentype");
+
+}
+
+
 
 
 
@@ -68,7 +70,7 @@ BANNERS
 .hero,
 .banner {
 
-    width: 100%;
+    width:100%;
 
 }
 
@@ -77,11 +79,11 @@ BANNERS
 .hero img,
 .banner img {
 
-    width: 100%;
+    width:100%;
 
-    height: auto;
+    height:auto;
 
-    display: block;
+    display:block;
 
 }
 
@@ -89,84 +91,57 @@ BANNERS
 
 .banner {
 
-    margin-top: 1cm;
+    margin-top:1cm;
 
 }
 
 
 
+
+
+
+
 /* ==========================
-CARROSSEL INSTAGRAM
+CARROSSEL
 ========================== */
 
 
 .instagram-carousel {
 
-    margin-top: 1cm;
 
-    text-align: center;
+    margin-top:1cm;
+
+    text-align:center;
+
 
 }
 
 
 
-/* Texto */
+
+
+/* FRASE */
+
 
 .instagram-carousel h2 {
 
 
-    font-family: "GothamLight";
-
-    font-size: 22px;
-
-    font-weight: normal;
-
-    letter-spacing: 2px;
-
-    text-transform: uppercase;
-
-    margin-bottom: 40px;
+    font-family:"GothamLight";
 
 
-}
+    font-size:22px;
 
 
+    font-weight:normal;
 
 
-/* Área do carrossel */
+    letter-spacing:2px;
 
 
-.carousel-wrapper {
-
-    width: 100%;
-
-    position: relative;
-
-    overflow: hidden;
-
-}
+    text-transform:uppercase;
 
 
-
-
-.carousel {
-
-    display: flex;
-
-    transition: transform 0.5s ease;
-
-}
-
-
-
-.carousel img {
-
-
-    width: 100%;
-
-    flex: 0 0 100%;
-
-    display: block;
+    margin-bottom:40px;
 
 
 }
@@ -175,46 +150,140 @@ CARROSSEL INSTAGRAM
 
 
 
-/* Setas */
+
+/* ÁREA DAS FOTOS */
+
+
+.carousel-area {
+
+
+    position:relative;
+
+
+    width:100%;
+
+
+}
+
+
+
+
+
+.carousel-box {
+
+
+    width:1080px;
+
+
+    height:1350px;
+
+
+    max-width:90%;
+
+
+    overflow:hidden;
+
+
+    margin:0 auto;
+
+
+}
+
+
+
+
+
+.carousel-track {
+
+
+    display:flex;
+
+
+    transition:transform .5s ease;
+
+
+}
+
+
+
+
+
+.carousel-track img {
+
+
+    width:1080px;
+
+
+    height:1350px;
+
+
+    flex:0 0 100%;
+
+
+    object-fit:cover;
+
+
+    display:block;
+
+
+}
+
+
+
+
+
+
+
+
+/* SETAS */
 
 
 .arrow {
 
 
-    position: absolute;
+    position:absolute;
 
-    top: 50%;
 
-    transform: translateY(-50%);
+    top:50%;
 
-    z-index: 5;
 
-    background: transparent;
+    transform:translateY(-50%);
 
-    border: none;
 
-    font-size: 55px;
+    border:none;
 
-    cursor: pointer;
 
-    color: #1E1E1E;
+    background:none;
+
+
+    font-size:60px;
+
+
+    cursor:pointer;
+
+
+    z-index:10;
 
 
 }
 
 
 
-.left {
+.prev {
 
-    left: 35px;
+
+    left:calc(50% - 620px);
+
 
 }
 
 
 
-.right {
+.next {
 
-    right: 35px;
+
+    right:calc(50% - 620px);
+
 
 }
 
@@ -222,55 +291,63 @@ CARROSSEL INSTAGRAM
 
 
 
-/* Bolinhas */
+
+/* BOLINHAS */
 
 
 .dots {
 
 
-    display: flex;
-
-    justify-content: center;
-
-    gap: 10px;
-
-    margin-top: 20px;
+    display:flex;
 
 
-}
+    justify-content:center;
 
 
+    gap:10px;
 
-.dot {
 
-
-    width: 8px;
-
-    height: 8px;
-
-    border-radius: 50%;
-
-    background: #D0D0D0;
+    margin-top:25px;
 
 
 }
 
 
 
-.dot.active {
+.dots span {
 
 
-    background: #1E1E1E;
+    width:8px;
+
+
+    height:8px;
+
+
+    border-radius:50%;
+
+
+    background:#D0D0D0;
 
 
 }
+
+
+
+.dots .active {
+
+
+    background:#1E1E1E;
+
+
+}
+
 
 
 
 
 
 /* ==========================
-RESPONSIVO
+MOBILE
 ========================== */
 
 
@@ -281,25 +358,65 @@ RESPONSIVO
     .instagram-carousel h2 {
 
 
-        font-size: 15px;
+        font-size:15px;
 
-        padding: 0 20px;
 
-        letter-spacing: 1px;
+        padding:0 20px;
+
+
+    }
+
+
+
+    .carousel-box {
+
+
+        width:100%;
+
+
+        height:auto;
+
+
+        aspect-ratio:4 / 5;
 
 
     }
 
 
 
-    .arrow {
+    .carousel-track img {
 
 
-        font-size: 35px;
+        width:100%;
+
+
+        height:auto;
+
+
+        aspect-ratio:4 / 5;
 
 
     }
 
+
+
+    .prev {
+
+
+        left:10px;
+
+
+    }
+
+
+
+    .next {
+
+
+        right:10px;
+
+
+    }
 
 
 }
