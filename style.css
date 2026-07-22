@@ -107,7 +107,7 @@ BANNERS
 
 
 /* ==========================
-EFEITO DOS LINKS
+EFEITOS DOS LINKS
 ========================== */
 
 .banner a img,
@@ -139,7 +139,6 @@ CARROSSEL
 
 .carousel-area {
     position: relative;
-
     width: 100%;
 
     touch-action: pan-y;
@@ -278,16 +277,20 @@ VÍDEO + BANNER 5
 
     gap: 15px;
     margin-top: 90px;
-
-    content-visibility: auto;
-    contain-intrinsic-size: 480px;
 }
 
 .video-product-link,
 .banner5-product-link {
     display: block;
     max-width: 100%;
+
+    cursor: pointer;
 }
+
+
+/* ==========================
+VÍDEO
+========================== */
 
 .video-box {
     width: min(320px, calc(100vw - 48px));
@@ -298,12 +301,20 @@ VÍDEO + BANNER 5
     background-color: #f3f3f3;
 }
 
-.video-box video {
+.product-video {
     width: 100%;
     height: 100%;
 
+    display: block;
     object-fit: cover;
+
+    background-color: #f3f3f3;
 }
+
+
+/* ==========================
+BANNER 5
+========================== */
 
 .banner5-box {
     width: min(360px, calc(100vw - 48px));
@@ -325,7 +336,7 @@ VÍDEO + BANNER 5
 
 
 /* ==========================
-BANNER 6 DO DESKTOP
+BANNER 6 — DESKTOP
 ========================== */
 
 .banner-6-desktop {
@@ -396,22 +407,17 @@ BANNER FINAL
     contain-intrinsic-size: 400px;
 }
 
-.final-banner-link {
+.final-banner-link,
+.final-banner picture,
+.final-banner img {
     display: block;
     width: 100%;
 }
 
-.final-banner-image {
-    display: block;
-    width: 100%;
+.final-banner img {
     height: auto;
 
     background-color: #f3f3f3;
-}
-
-.final-banner-link.is-disabled {
-    pointer-events: none;
-    cursor: default;
 }
 
 
@@ -463,6 +469,11 @@ TABLETS E CELULARES
         width: min(300px, calc(100vw - 40px));
     }
 
+    .product-video {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    }
+
 
     /* ESCONDE O BANNER 6 DA POSIÇÃO DESKTOP */
 
@@ -479,19 +490,20 @@ TABLETS E CELULARES
         width: min(100% - 24px, 330px);
 
         gap: 12px;
+
         margin-top: 30px;
         margin-bottom: 30px;
     }
 
 
-    /* MOB-6 APÓS AS 12 FOTOS */
+    /* MOB-6 NO LUGAR DO BANNER 7 */
 
     .final-banner {
         margin-top: 0;
     }
 
     .final-banner-link {
-        cursor: default;
+        cursor: pointer;
     }
 }
 
