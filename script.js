@@ -11,7 +11,6 @@ let currentSlide = 0;
 let pointerStartX = 0;
 let carouselWasDragged = false;
 let carouselInitialized = false;
-let finalBannerLoaded = false;
 
 
 /* ==========================
@@ -52,16 +51,20 @@ function loadCarouselImage(index) {
 }
 
 
-/* Carrega a imagem atual e a próxima */
+/* Carrega a imagem atual, a anterior e a próxima */
 
 function preloadCarouselImages() {
     if (totalSlides === 0) {
         return;
     }
 
+    const previousIndex =
+        (currentSlide - 1 + totalSlides) % totalSlides;
+
     const nextIndex =
         (currentSlide + 1) % totalSlides;
 
+    loadCarouselImage(previousIndex);
     loadCarouselImage(currentSlide);
     loadCarouselImage(nextIndex);
 }
@@ -156,8 +159,8 @@ function previousSlide() {
 
 previousButton?.addEventListener(
     "click",
-    nextEvent => {
-        nextEvent.preventDefault();
+    (event) => {
+        event.preventDefault();
         previousSlide();
     }
 );
@@ -165,8 +168,8 @@ previousButton?.addEventListener(
 
 nextButton?.addEventListener(
     "click",
-    nextEvent => {
-        nextEvent.preventDefault();
+    (event) => {
+        event.preventDefault();
         nextSlide();
     }
 );
@@ -178,7 +181,7 @@ TECLADO
 
 carouselArea?.addEventListener(
     "keydown",
-    event => {
+    (event) => {
         if (event.key === "ArrowLeft") {
             event.preventDefault();
             previousSlide();
@@ -198,7 +201,7 @@ ARRASTAR NO MOBILE
 
 carouselArea?.addEventListener(
     "pointerdown",
-    event => {
+    (event) => {
         pointerStartX = event.clientX;
         carouselWasDragged = false;
     }
@@ -207,7 +210,7 @@ carouselArea?.addEventListener(
 
 carouselArea?.addEventListener(
     "pointermove",
-    event => {
+    (event) => {
         const movement =
             Math.abs(event.clientX - pointerStartX);
 
@@ -220,7 +223,7 @@ carouselArea?.addEventListener(
 
 carouselArea?.addEventListener(
     "pointerup",
-    event => {
+    (event) => {
         const distance =
             event.clientX - pointerStartX;
 
@@ -245,11 +248,11 @@ carouselArea?.addEventListener(
 );
 
 
-/* Evita abrir o produto quando a pessoa arrasta */
+/* Impede que o produto abra durante o gesto de arrastar */
 
 carouselLink?.addEventListener(
     "click",
-    event => {
+    (event) => {
         if (carouselWasDragged) {
             event.preventDefault();
             carouselWasDragged = false;
@@ -259,79 +262,79 @@ carouselLink?.addEventListener(
 
 
 /* ==========================
-CARREGAMENTO DO VÍDEO
+REPRODUÇÃO RÁPIDA DO VÍDEO
 ========================== */
 
-const video = document.querySelector(
-    ".video-box video"
-);
-
-const videoSource = video?.querySelector(
-    "source[data-src]"
+const productVideo = document.querySelector(
+    ".product-video"
 );
 
 
-function loadVideo() {
-    if (!video || !videoSource) {
+function startProductVideo() {
+    if (!productVideo) {
         return;
     }
 
-    if (!videoSource.dataset.src) {
-        return;
-    }
+    productVideo.muted = true;
+    productVideo.defaultMuted = true;
 
-    videoSource.src = videoSource.dataset.src;
-    videoSource.removeAttribute("data-src");
-
-    video.load();
-}
-
-
-function playVideo() {
-    if (!video) {
-        return;
-    }
-
-    const playPromise = video.play();
+    const playPromise = productVideo.play();
 
     if (playPromise !== undefined) {
         playPromise.catch(() => {
             /*
             Alguns navegadores podem bloquear
-            a reprodução automática.
+            temporariamente o autoplay.
             */
         });
     }
 }
 
 
-if (
-    video &&
-    videoSource &&
-    "IntersectionObserver" in window
-) {
-    const videoObserver = new IntersectionObserver(
-        entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    loadVideo();
-                    playVideo();
-                } else {
-                    video.pause();
-                }
-            });
-        },
-        {
-            rootMargin: "300px 0px",
-            threshold: 0.01
-        }
-    );
+/* Tenta iniciar assim que o HTML estiver pronto */
 
-    videoObserver.observe(video);
+if (document.readyState === "loading") {
+    document.addEventListener(
+        "DOMContentLoaded",
+        startProductVideo,
+        { once: true }
+    );
 } else {
-    loadVideo();
-    playVideo();
+    startProductVideo();
 }
+
+
+/* Tenta novamente quando houver dados suficientes */
+
+productVideo?.addEventListener(
+    "loadeddata",
+    startProductVideo
+);
+
+productVideo?.addEventListener(
+    "canplay",
+    startProductVideo
+);
+
+
+/* Reinicia ao retornar para a página */
+
+window.addEventListener(
+    "pageshow",
+    startProductVideo
+);
+
+
+/* Reinicia quando a aba volta a ficar visível */
+
+document.addEventListener(
+    "visibilitychange",
+    () => {
+        if (!document.hidden) {
+            startProductVideo();
+        }
+    }
+);
 
 
 /* ==========================
@@ -362,172 +365,62 @@ function loadDesktopBanner() {
 }
 
 
+function configureDesktopBanner() {
+    if (mobileMedia.matches) {
+        return;
+    }
+
+    loadDesktopBanner();
+}
+
+
 if (
     desktopBannerSection &&
     desktopBannerImage &&
-    !mobileMedia.matches
-) {
-    if ("IntersectionObserver" in window) {
-        const desktopBannerObserver =
-            new IntersectionObserver(
-                (entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            loadDesktopBanner();
-                            observer.disconnect();
-                        }
-                    });
-                },
-                {
-                    rootMargin: "300px 0px",
-                    threshold: 0.01
-                }
-            );
-
-        desktopBannerObserver.observe(
-            desktopBannerSection
-        );
-    } else {
-        loadDesktopBanner();
-    }
-}
-
-
-/* ==========================
-BANNER FINAL RESPONSIVO
-
-DESKTOP: banner-7 com WhatsApp
-MOBILE: mob-6 sem link
-========================== */
-
-const finalBanner = document.querySelector(
-    ".final-banner"
-);
-
-const finalBannerLink = document.querySelector(
-    ".final-banner-link"
-);
-
-const finalBannerImage = document.querySelector(
-    ".final-banner-image"
-);
-
-
-function configureFinalBanner() {
-    if (!finalBannerLink || !finalBannerImage) {
-        return;
-    }
-
-    if (mobileMedia.matches) {
-        finalBannerLink.removeAttribute("href");
-        finalBannerLink.removeAttribute("target");
-        finalBannerLink.removeAttribute("rel");
-
-        finalBannerLink.setAttribute(
-            "aria-label",
-            "Banner coleção Charry"
-        );
-
-        finalBannerLink.setAttribute(
-            "aria-disabled",
-            "true"
-        );
-
-        finalBannerLink.setAttribute(
-            "tabindex",
-            "-1"
-        );
-
-        finalBannerLink.classList.add(
-            "is-disabled"
-        );
-
-        if (finalBannerLoaded) {
-            finalBannerImage.src =
-                finalBannerImage.dataset.mobileSrc;
-        }
-    } else {
-        finalBannerLink.href =
-            finalBannerLink.dataset.desktopHref;
-
-        finalBannerLink.target = "_blank";
-        finalBannerLink.rel = "noopener noreferrer";
-
-        finalBannerLink.setAttribute(
-            "aria-label",
-            "Entrar no grupo da Charry no WhatsApp"
-        );
-
-        finalBannerLink.removeAttribute(
-            "aria-disabled"
-        );
-
-        finalBannerLink.removeAttribute(
-            "tabindex"
-        );
-
-        finalBannerLink.classList.remove(
-            "is-disabled"
-        );
-
-        if (finalBannerLoaded) {
-            finalBannerImage.src =
-                finalBannerImage.dataset.desktopSrc;
-        }
-    }
-}
-
-
-function loadFinalBanner() {
-    if (!finalBannerImage) {
-        return;
-    }
-
-    finalBannerLoaded = true;
-
-    if (mobileMedia.matches) {
-        finalBannerImage.src =
-            finalBannerImage.dataset.mobileSrc;
-    } else {
-        finalBannerImage.src =
-            finalBannerImage.dataset.desktopSrc;
-    }
-}
-
-
-configureFinalBanner();
-
-
-if (
-    finalBanner &&
-    finalBannerImage &&
+    !mobileMedia.matches &&
     "IntersectionObserver" in window
 ) {
-    const finalBannerObserver =
+    const desktopBannerObserver =
         new IntersectionObserver(
             (entries, observer) => {
-                entries.forEach(entry => {
+                entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        loadFinalBanner();
+                        loadDesktopBanner();
                         observer.disconnect();
                     }
                 });
             },
             {
-                rootMargin: "400px 0px",
+                rootMargin: "300px 0px",
                 threshold: 0.01
             }
         );
 
-    finalBannerObserver.observe(finalBanner);
-} else {
-    loadFinalBanner();
+    desktopBannerObserver.observe(
+        desktopBannerSection
+    );
+} else if (!mobileMedia.matches) {
+    loadDesktopBanner();
 }
 
 
-/* Atualiza se a tela mudar de desktop para mobile */
+/* ==========================
+ALTERAÇÃO ENTRE MOBILE E DESKTOP
+========================== */
 
-mobileMedia.addEventListener?.(
-    "change",
-    configureFinalBanner
-);
+function handleScreenChange() {
+    configureDesktopBanner();
+    startProductVideo();
+}
+
+
+if (typeof mobileMedia.addEventListener === "function") {
+    mobileMedia.addEventListener(
+        "change",
+        handleScreenChange
+    );
+} else if (typeof mobileMedia.addListener === "function") {
+    mobileMedia.addListener(
+        handleScreenChange
+    );
+}
