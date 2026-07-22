@@ -11,7 +11,7 @@
 
     <title>Inside the Look</title>
 
-    <!-- Carrega primeiro somente o banner inicial correspondente à tela -->
+    <!-- Carrega primeiro apenas o banner inicial adequado à tela -->
 
     <link
         rel="preload"
@@ -29,14 +29,16 @@
 
     <link rel="stylesheet" href="./style.css">
 
-    <!-- O defer impede o JavaScript de atrasar o carregamento do HTML -->
     <script src="./script.js" defer></script>
 </head>
 
 <body>
 
     <!-- ==========================
-    BANNER 1 RESPONSIVO
+    BANNER 1
+
+    DESKTOP: banner-1.jpg
+    MOBILE: mob-1.jpg
     =========================== -->
 
     <section class="hero">
@@ -60,7 +62,10 @@
 
 
     <!-- ==========================
-    BANNER 2 RESPONSIVO
+    BANNER 2
+
+    DESKTOP: banner-2.jpg
+    MOBILE: mob-2.jpg
     =========================== -->
 
     <section class="banner banner-normal">
@@ -74,7 +79,7 @@
 
             <img
                 src="./images/banner-2.jpg"
-                alt="Banner Inside the Look"
+                alt="Inside the Look"
                 loading="lazy"
                 decoding="async"
             >
@@ -85,7 +90,10 @@
 
 
     <!-- ==========================
-    BANNER 3 RESPONSIVO COM LINK
+    BANNER 3 COM LINK
+
+    DESKTOP: banner-3.jpg
+    MOBILE: mob-3.jpg
     =========================== -->
 
     <section class="banner banner-small">
@@ -117,7 +125,10 @@
 
 
     <!-- ==========================
-    BANNER 4 RESPONSIVO
+    BANNER 4
+
+    DESKTOP: banner-4.jpg
+    MOBILE: mob-4.jpg
     =========================== -->
 
     <section class="banner banner-small">
@@ -131,7 +142,7 @@
 
             <img
                 src="./images/banner-4.jpg"
-                alt="Banner coleção Charry"
+                alt="Coleção Charry"
                 loading="lazy"
                 decoding="async"
             >
@@ -142,7 +153,7 @@
 
 
     <!-- ==========================
-    CARROSSEL
+    CARROSSEL COM 5 IMAGENS
     =========================== -->
 
     <section class="instagram-carousel">
@@ -172,16 +183,11 @@
 
                     <div class="carousel-track">
 
-                        <!-- Primeira imagem carregada inicialmente -->
-
                         <img
-                            src="./images/foto-1.jpg"
+                            data-src="./images/foto-1.jpg"
                             alt="Calça Ballon Lisa - Foto 1"
                             decoding="async"
                         >
-
-
-                        <!-- As demais serão carregadas pelo JavaScript -->
 
                         <img
                             data-src="./images/foto-2.jpg"
@@ -226,11 +232,13 @@
 
 
         <div class="dots" aria-hidden="true">
+
             <span class="active"></span>
             <span></span>
             <span></span>
             <span></span>
             <span></span>
+
         </div>
 
     </section>
@@ -242,7 +250,7 @@
 
     <section class="video-banner">
 
-        <!-- O vídeo só será carregado quando estiver próximo da tela -->
+        <!-- VÍDEO COM LINK -->
 
         <a
             href="https://www.charry.com.br/products/lenco-pareo-liso-com-franja?variant=45309853892678"
@@ -274,7 +282,12 @@
         </a>
 
 
-        <!-- BANNER 5 RESPONSIVO -->
+        <!--
+        BANNER 5
+
+        DESKTOP: banner-5.jpg
+        MOBILE: mob-5.jpg
+        -->
 
         <a
             href="https://www.charry.com.br/products/lenco-pareo-liso-com-franja?variant=45309853892678"
@@ -308,32 +321,25 @@
 
 
     <!-- ==========================
-    BANNER 6 RESPONSIVO
+    BANNER 6 — SOMENTE DESKTOP
+
+    Ele fica antes das 12 fotos apenas no desktop.
     =========================== -->
 
-    <section class="banner banner-normal">
+    <section class="banner banner-normal banner-6-desktop">
 
-        <picture>
-
-            <source
-                media="(max-width: 900px)"
-                srcset="./images/mob-6.jpg"
-            >
-
-            <img
-                src="./images/banner-6.jpg"
-                alt="Banner coleção Charry"
-                loading="lazy"
-                decoding="async"
-            >
-
-        </picture>
+        <img
+            class="desktop-banner-image"
+            data-src="./images/banner-6.jpg"
+            alt="Coleção Charry"
+            decoding="async"
+        >
 
     </section>
 
 
     <!-- ==========================
-    FEED DE IMAGENS
+    FEED COM 12 FOTOS
     =========================== -->
 
     <section class="instagram-feed">
@@ -426,22 +432,25 @@
 
 
     <!-- ==========================
-    BANNER 7 COM LINK
+    BANNER FINAL
+
+    DESKTOP: banner-7.jpg com link
+    MOBILE: mob-6.jpg sem link
     =========================== -->
 
-    <section class="banner banner-normal">
+    <section class="banner banner-normal final-banner">
 
         <a
-            href="https://chat.whatsapp.com/LM0r58rotgbGuj0oB4m6Rk"
-            target="_blank"
-            rel="noopener noreferrer"
+            class="final-banner-link"
+            data-desktop-href="https://chat.whatsapp.com/LM0r58rotgbGuj0oB4m6Rk"
             aria-label="Entrar no grupo da Charry no WhatsApp"
         >
 
             <img
-                src="./images/banner-7.jpg"
-                alt="Entre no grupo da Charry no WhatsApp"
-                loading="lazy"
+                class="final-banner-image"
+                data-desktop-src="./images/banner-7.jpg"
+                data-mobile-src="./images/mob-6.jpg"
+                alt="Banner final Charry"
                 decoding="async"
             >
 
