@@ -17,15 +17,28 @@
 <body>
 
     <!-- ==========================
-    BANNER 1
+    BANNER 1 RESPONSIVO
+
+    DESKTOP: banner-1.jpg
+    MOBILE: mob-1.jpg
     =========================== -->
 
     <section class="hero">
 
-        <img
-            src="./images/banner-1.jpg"
-            alt="Inside the Look"
-        >
+        <picture>
+
+            <source
+                media="(max-width: 900px)"
+                srcset="./images/mob-1.jpg"
+            >
+
+            <img
+                src="./images/banner-1.jpg"
+                alt="Inside the Look"
+                fetchpriority="high"
+            >
+
+        </picture>
 
     </section>
 
