@@ -20,6 +20,9 @@ body {
 
     background-color: #ffffff;
     color: #1e1e1e;
+
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 
@@ -50,9 +53,10 @@ FONTES
 CONFIGURAÇÕES GERAIS
 ========================== */
 
-img {
-    max-width: 100%;
+img,
+video {
     display: block;
+    max-width: 100%;
 }
 
 a {
@@ -60,21 +64,15 @@ a {
     text-decoration: none;
 }
 
-
-/* ==========================
-IMAGENS RESPONSIVAS
-DESKTOP / MOBILE
-========================== */
-
 picture {
-    width: 100%;
     display: block;
+    width: 100%;
 }
 
 picture img {
+    display: block;
     width: 100%;
     height: auto;
-    display: block;
 }
 
 
@@ -91,17 +89,16 @@ BANNERS
 .banner img {
     width: 100%;
     height: auto;
-    display: block;
 }
 
 .banner a {
-    width: 100%;
     display: block;
+    width: 100%;
     cursor: pointer;
 }
 
 .banner-normal {
-    margin-top: 1cm;
+    margin-top: 38px;
 }
 
 .banner-small {
@@ -110,16 +107,18 @@ BANNERS
 
 
 /* ==========================
-EFEITO NOS BANNERS COM LINK
+EFEITO DOS LINKS
 ========================== */
 
-.banner a img {
-    transition:
-        opacity 0.3s ease,
-        transform 0.3s ease;
+.banner a img,
+.banner5-product-link img,
+.video-product-link video {
+    transition: opacity 0.25s ease;
 }
 
-.banner a:hover img {
+.banner a:hover img,
+.banner5-product-link:hover img,
+.video-product-link:hover video {
     opacity: 0.94;
 }
 
@@ -130,63 +129,61 @@ CARROSSEL
 
 .instagram-carousel {
     width: 100%;
-    margin-top: 1cm;
-
+    margin-top: 38px;
     text-align: center;
+
+    content-visibility: auto;
+    contain-intrinsic-size: 520px;
 }
 
 .carousel-area {
     position: relative;
     width: 100%;
+
+    touch-action: pan-y;
+    outline: none;
 }
 
 .carousel-product-link {
     display: block;
 
-    width: 360px;
-    max-width: 100%;
-
+    width: min(360px, calc(100vw - 64px));
     margin: 0 auto;
 
     cursor: pointer;
 }
 
 .carousel-box {
-    width: 360px;
-    max-width: 100%;
-    height: 450px;
+    width: 100%;
+    aspect-ratio: 4 / 5;
 
-    margin: 0 auto;
     overflow: hidden;
+
+    background-color: #f3f3f3;
 }
 
 .carousel-track {
     display: flex;
-    width: 100%;
 
-    transition: transform 0.5s ease;
-    will-change: transform;
+    width: 100%;
+    height: 100%;
+
+    transition: transform 0.45s ease;
 }
 
 .carousel-track img {
     width: 100%;
-    height: 450px;
+    height: 100%;
 
     flex: 0 0 100%;
 
     object-fit: cover;
-    display: block;
-
-    transition: opacity 0.3s ease;
-}
-
-.carousel-product-link:hover .carousel-track img {
-    opacity: 0.95;
+    background-color: #f3f3f3;
 }
 
 
 /* ==========================
-SETAS DO CARROSSEL
+SETAS
 ========================== */
 
 .arrow {
@@ -196,35 +193,31 @@ SETAS DO CARROSSEL
 
     transform: translateY(-50%);
 
-    width: 50px;
-    height: 70px;
+    width: 48px;
+    height: 64px;
 
+    border: 0;
     padding: 0;
 
-    border: none;
-    outline: none;
-
-    background-color: transparent;
+    background: transparent;
     color: #1e1e1e;
 
     font-family: Arial, sans-serif;
-    font-size: 45px;
+    font-size: 44px;
     line-height: 1;
 
     cursor: pointer;
 
-    transition:
-        opacity 0.3s ease,
-        transform 0.3s ease;
+    transition: opacity 0.2s ease;
 }
 
 .arrow:hover {
-    opacity: 0.6;
+    opacity: 0.55;
 }
 
 .arrow:focus-visible {
     outline: 2px solid #1e1e1e;
-    outline-offset: 3px;
+    outline-offset: 2px;
 }
 
 .prev {
@@ -237,7 +230,7 @@ SETAS DO CARROSSEL
 
 
 /* ==========================
-BOLINHAS DO CARROSSEL
+BOLINHAS
 ========================== */
 
 .dots {
@@ -246,7 +239,7 @@ BOLINHAS DO CARROSSEL
     align-items: center;
 
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 18px;
 }
 
 .dots span {
@@ -258,8 +251,8 @@ BOLINHAS DO CARROSSEL
     background-color: #d0d0d0;
 
     transition:
-        background-color 0.3s ease,
-        transform 0.3s ease;
+        background-color 0.25s ease,
+        transform 0.25s ease;
 }
 
 .dots span.active {
@@ -280,26 +273,25 @@ VÍDEO + BANNER 5
     width: 100%;
 
     gap: 15px;
-    margin-top: 3cm;
+    margin-top: 90px;
+
+    content-visibility: auto;
+    contain-intrinsic-size: 480px;
 }
 
 .video-product-link,
 .banner5-product-link {
     display: block;
     max-width: 100%;
-    cursor: pointer;
 }
 
-
-/* ==========================
-VÍDEO
-========================== */
-
 .video-box {
-    width: 320px;
-    height: 400px;
+    width: min(320px, calc(100vw - 48px));
+    aspect-ratio: 4 / 5;
 
     overflow: hidden;
+
+    background-color: #f3f3f3;
 }
 
 .video-box video {
@@ -307,77 +299,60 @@ VÍDEO
     height: 100%;
 
     object-fit: cover;
-    display: block;
-
-    transition:
-        opacity 0.3s ease,
-        transform 0.4s ease;
 }
-
-.video-product-link:hover video {
-    opacity: 0.94;
-}
-
-
-/* ==========================
-BANNER 5
-========================== */
 
 .banner5-box {
-    width: 360px;
-    max-width: 100%;
+    width: min(360px, calc(100vw - 48px));
+
+    background-color: #f3f3f3;
+}
+
+.banner5-box,
+.banner5-box picture,
+.banner5-box img {
+    display: block;
 }
 
 .banner5-box picture,
 .banner5-box img {
     width: 100%;
     height: auto;
-    display: block;
-}
-
-.banner5-box img {
-    transition:
-        opacity 0.3s ease,
-        transform 0.4s ease;
-}
-
-.banner5-product-link:hover img {
-    opacity: 0.94;
 }
 
 
 /* ==========================
-FEED DE IMAGENS
+FEED
 ========================== */
 
 .instagram-feed {
     display: grid;
-    grid-template-columns: repeat(4, 180px);
+    grid-template-columns: repeat(4, minmax(0, 180px));
     justify-content: center;
 
-    width: 100%;
-    max-width: 900px;
+    width: min(100% - 24px, 900px);
 
     gap: 14px;
-    margin: 1cm auto;
+    margin: 38px auto;
+
+    content-visibility: auto;
+    contain-intrinsic-size: 800px;
 }
 
 .instagram-feed img {
-    width: 180px;
-    height: 225px;
+    width: 100%;
+    aspect-ratio: 4 / 5;
 
     object-fit: cover;
-    display: block;
 
-    cursor: pointer;
+    background-color: #f3f3f3;
 
     transition:
-        transform 0.3s ease,
-        opacity 0.3s ease;
+        transform 0.25s ease,
+        opacity 0.25s ease;
 }
 
 .instagram-feed img:hover {
-    transform: scale(1.03);
+    transform: scale(1.025);
     opacity: 0.95;
 }
 
@@ -399,26 +374,20 @@ TABLETS E CELULARES
 
     /* CARROSSEL */
 
-    .carousel-product-link,
-    .carousel-box {
-        width: 300px;
+    .instagram-carousel {
+        margin-top: 30px;
     }
 
-    .carousel-box {
-        height: 375px;
-    }
-
-    .carousel-track img {
-        width: 100%;
-        height: 375px;
+    .carousel-product-link {
+        width: min(300px, calc(100vw - 70px));
     }
 
     .prev {
-        left: 20px;
+        left: max(4px, calc(50% - 200px));
     }
 
     .next {
-        right: 20px;
+        right: max(4px, calc(50% - 200px));
     }
 
 
@@ -428,58 +397,42 @@ TABLETS E CELULARES
         flex-direction: column;
 
         gap: 15px;
-        margin-top: 2cm;
+        margin-top: 58px;
     }
 
-    .video-box {
-        width: 300px;
-        height: 375px;
-    }
-
+    .video-box,
     .banner5-box {
-        width: 300px;
+        width: min(300px, calc(100vw - 40px));
     }
 
 
-    /* FEED DE IMAGENS */
+    /* FEED */
 
     .instagram-feed {
-        grid-template-columns: repeat(2, 150px);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
 
-        max-width: 100%;
+        width: min(100% - 24px, 330px);
 
         gap: 12px;
-        padding: 0 12px;
-    }
-
-    .instagram-feed img {
-        width: 150px;
-        height: 188px;
+        margin-top: 30px;
     }
 }
 
 
 /* ==========================
-CELULARES MENORES
+CELULARES PEQUENOS
 ========================== */
 
 @media (max-width: 380px) {
 
-    .carousel-product-link,
-    .carousel-box {
-        width: 280px;
-    }
-
-    .carousel-box {
-        height: 350px;
-    }
-
-    .carousel-track img {
-        height: 350px;
+    .carousel-product-link {
+        width: min(280px, calc(100vw - 64px));
     }
 
     .arrow {
         width: 35px;
+        height: 55px;
+        font-size: 40px;
     }
 
     .prev {
@@ -492,25 +445,12 @@ CELULARES MENORES
 
     .video-box,
     .banner5-box {
-        width: 280px;
-    }
-
-    .video-box {
-        height: 350px;
+        width: min(280px, calc(100vw - 32px));
     }
 
     .instagram-feed {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-
+        width: calc(100% - 20px);
         gap: 8px;
-        padding: 0 10px;
-    }
-
-    .instagram-feed img {
-        width: 100%;
-        height: auto;
-
-        aspect-ratio: 4 / 5;
     }
 }
 
@@ -526,7 +466,6 @@ REDUÇÃO DE ANIMAÇÕES
     }
 
     .carousel-track,
-    .carousel-track img,
     .banner img,
     .video-box video,
     .banner5-box img,
