@@ -211,13 +211,9 @@
         <div class="dots" aria-hidden="true">
 
             <span class="active"></span>
-
             <span></span>
-
             <span></span>
-
             <span></span>
-
             <span></span>
 
         </div>
@@ -264,7 +260,7 @@
 
 
         <!--
-        BANNER 5
+        BANNER 5 RESPONSIVO
 
         DESKTOP: banner-5.jpg
         MOBILE: mob-5.jpg
@@ -301,16 +297,28 @@
 
 
     <!-- ==========================
-    BANNER 6
+    BANNER 6 RESPONSIVO
+
+    DESKTOP: banner-6.jpg
+    MOBILE: mob-6.jpg
     =========================== -->
 
     <section class="banner banner-normal">
 
-        <img
-            src="./images/banner-6.jpg"
-            alt="Banner coleção Charry"
-            loading="lazy"
-        >
+        <picture>
+
+            <source
+                media="(max-width: 900px)"
+                srcset="./images/mob-6.jpg"
+            >
+
+            <img
+                src="./images/banner-6.jpg"
+                alt="Banner coleção Charry"
+                loading="lazy"
+            >
+
+        </picture>
 
     </section>
 
