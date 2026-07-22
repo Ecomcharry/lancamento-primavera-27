@@ -11,16 +11,32 @@
 
     <title>Inside the Look</title>
 
+    <!-- Carrega primeiro somente o banner inicial correspondente à tela -->
+
+    <link
+        rel="preload"
+        as="image"
+        href="./images/banner-1.jpg"
+        media="(min-width: 901px)"
+    >
+
+    <link
+        rel="preload"
+        as="image"
+        href="./images/mob-1.jpg"
+        media="(max-width: 900px)"
+    >
+
     <link rel="stylesheet" href="./style.css">
+
+    <!-- O defer impede o JavaScript de atrasar o carregamento do HTML -->
+    <script src="./script.js" defer></script>
 </head>
 
 <body>
 
     <!-- ==========================
     BANNER 1 RESPONSIVO
-
-    DESKTOP: banner-1.jpg
-    MOBILE: mob-1.jpg
     =========================== -->
 
     <section class="hero">
@@ -45,9 +61,6 @@
 
     <!-- ==========================
     BANNER 2 RESPONSIVO
-
-    DESKTOP: banner-2.jpg
-    MOBILE: mob-2.jpg
     =========================== -->
 
     <section class="banner banner-normal">
@@ -63,6 +76,7 @@
                 src="./images/banner-2.jpg"
                 alt="Banner Inside the Look"
                 loading="lazy"
+                decoding="async"
             >
 
         </picture>
@@ -72,9 +86,6 @@
 
     <!-- ==========================
     BANNER 3 RESPONSIVO COM LINK
-
-    DESKTOP: banner-3.jpg
-    MOBILE: mob-3.jpg
     =========================== -->
 
     <section class="banner banner-small">
@@ -95,6 +106,7 @@
                     src="./images/banner-3.jpg"
                     alt="Blusa Reta Lisa com Gola"
                     loading="lazy"
+                    decoding="async"
                 >
 
             </picture>
@@ -106,9 +118,6 @@
 
     <!-- ==========================
     BANNER 4 RESPONSIVO
-
-    DESKTOP: banner-4.jpg
-    MOBILE: mob-4.jpg
     =========================== -->
 
     <section class="banner banner-small">
@@ -124,6 +133,7 @@
                 src="./images/banner-4.jpg"
                 alt="Banner coleção Charry"
                 loading="lazy"
+                decoding="async"
             >
 
         </picture>
@@ -132,18 +142,21 @@
 
 
     <!-- ==========================
-    CARROSSEL COM LINK
+    CARROSSEL
     =========================== -->
 
     <section class="instagram-carousel">
 
-        <div class="carousel-area">
+        <div
+            class="carousel-area"
+            tabindex="0"
+            aria-label="Carrossel da Calça Ballon Lisa"
+        >
 
             <button
                 class="arrow prev"
                 type="button"
                 aria-label="Mostrar imagem anterior"
-                onclick="prevSlide()"
             >
                 ‹
             </button>
@@ -159,34 +172,39 @@
 
                     <div class="carousel-track">
 
+                        <!-- Primeira imagem carregada inicialmente -->
+
                         <img
                             src="./images/foto-1.jpg"
                             alt="Calça Ballon Lisa - Foto 1"
-                            loading="lazy"
+                            decoding="async"
                         >
 
+
+                        <!-- As demais serão carregadas pelo JavaScript -->
+
                         <img
-                            src="./images/foto-2.jpg"
+                            data-src="./images/foto-2.jpg"
                             alt="Calça Ballon Lisa - Foto 2"
-                            loading="lazy"
+                            decoding="async"
                         >
 
                         <img
-                            src="./images/foto-3.JPG"
+                            data-src="./images/foto-3.JPG"
                             alt="Calça Ballon Lisa - Foto 3"
-                            loading="lazy"
+                            decoding="async"
                         >
 
                         <img
-                            src="./images/foto-4.JPG"
+                            data-src="./images/foto-4.JPG"
                             alt="Calça Ballon Lisa - Foto 4"
-                            loading="lazy"
+                            decoding="async"
                         >
 
                         <img
-                            src="./images/foto-5.jpg"
+                            data-src="./images/foto-5.jpg"
                             alt="Calça Ballon Lisa - Foto 5"
-                            loading="lazy"
+                            decoding="async"
                         >
 
                     </div>
@@ -200,7 +218,6 @@
                 class="arrow next"
                 type="button"
                 aria-label="Mostrar próxima imagem"
-                onclick="nextSlide()"
             >
                 ›
             </button>
@@ -209,25 +226,23 @@
 
 
         <div class="dots" aria-hidden="true">
-
             <span class="active"></span>
             <span></span>
             <span></span>
             <span></span>
             <span></span>
-
         </div>
 
     </section>
 
 
     <!-- ==========================
-    VÍDEO + BANNER 5 RESPONSIVO
+    VÍDEO + BANNER 5
     =========================== -->
 
     <section class="video-banner">
 
-        <!-- VÍDEO COM LINK -->
+        <!-- O vídeo só será carregado quando estiver próximo da tela -->
 
         <a
             href="https://www.charry.com.br/products/lenco-pareo-liso-com-franja?variant=45309853892678"
@@ -238,15 +253,15 @@
             <div class="video-box">
 
                 <video
-                    autoplay
                     muted
                     loop
                     playsinline
-                    preload="metadata"
+                    preload="none"
+                    aria-label="Vídeo do Lenço Pareô Liso com Franja"
                 >
 
                     <source
-                        src="./images/video.mp4"
+                        data-src="./images/video.mp4"
                         type="video/mp4"
                     >
 
@@ -259,12 +274,7 @@
         </a>
 
 
-        <!--
-        BANNER 5 RESPONSIVO
-
-        DESKTOP: banner-5.jpg
-        MOBILE: mob-5.jpg
-        -->
+        <!-- BANNER 5 RESPONSIVO -->
 
         <a
             href="https://www.charry.com.br/products/lenco-pareo-liso-com-franja?variant=45309853892678"
@@ -285,6 +295,7 @@
                         src="./images/banner-5.jpg"
                         alt="Lenço Pareô Liso com Franja"
                         loading="lazy"
+                        decoding="async"
                     >
 
                 </picture>
@@ -298,9 +309,6 @@
 
     <!-- ==========================
     BANNER 6 RESPONSIVO
-
-    DESKTOP: banner-6.jpg
-    MOBILE: mob-6.jpg
     =========================== -->
 
     <section class="banner banner-normal">
@@ -316,6 +324,7 @@
                 src="./images/banner-6.jpg"
                 alt="Banner coleção Charry"
                 loading="lazy"
+                decoding="async"
             >
 
         </picture>
@@ -333,79 +342,91 @@
             src="./images/foto-6.jpg"
             alt="Charry - Foto 6"
             loading="lazy"
+            decoding="async"
         >
 
         <img
             src="./images/foto-7.jpg"
             alt="Charry - Foto 7"
             loading="lazy"
+            decoding="async"
         >
 
         <img
             src="./images/foto-8.jpeg"
             alt="Charry - Foto 8"
             loading="lazy"
+            decoding="async"
         >
 
         <img
             src="./images/foto-9.jpeg"
             alt="Charry - Foto 9"
             loading="lazy"
+            decoding="async"
         >
 
         <img
             src="./images/foto-10.JPG"
             alt="Charry - Foto 10"
             loading="lazy"
+            decoding="async"
         >
 
         <img
             src="./images/foto-11.JPG"
             alt="Charry - Foto 11"
             loading="lazy"
+            decoding="async"
         >
 
         <img
             src="./images/foto-12.JPG"
             alt="Charry - Foto 12"
             loading="lazy"
+            decoding="async"
         >
 
         <img
             src="./images/foto-13.JPG"
             alt="Charry - Foto 13"
             loading="lazy"
+            decoding="async"
         >
 
         <img
             src="./images/foto-14.jpg"
             alt="Charry - Foto 14"
             loading="lazy"
+            decoding="async"
         >
 
         <img
             src="./images/foto-15.jpg"
             alt="Charry - Foto 15"
             loading="lazy"
+            decoding="async"
         >
 
         <img
             src="./images/foto-16.JPG"
             alt="Charry - Foto 16"
             loading="lazy"
+            decoding="async"
         >
 
         <img
             src="./images/foto-17.JPG"
             alt="Charry - Foto 17"
             loading="lazy"
+            decoding="async"
         >
 
     </section>
 
 
     <!-- ==========================
-    BANNER 7 COM LINK PARA WHATSAPP
+    BANNER 7 COM LINK
     =========================== -->
 
     <section class="banner banner-normal">
@@ -421,14 +442,12 @@
                 src="./images/banner-7.jpg"
                 alt="Entre no grupo da Charry no WhatsApp"
                 loading="lazy"
+                decoding="async"
             >
 
         </a>
 
     </section>
-
-
-    <script src="./script.js"></script>
 
 </body>
 
