@@ -11,7 +11,8 @@
 
     <title>Inside the Look</title>
 
-    <!-- Carrega primeiro apenas o banner inicial adequado à tela -->
+
+    <!-- Banner inicial prioritário no desktop -->
 
     <link
         rel="preload"
@@ -20,6 +21,9 @@
         media="(min-width: 901px)"
     >
 
+
+    <!-- Banner inicial prioritário no mobile -->
+
     <link
         rel="preload"
         as="image"
@@ -27,10 +31,23 @@
         media="(max-width: 900px)"
     >
 
+
+    <!-- Carregamento antecipado do vídeo no mobile -->
+
+    <link
+        rel="preload"
+        as="video"
+        href="./images/video.mp4"
+        type="video/mp4"
+        media="(max-width: 900px)"
+    >
+
+
     <link rel="stylesheet" href="./style.css">
 
     <script src="./script.js" defer></script>
 </head>
+
 
 <body>
 
@@ -54,6 +71,7 @@
                 src="./images/banner-1.jpg"
                 alt="Inside the Look"
                 fetchpriority="high"
+                decoding="async"
             >
 
         </picture>
@@ -79,7 +97,7 @@
 
             <img
                 src="./images/banner-2.jpg"
-                alt="Inside the Look"
+                alt="Inside the Look Charry"
                 loading="lazy"
                 decoding="async"
             >
@@ -184,7 +202,7 @@
                     <div class="carousel-track">
 
                         <img
-                            data-src="./images/foto-1.jpg"
+                            src="./images/foto-1.jpg"
                             alt="Calça Ballon Lisa - Foto 1"
                             decoding="async"
                         >
@@ -261,15 +279,19 @@
             <div class="video-box">
 
                 <video
+                    class="product-video"
+                    autoplay
                     muted
                     loop
                     playsinline
-                    preload="none"
+                    webkit-playsinline
+                    preload="auto"
+                    disablepictureinpicture
                     aria-label="Vídeo do Lenço Pareô Liso com Franja"
                 >
 
                     <source
-                        data-src="./images/video.mp4"
+                        src="./images/video.mp4"
                         type="video/mp4"
                     >
 
@@ -282,12 +304,12 @@
         </a>
 
 
-        <!--
-        BANNER 5
+        <!-- ==========================
+        BANNER 5 COM LINK
 
         DESKTOP: banner-5.jpg
         MOBILE: mob-5.jpg
-        -->
+        =========================== -->
 
         <a
             href="https://www.charry.com.br/products/lenco-pareo-liso-com-franja?variant=45309853892678"
@@ -323,7 +345,7 @@
     <!-- ==========================
     BANNER 6 — SOMENTE DESKTOP
 
-    Ele fica antes das 12 fotos apenas no desktop.
+    No mobile ele fica escondido.
     =========================== -->
 
     <section class="banner banner-normal banner-6-desktop">
@@ -432,27 +454,37 @@
 
 
     <!-- ==========================
-    BANNER FINAL
+    BANNER FINAL COM O MESMO LINK
 
-    DESKTOP: banner-7.jpg com link
-    MOBILE: mob-6.jpg sem link
+    DESKTOP: banner-7.jpg
+    MOBILE: mob-6.jpg
     =========================== -->
 
     <section class="banner banner-normal final-banner">
 
         <a
+            href="https://chat.whatsapp.com/LM0r58rotgbGuj0oB4m6Rk"
+            target="_blank"
+            rel="noopener noreferrer"
             class="final-banner-link"
-            data-desktop-href="https://chat.whatsapp.com/LM0r58rotgbGuj0oB4m6Rk"
             aria-label="Entrar no grupo da Charry no WhatsApp"
         >
 
-            <img
-                class="final-banner-image"
-                data-desktop-src="./images/banner-7.jpg"
-                data-mobile-src="./images/mob-6.jpg"
-                alt="Banner final Charry"
-                decoding="async"
-            >
+            <picture>
+
+                <source
+                    media="(max-width: 900px)"
+                    srcset="./images/mob-6.jpg"
+                >
+
+                <img
+                    src="./images/banner-7.jpg"
+                    alt="Entre no grupo da Charry no WhatsApp"
+                    loading="lazy"
+                    decoding="async"
+                >
+
+            </picture>
 
         </a>
 
