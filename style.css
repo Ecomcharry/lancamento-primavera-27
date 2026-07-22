@@ -130,6 +130,7 @@ CARROSSEL
 .instagram-carousel {
     width: 100%;
     margin-top: 38px;
+
     text-align: center;
 
     content-visibility: auto;
@@ -138,6 +139,7 @@ CARROSSEL
 
 .carousel-area {
     position: relative;
+
     width: 100%;
 
     touch-action: pan-y;
@@ -169,6 +171,7 @@ CARROSSEL
     height: 100%;
 
     transition: transform 0.45s ease;
+    will-change: transform;
 }
 
 .carousel-track img {
@@ -178,12 +181,13 @@ CARROSSEL
     flex: 0 0 100%;
 
     object-fit: cover;
+
     background-color: #f3f3f3;
 }
 
 
 /* ==========================
-SETAS
+SETAS DO CARROSSEL
 ========================== */
 
 .arrow {
@@ -196,10 +200,10 @@ SETAS
     width: 48px;
     height: 64px;
 
-    border: 0;
     padding: 0;
+    border: 0;
 
-    background: transparent;
+    background-color: transparent;
     color: #1e1e1e;
 
     font-family: Arial, sans-serif;
@@ -321,7 +325,29 @@ VÍDEO + BANNER 5
 
 
 /* ==========================
-FEED
+BANNER 6 DO DESKTOP
+========================== */
+
+.banner-6-desktop {
+    display: block;
+
+    min-height: 1px;
+
+    content-visibility: auto;
+    contain-intrinsic-size: 500px;
+}
+
+.desktop-banner-image {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    background-color: #f3f3f3;
+}
+
+
+/* ==========================
+FEED COM 12 FOTOS
 ========================== */
 
 .instagram-feed {
@@ -354,6 +380,38 @@ FEED
 .instagram-feed img:hover {
     transform: scale(1.025);
     opacity: 0.95;
+}
+
+
+/* ==========================
+BANNER FINAL
+========================== */
+
+.final-banner {
+    width: 100%;
+
+    min-height: 1px;
+
+    content-visibility: auto;
+    contain-intrinsic-size: 400px;
+}
+
+.final-banner-link {
+    display: block;
+    width: 100%;
+}
+
+.final-banner-image {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    background-color: #f3f3f3;
+}
+
+.final-banner-link.is-disabled {
+    pointer-events: none;
+    cursor: default;
 }
 
 
@@ -406,6 +464,13 @@ TABLETS E CELULARES
     }
 
 
+    /* ESCONDE O BANNER 6 DA POSIÇÃO DESKTOP */
+
+    .banner-6-desktop {
+        display: none;
+    }
+
+
     /* FEED */
 
     .instagram-feed {
@@ -415,6 +480,18 @@ TABLETS E CELULARES
 
         gap: 12px;
         margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+
+    /* MOB-6 APÓS AS 12 FOTOS */
+
+    .final-banner {
+        margin-top: 0;
+    }
+
+    .final-banner-link {
+        cursor: default;
     }
 }
 
@@ -432,6 +509,7 @@ CELULARES PEQUENOS
     .arrow {
         width: 35px;
         height: 55px;
+
         font-size: 40px;
     }
 
@@ -450,6 +528,7 @@ CELULARES PEQUENOS
 
     .instagram-feed {
         width: calc(100% - 20px);
+
         gap: 8px;
     }
 }
