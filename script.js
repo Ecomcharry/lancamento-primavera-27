@@ -5,8 +5,6 @@
 CONFIGURAÇÕES
 ========================== */
 
-const mobileMedia = window.matchMedia("(max-width: 900px)");
-
 let currentSlide = 0;
 let pointerStartX = 0;
 let carouselWasDragged = false;
@@ -262,7 +260,7 @@ carouselLink?.addEventListener(
 
 
 /* ==========================
-REPRODUÇÃO RÁPIDA DO VÍDEO
+REPRODUÇÃO CONTÍNUA DO VÍDEO
 ========================== */
 
 const productVideo = document.querySelector(
@@ -275,21 +273,34 @@ function startProductVideo() {
         return;
     }
 
+    productVideo.autoplay = true;
+    productVideo.loop = true;
     productVideo.muted = true;
     productVideo.defaultMuted = true;
+    productVideo.playsInline = true;
+    productVideo.controls = false;
+
+    productVideo.setAttribute("autoplay", "");
+    productVideo.setAttribute("loop", "");
+    productVideo.setAttribute("muted", "");
+    productVideo.setAttribute("playsinline", "");
+
+    productVideo.removeAttribute("controls");
 
     const playPromise = productVideo.play();
 
     if (playPromise !== undefined) {
         playPromise.catch(() => {
             /*
-            Alguns navegadores podem bloquear
-            temporariamente o autoplay.
+            O navegador pode aguardar uma interação
+            antes de liberar o autoplay.
             */
         });
     }
 }
 
+
+/* Inicia assim que o HTML estiver pronto */
 
 if (document.readyState === "loading") {
     document.addEventListener(
@@ -302,6 +313,13 @@ if (document.readyState === "loading") {
 }
 
 
+/* Tenta novamente em diferentes etapas do carregamento */
+
+productVideo?.addEventListener(
+    "loadedmetadata",
+    startProductVideo
+);
+
 productVideo?.addEventListener(
     "loadeddata",
     startProductVideo
@@ -312,12 +330,33 @@ productVideo?.addEventListener(
     startProductVideo
 );
 
+productVideo?.addEventListener(
+    "canplaythrough",
+    startProductVideo
+);
+
+
+/* Evita que o vídeo permaneça pausado */
+
+productVideo?.addEventListener(
+    "pause",
+    () => {
+        if (!document.hidden) {
+            startProductVideo();
+        }
+    }
+);
+
+
+/* Reinicia ao voltar para a página */
 
 window.addEventListener(
     "pageshow",
     startProductVideo
 );
 
+
+/* Reinicia quando a aba volta a ficar visível */
 
 document.addEventListener(
     "visibilitychange",
@@ -329,90 +368,21 @@ document.addEventListener(
 );
 
 
-/* ==========================
-BANNER 6 SOMENTE NO DESKTOP
-========================== */
+/* Nova tentativa após a primeira interação do usuário */
 
-const desktopBannerSection = document.querySelector(
-    ".banner-6-desktop"
-);
+const interactionEvents = [
+    "touchstart",
+    "pointerdown",
+    "scroll"
+];
 
-const desktopBannerImage = document.querySelector(
-    ".desktop-banner-image"
-);
-
-
-function loadDesktopBanner() {
-    if (
-        !desktopBannerImage ||
-        !desktopBannerImage.dataset.src
-    ) {
-        return;
-    }
-
-    desktopBannerImage.src =
-        desktopBannerImage.dataset.src;
-
-    desktopBannerImage.removeAttribute("data-src");
-}
-
-
-function configureDesktopBanner() {
-    if (mobileMedia.matches) {
-        return;
-    }
-
-    loadDesktopBanner();
-}
-
-
-if (
-    desktopBannerSection &&
-    desktopBannerImage &&
-    !mobileMedia.matches &&
-    "IntersectionObserver" in window
-) {
-    const desktopBannerObserver =
-        new IntersectionObserver(
-            (entries, observer) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        loadDesktopBanner();
-                        observer.disconnect();
-                    }
-                });
-            },
-            {
-                rootMargin: "300px 0px",
-                threshold: 0.01
-            }
-        );
-
-    desktopBannerObserver.observe(
-        desktopBannerSection
+interactionEvents.forEach((eventName) => {
+    window.addEventListener(
+        eventName,
+        startProductVideo,
+        {
+            once: true,
+            passive: true
+        }
     );
-} else if (!mobileMedia.matches) {
-    loadDesktopBanner();
-}
-
-
-/* ==========================
-ALTERAÇÃO ENTRE MOBILE E DESKTOP
-========================== */
-
-function handleScreenChange() {
-    configureDesktopBanner();
-    startProductVideo();
-}
-
-
-if (typeof mobileMedia.addEventListener === "function") {
-    mobileMedia.addEventListener(
-        "change",
-        handleScreenChange
-    );
-} else if (typeof mobileMedia.addListener === "function") {
-    mobileMedia.addListener(
-        handleScreenChange
-    );
-}
+});
