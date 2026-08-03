@@ -458,11 +458,9 @@ TABLETS E CELULARES
     /* VÍDEO + BANNER 5 */
 
     .video-banner {
-        flex-direction: column;
-
-        gap: 15px;
-        margin-top: 58px;
-    }
+    gap: 18px;
+    margin-top: 58px;
+}
 
     .video-box,
     .banner5-box {
