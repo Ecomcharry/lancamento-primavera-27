@@ -153,7 +153,7 @@ EFEITOS DOS LINKS
 
 
 /* ==========================
-VÍDEO
+VÍDEO AUTOMÁTICO
 ========================== */
 
 .video-section {
@@ -189,7 +189,30 @@ VÍDEO
 
     object-fit: cover;
 
+    pointer-events: none;
+
     background-color: #f3f3f3;
+}
+
+
+/* Esconde qualquer controle ou botão nativo do vídeo */
+
+.product-video::-webkit-media-controls {
+    display: none !important;
+}
+
+.product-video::-webkit-media-controls-panel {
+    display: none !important;
+}
+
+.product-video::-webkit-media-controls-play-button {
+    display: none !important;
+}
+
+.product-video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+
+    -webkit-appearance: none;
 }
 
 
@@ -375,21 +398,24 @@ BANNER 5
 
 
 /* ==========================
-BANNER 6 — DESKTOP
+BANNER 6 DESKTOP / MOB-5 MOBILE
 ========================== */
 
-.banner-6-desktop {
+.banner-6-responsive {
     display: block;
-
-    min-height: 1px;
+    width: 100%;
 
     content-visibility: auto;
     contain-intrinsic-size: 500px;
 }
 
-.desktop-banner-image {
+.banner-6-responsive picture,
+.banner-6-responsive img {
     display: block;
     width: 100%;
+}
+
+.banner-6-responsive img {
     height: auto;
 
     background-color: #f3f3f3;
@@ -517,24 +543,6 @@ TABLETS E CELULARES
     }
 
 
-    /* BANNER 5 */
-
-    .banner5-section {
-        margin-top: 58px;
-    }
-
-    .banner5-box {
-        width: min(300px, calc(100vw - 40px));
-    }
-
-
-    /* ESCONDE O BANNER 6 DESKTOP */
-
-    .banner-6-desktop {
-        display: none;
-    }
-
-
     /* FEED */
 
     .instagram-feed {
@@ -607,7 +615,6 @@ REDUÇÃO DE ANIMAÇÕES
 
     .carousel-track,
     .banner img,
-    .video-box video,
     .banner5-box img,
     .instagram-feed img {
         transition: none;
