@@ -17,7 +17,7 @@
     <link
         rel="preload"
         as="image"
-        href="./images/gif-1.gif"
+        href="./images/banner-1.jpg"
         media="(min-width: 901px)"
     >
 
@@ -27,7 +27,7 @@
     <link
         rel="preload"
         as="image"
-        href="./images/gif-mob.gif"
+        href="./images/mob-1.jpg"
         media="(max-width: 900px)"
     >
 
@@ -52,7 +52,7 @@
 <body>
 
     <!-- ==========================
-    BANNER 1
+    BANNER 1 COM LINK
 
     DESKTOP: banner-1.jpg
     MOBILE: mob-1.jpg
@@ -60,84 +60,35 @@
 
     <section class="hero">
 
-    <picture>
-
-        <source
-            media="(max-width: 900px)"
-            srcset="./images/gif-mob.gif"
+        <a
+            href="https://www.charry.com.br/products/conjunto-blusa-e-calca-327029-e-327137?variant=45941082587206"
+            class="hero-link"
+            aria-label="Conhecer o Conjunto Blusa e Calça"
         >
 
-        <img
-            src="./images/gif-1.gif"
-            alt="Inside the Look"
-            fetchpriority="high"
-        >
+            <picture>
 
-    </picture>
+                <source
+                    media="(max-width: 900px)"
+                    srcset="./images/mob-1.jpg"
+                >
 
-</section>
+                <img
+                    src="./images/banner-1.jpg"
+                    alt="Conjunto Blusa e Calça Charry"
+                    fetchpriority="high"
+                    decoding="async"
+                >
 
-<section class="video-banner">
+            </picture>
 
-    <!-- VÍDEO -->
-    <a
-        href="https://www.charry.com.br/products/lenco-pareo-liso-com-franja?variant=45309853892678"
-        class="video-product-link"
-        aria-label="Conhecer o Lenço Pareô Liso com Franja"
-    >
-        <div class="video-box">
-            <video
-                class="product-video"
-                autoplay
-                muted
-                loop
-                playsinline
-                webkit-playsinline
-                preload="auto"
-                disablepictureinpicture
-            >
-                <source src="./images/video.mp4" type="video/mp4">
-            </video>
-        </div>
-    </a>
-</section>
+        </a>
 
-<!-- ==========================
-BANNER 1
-
-DESKTOP: banner-1.jpg
-MOBILE: mob-1.jpg
-=========================== -->
-
-<section class="banner banner-normal">
-
-    <picture>
-
-        <source
-            media="(max-width: 900px)"
-            srcset="./images/mob-1.jpg"
-        >
-
-        <img
-            src="./images/banner-1.jpg"
-            alt="Inside the Look"
-            loading="lazy"
-            decoding="async"
-        >
-
-    </picture>
-
-</section>
-
-
-
-
-
-    
+    </section>
 
 
     <!-- ==========================
-    BANNER 2
+    BANNER 2 COM LINK
 
     DESKTOP: banner-2.jpg
     MOBILE: mob-2.jpg
@@ -145,21 +96,28 @@ MOBILE: mob-1.jpg
 
     <section class="banner banner-normal">
 
-        <picture>
+        <a
+            href="https://www.charry.com.br/collections/verao-27"
+            aria-label="Conhecer a coleção Verão 27"
+        >
 
-            <source
-                media="(max-width: 900px)"
-                srcset="./images/mob-2.jpg"
-            >
+            <picture>
 
-            <img
-                src="./images/banner-2.jpg"
-                alt="Inside the Look Charry"
-                loading="lazy"
-                decoding="async"
-            >
+                <source
+                    media="(max-width: 900px)"
+                    srcset="./images/mob-2.jpg"
+                >
 
-        </picture>
+                <img
+                    src="./images/banner-2.jpg"
+                    alt="Coleção Verão 27 Charry"
+                    loading="lazy"
+                    decoding="async"
+                >
+
+            </picture>
+
+        </a>
 
     </section>
 
@@ -319,22 +277,91 @@ MOBILE: mob-1.jpg
     </section>
 
 
-    
-   <!-- ==========================
-BANNER 6
+    <!-- ==========================
+    VÍDEO / GIF + BANNER 5
+    =========================== -->
 
-DESKTOP: banner-6.jpg
-MOBILE: mob-5.jpg
-=========================== -->
-    
-    <section class="banner banner-normal banner-6-desktop">
+    <section class="video-banner">
 
-    <picture>
+        <!-- VÍDEO / GIF COM LINK -->
 
-        <source
-            media="(max-width: 900px)"
-            srcset="./images/mob-5.jpg"
+        <a
+            href="https://www.charry.com.br/products/lenco-pareo-liso-com-franja?variant=45309853892678"
+            class="video-product-link"
+            aria-label="Conhecer o Lenço Pareô Liso com Franja"
         >
+
+            <div class="video-box">
+
+                <video
+                    class="product-video"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    webkit-playsinline
+                    preload="auto"
+                    disablepictureinpicture
+                    aria-label="Vídeo do Lenço Pareô Liso com Franja"
+                >
+
+                    <source
+                        src="./images/video.mp4"
+                        type="video/mp4"
+                    >
+
+                    Seu navegador não suporta a reprodução deste vídeo.
+
+                </video>
+
+            </div>
+
+        </a>
+
+
+        <!-- ==========================
+        BANNER 5 COM LINK
+
+        DESKTOP: banner-5.jpg
+        MOBILE: mob-5.jpg
+        =========================== -->
+
+        <a
+            href="https://www.charry.com.br/products/lenco-pareo-liso-com-franja?variant=45309853892678"
+            class="banner5-product-link"
+            aria-label="Conhecer o Lenço Pareô Liso com Franja"
+        >
+
+            <div class="banner5-box">
+
+                <picture>
+
+                    <source
+                        media="(max-width: 900px)"
+                        srcset="./images/mob-5.jpg"
+                    >
+
+                    <img
+                        src="./images/banner-5.jpg"
+                        alt="Lenço Pareô Liso com Franja"
+                        loading="lazy"
+                        decoding="async"
+                    >
+
+                </picture>
+
+            </div>
+
+        </a>
+
+    </section>
+
+
+    <!-- ==========================
+    BANNER 6 — SOMENTE DESKTOP
+    =========================== -->
+
+    <section class="banner banner-normal banner-6-desktop">
 
         <img
             class="desktop-banner-image"
@@ -343,100 +370,229 @@ MOBILE: mob-5.jpg
             decoding="async"
         >
 
-    </picture>
-
-</section>
+    </section>
 
 
     <!-- ==========================
-    FEED COM 12 FOTOS
+    FEED COM 12 FOTOS E LINKS
     =========================== -->
 
     <section class="instagram-feed">
 
-        <img
-            src="./images/foto-6.jpg"
-            alt="Charry - Foto 6"
-            loading="lazy"
-            decoding="async"
+        <!-- FOTO 6 -->
+
+        <a
+            href="https://www.charry.com.br/products/blusa-reta-lisa-com-aplicacao-de-renda?variant=45941203927110"
+            class="feed-link"
+            aria-label="Conhecer a Blusa Reta Lisa com Aplicação de Renda"
         >
 
-        <img
-            src="./images/foto-7.JPG"
-            alt="Charry - Foto 7"
-            loading="lazy"
-            decoding="async"
+            <img
+                src="./images/foto-6.jpg"
+                alt="Blusa Reta Lisa com Aplicação de Renda"
+                loading="lazy"
+                decoding="async"
+            >
+
+        </a>
+
+
+        <!-- FOTO 7 -->
+
+        <a
+            href="https://www.charry.com.br/products/calca-wide-lisa-plissada?variant=45941198946374"
+            class="feed-link"
+            aria-label="Conhecer a Calça Wide Lisa Plissada"
         >
 
-        <img
-            src="./images/foto-8.jpeg"
-            alt="Charry - Foto 8"
-            loading="lazy"
-            decoding="async"
+            <img
+                src="./images/foto-7.jpg"
+                alt="Calça Wide Lisa Plissada"
+                loading="lazy"
+                decoding="async"
+            >
+
+        </a>
+
+
+        <!-- FOTO 8 -->
+
+        <a
+            href="https://www.charry.com.br/products/calca-wide-lisa-com-bolsos-faca-10?variant=45941198225478"
+            class="feed-link"
+            aria-label="Conhecer a Calça Wide Lisa com Bolsos Faca"
         >
 
-        <img
-            src="./images/foto-9.jpeg"
-            alt="Charry - Foto 9"
-            loading="lazy"
-            decoding="async"
+            <img
+                src="./images/foto-8.jpeg"
+                alt="Calça Wide Lisa com Bolsos Faca - Foto 1"
+                loading="lazy"
+                decoding="async"
+            >
+
+        </a>
+
+
+        <!-- FOTO 9 -->
+
+        <a
+            href="https://www.charry.com.br/products/calca-wide-lisa-com-bolsos-faca-10?variant=45941198225478"
+            class="feed-link"
+            aria-label="Conhecer a Calça Wide Lisa com Bolsos Faca"
         >
 
-        <img
-            src="./images/foto-10.JPG"
-            alt="Charry - Foto 10"
-            loading="lazy"
-            decoding="async"
+            <img
+                src="./images/foto-9.jpeg"
+                alt="Calça Wide Lisa com Bolsos Faca - Foto 2"
+                loading="lazy"
+                decoding="async"
+            >
+
+        </a>
+
+
+        <!-- FOTO 10 -->
+
+        <a
+            href="https://www.charry.com.br/products/blusa-alongada-lisa-drapeada?variant=45941204582470"
+            class="feed-link"
+            aria-label="Conhecer a Blusa Alongada Lisa Drapeada"
         >
 
-        <img
-            src="./images/foto-11.JPG"
-            alt="Charry - Foto 11"
-            loading="lazy"
-            decoding="async"
+            <img
+                src="./images/foto-10.JPG"
+                alt="Blusa Alongada Lisa Drapeada"
+                loading="lazy"
+                decoding="async"
+            >
+
+        </a>
+
+
+        <!-- FOTO 11 -->
+
+        <a
+            href="https://www.charry.com.br/products/calca-pantalona-lisa-com-pregas-1?variant=45941199437894"
+            class="feed-link"
+            aria-label="Conhecer a Calça Pantalona Lisa com Pregas"
         >
 
-        <img
-            src="./images/foto-12.JPG"
-            alt="Charry - Foto 12"
-            loading="lazy"
-            decoding="async"
+            <img
+                src="./images/foto-11.JPG"
+                alt="Calça Pantalona Lisa com Pregas"
+                loading="lazy"
+                decoding="async"
+            >
+
+        </a>
+
+
+        <!-- FOTO 12 -->
+
+        <a
+            href="https://www.charry.com.br/products/top-ajustado-chevron-com-maxi-passante-1?variant=45374853709894"
+            class="feed-link"
+            aria-label="Conhecer o Top Ajustado Chevron com Maxi Passante"
         >
 
-        <img
-            src="./images/foto-13.JPG"
-            alt="Charry - Foto 13"
-            loading="lazy"
-            decoding="async"
+            <img
+                src="./images/foto-12.JPG"
+                alt="Top Ajustado Chevron com Maxi Passante"
+                loading="lazy"
+                decoding="async"
+            >
+
+        </a>
+
+
+        <!-- FOTO 13 -->
+
+        <a
+            href="https://www.charry.com.br/products/saia-longa-chevron-com-maxi-passantes-1?variant=45374855053382"
+            class="feed-link"
+            aria-label="Conhecer a Saia Longa Chevron com Maxi Passantes"
         >
 
-        <img
-            src="./images/foto-14.JPG"
-            alt="Charry - Foto 14"
-            loading="lazy"
-            decoding="async"
+            <img
+                src="./images/foto-13.JPG"
+                alt="Saia Longa Chevron com Maxi Passantes"
+                loading="lazy"
+                decoding="async"
+            >
+
+        </a>
+
+
+        <!-- FOTO 14 -->
+
+        <a
+            href="https://www.charry.com.br/products/vestido-longo-slip-liso-com-alcas-1?variant=45374852661318"
+            class="feed-link"
+            aria-label="Conhecer o Vestido Longo Slip Liso com Alças"
         >
 
-        <img
-            src="./images/foto-15.jpg"
-            alt="Charry - Foto 15"
-            loading="lazy"
-            decoding="async"
+            <img
+                src="./images/foto-14.jpg"
+                alt="Vestido Longo Slip Liso com Alças - Foto 1"
+                loading="lazy"
+                decoding="async"
+            >
+
+        </a>
+
+
+        <!-- FOTO 15 -->
+
+        <a
+            href="https://www.charry.com.br/products/vestido-longo-slip-liso-com-alcas-1?variant=45374852661318"
+            class="feed-link"
+            aria-label="Conhecer o Vestido Longo Slip Liso com Alças"
         >
 
-        <img
-            src="./images/foto-16.JPG"
-            alt="Charry - Foto 16"
-            loading="lazy"
-            decoding="async"
+            <img
+                src="./images/foto-15.jpg"
+                alt="Vestido Longo Slip Liso com Alças - Foto 2"
+                loading="lazy"
+                decoding="async"
+            >
+
+        </a>
+
+
+        <!-- FOTO 16 -->
+
+        <a
+            href="https://www.charry.com.br/products/calca-wide-listrada-com-bolsos-faca-1?variant=45941202387014"
+            class="feed-link"
+            aria-label="Conhecer a Calça Wide Listrada com Bolsos Faca"
         >
 
-        <img
-            src="./images/foto-17.JPG"
-            alt="Charry - Foto 17"
-            loading="lazy"
-            decoding="async"
+            <img
+                src="./images/foto-16.JPG"
+                alt="Calça Wide Listrada com Bolsos Faca"
+                loading="lazy"
+                decoding="async"
+            >
+
+        </a>
+
+
+        <!-- FOTO 17 -->
+
+        <a
+            href="https://www.charry.com.br/products/camisa-mangas-longas-estampada-maxi-listras?variant=45941176762438"
+            class="feed-link"
+            aria-label="Conhecer a Camisa de Mangas Longas Estampada Maxi Listras"
         >
+
+            <img
+                src="./images/foto-17.JPG"
+                alt="Camisa de Mangas Longas Estampada Maxi Listras"
+                loading="lazy"
+                decoding="async"
+            >
+
+        </a>
 
     </section>
 
