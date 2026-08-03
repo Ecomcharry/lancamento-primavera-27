@@ -60,23 +60,49 @@
 
     <section class="hero">
 
-        <picture>
+    <picture>
 
-            <source
-                media="(max-width: 900px)"
-                srcset="./images/mob-1.jpg"
-            >
+        <source
+            media="(max-width: 900px)"
+            srcset="./images/gif-mob.gif"
+        >
 
-            <img
-                src="./images/banner-1.jpg"
-                alt="Inside the Look"
-                fetchpriority="high"
-                decoding="async"
-            >
+        <img
+            src="./images/gif-1.gif"
+            alt="Inside the Look"
+            fetchpriority="high"
+        >
 
-        </picture>
+    </picture>
 
-    </section>
+</section>
+
+    <!-- ==========================
+BANNER 1
+
+DESKTOP: banner-1.jpg
+MOBILE: mob-1.jpg
+=========================== -->
+
+<section class="banner banner-normal">
+
+    <picture>
+
+        <source
+            media="(max-width: 900px)"
+            srcset="./images/mob-1.jpg"
+        >
+
+        <img
+            src="./images/banner-1.jpg"
+            alt="Inside the Look"
+            loading="lazy"
+            decoding="async"
+        >
+
+    </picture>
+
+</section>
 
 
     <!-- ==========================
