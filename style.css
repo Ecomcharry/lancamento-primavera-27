@@ -317,7 +317,7 @@ BANNER 5
 ========================== */
 
 .banner5-box {
-    width: min(360px, calc(100vw - 48px));
+    width: min(760px, calc(100vw - 48px));
 
     background-color: #f3f3f3;
 }
@@ -326,14 +326,12 @@ BANNER 5
 .banner5-box picture,
 .banner5-box img {
     display: block;
+    width: 100%;
 }
 
-.banner5-box picture,
 .banner5-box img {
-    width: 100%;
     height: auto;
 }
-
 
 /* ==========================
 BANNER 6 — DESKTOP
@@ -462,15 +460,13 @@ TABLETS E CELULARES
     margin-top: 58px;
 }
 
-    .video-box,
-    .banner5-box {
-        width: min(300px, calc(100vw - 40px));
-    }
+    .video-box {
+    width: min(300px, calc(100vw - 40px));
+}
 
-    .product-video {
-        transform: translateZ(0);
-        backface-visibility: hidden;
-    }
+.banner5-box {
+    width: min(420px, calc(100vw - 24px));
+}
 
 
     /* ESCONDE O BANNER 6 DA POSIÇÃO DESKTOP */
