@@ -469,11 +469,12 @@ TABLETS E CELULARES
 }
 
 
-    /* ESCONDE O BANNER 6 DA POSIÇÃO DESKTOP */
+    /* BANNER 6 TAMBÉM NO MOBILE */
 
-    .banner-6-desktop {
-        display: none;
-    }
+.banner-6-desktop {
+    display: block;
+    margin-top: 30px;
+}
 
 
     /* FEED */
