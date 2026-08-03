@@ -86,7 +86,7 @@
 
 
     <!-- ==========================
-    VÍDEO COM LINK
+    VÍDEO AUTOMÁTICO COM LINK
     =========================== -->
 
     <section class="video-section">
@@ -108,6 +108,7 @@
                     webkit-playsinline
                     preload="auto"
                     disablepictureinpicture
+                    disableremoteplayback
                     aria-label="Vídeo do Lenço Pareô Liso com Franja"
                 >
 
@@ -353,17 +354,29 @@
 
 
     <!-- ==========================
-    BANNER 6 — SOMENTE DESKTOP
+    BANNER RESPONSIVO
+
+    DESKTOP: banner-6.jpg
+    MOBILE: mob-5.jpg
     =========================== -->
 
-    <section class="banner banner-normal banner-6-desktop">
+    <section class="banner banner-normal banner-6-responsive">
 
-        <img
-            class="desktop-banner-image"
-            data-src="./images/banner-6.jpg"
-            alt="Coleção Charry"
-            decoding="async"
-        >
+        <picture>
+
+            <source
+                media="(max-width: 900px)"
+                srcset="./images/mob-5.jpg"
+            >
+
+            <img
+                src="./images/banner-6.jpg"
+                alt="Coleção Charry"
+                loading="lazy"
+                decoding="async"
+            >
+
+        </picture>
 
     </section>
 
