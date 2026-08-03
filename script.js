@@ -51,7 +51,7 @@ function loadCarouselImage(index) {
 }
 
 
-/* Carrega a imagem atual, a anterior e a próxima */
+/* Carrega atual, anterior e próxima */
 
 function preloadCarouselImages() {
     if (totalSlides === 0) {
@@ -248,7 +248,7 @@ carouselArea?.addEventListener(
 );
 
 
-/* Impede que o produto abra durante o gesto de arrastar */
+/* Evita abrir o produto ao arrastar */
 
 carouselLink?.addEventListener(
     "click",
@@ -291,8 +291,6 @@ function startProductVideo() {
 }
 
 
-/* Tenta iniciar assim que o HTML estiver pronto */
-
 if (document.readyState === "loading") {
     document.addEventListener(
         "DOMContentLoaded",
@@ -303,8 +301,6 @@ if (document.readyState === "loading") {
     startProductVideo();
 }
 
-
-/* Tenta novamente quando houver dados suficientes */
 
 productVideo?.addEventListener(
     "loadeddata",
@@ -317,15 +313,11 @@ productVideo?.addEventListener(
 );
 
 
-/* Reinicia ao retornar para a página */
-
 window.addEventListener(
     "pageshow",
     startProductVideo
 );
 
-
-/* Reinicia quando a aba volta a ficar visível */
 
 document.addEventListener(
     "visibilitychange",
