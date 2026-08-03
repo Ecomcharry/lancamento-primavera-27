@@ -12,34 +12,33 @@
     <title>Inside the Look</title>
 
 
-    <!-- Banner inicial prioritário no desktop -->
+    <!-- GIF inicial desktop -->
 
     <link
         rel="preload"
         as="image"
-        href="./images/banner-1.jpg"
+        href="./images/gif-1.gif"
         media="(min-width: 901px)"
     >
 
 
-    <!-- Banner inicial prioritário no mobile -->
+    <!-- GIF inicial mobile -->
 
     <link
         rel="preload"
         as="image"
-        href="./images/mob-1.jpg"
+        href="./images/gif-mob.gif"
         media="(max-width: 900px)"
     >
 
 
-    <!-- Carregamento antecipado do vídeo no mobile -->
+    <!-- Carregamento antecipado do vídeo -->
 
     <link
         rel="preload"
         as="video"
         href="./images/video.mp4"
         type="video/mp4"
-        media="(max-width: 900px)"
     >
 
 
@@ -52,17 +51,93 @@
 <body>
 
     <!-- ==========================
+    GIF INICIAL COM LINK
+
+    DESKTOP: gif-1.gif
+    MOBILE: gif-mob.gif
+    =========================== -->
+
+    <section class="hero gif-hero">
+
+        <a
+            href="https://www.charry.com.br/products/lenco-pareo-liso-com-franja?variant=45309853892678"
+            class="hero-link"
+            aria-label="Conhecer o Lenço Pareô Liso com Franja"
+        >
+
+            <picture>
+
+                <source
+                    media="(max-width: 900px)"
+                    srcset="./images/gif-mob.gif"
+                >
+
+                <img
+                    src="./images/gif-1.gif"
+                    alt="Lenço Pareô Liso com Franja"
+                    fetchpriority="high"
+                >
+
+            </picture>
+
+        </a>
+
+    </section>
+
+
+    <!-- ==========================
+    VÍDEO COM LINK
+    =========================== -->
+
+    <section class="video-section">
+
+        <a
+            href="https://www.charry.com.br/products/lenco-pareo-liso-com-franja?variant=45309853892678"
+            class="video-product-link"
+            aria-label="Conhecer o Lenço Pareô Liso com Franja"
+        >
+
+            <div class="video-box">
+
+                <video
+                    class="product-video"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    webkit-playsinline
+                    preload="auto"
+                    disablepictureinpicture
+                    aria-label="Vídeo do Lenço Pareô Liso com Franja"
+                >
+
+                    <source
+                        src="./images/video.mp4"
+                        type="video/mp4"
+                    >
+
+                    Seu navegador não suporta a reprodução deste vídeo.
+
+                </video>
+
+            </div>
+
+        </a>
+
+    </section>
+
+
+    <!-- ==========================
     BANNER 1 COM LINK
 
     DESKTOP: banner-1.jpg
     MOBILE: mob-1.jpg
     =========================== -->
 
-    <section class="hero">
+    <section class="banner banner-normal">
 
         <a
             href="https://www.charry.com.br/products/conjunto-blusa-e-calca-327029-e-327137?variant=45941082587206"
-            class="hero-link"
             aria-label="Conhecer o Conjunto Blusa e Calça"
         >
 
@@ -76,7 +151,7 @@
                 <img
                     src="./images/banner-1.jpg"
                     alt="Conjunto Blusa e Calça Charry"
-                    fetchpriority="high"
+                    loading="lazy"
                     decoding="async"
                 >
 
@@ -110,7 +185,7 @@
 
                 <img
                     src="./images/banner-2.jpg"
-                    alt="Coleção Verão 27 Charry"
+                    alt="Coleção Verão 27"
                     loading="lazy"
                     decoding="async"
                 >
@@ -278,53 +353,13 @@
 
 
     <!-- ==========================
-    VÍDEO / GIF + BANNER 5
+    BANNER 5 COM LINK
+
+    DESKTOP: banner-5.jpg
+    MOBILE: mob-5.jpg
     =========================== -->
 
-    <section class="video-banner">
-
-        <!-- VÍDEO / GIF COM LINK -->
-
-        <a
-            href="https://www.charry.com.br/products/lenco-pareo-liso-com-franja?variant=45309853892678"
-            class="video-product-link"
-            aria-label="Conhecer o Lenço Pareô Liso com Franja"
-        >
-
-            <div class="video-box">
-
-                <video
-                    class="product-video"
-                    autoplay
-                    muted
-                    loop
-                    playsinline
-                    webkit-playsinline
-                    preload="auto"
-                    disablepictureinpicture
-                    aria-label="Vídeo do Lenço Pareô Liso com Franja"
-                >
-
-                    <source
-                        src="./images/video.mp4"
-                        type="video/mp4"
-                    >
-
-                    Seu navegador não suporta a reprodução deste vídeo.
-
-                </video>
-
-            </div>
-
-        </a>
-
-
-        <!-- ==========================
-        BANNER 5 COM LINK
-
-        DESKTOP: banner-5.jpg
-        MOBILE: mob-5.jpg
-        =========================== -->
+    <section class="banner5-section">
 
         <a
             href="https://www.charry.com.br/products/lenco-pareo-liso-com-franja?variant=45309853892678"
@@ -582,7 +617,7 @@
         <a
             href="https://www.charry.com.br/products/camisa-mangas-longas-estampada-maxi-listras?variant=45941176762438"
             class="feed-link"
-            aria-label="Conhecer a Camisa de Mangas Longas Estampada Maxi Listras"
+            aria-label="Conhecer a Camisa de Mangas Longas Estampada"
         >
 
             <img
@@ -598,7 +633,7 @@
 
 
     <!-- ==========================
-    BANNER FINAL COM O MESMO LINK
+    BANNER FINAL COM LINK
 
     DESKTOP: banner-7.jpg
     MOBILE: mob-6.jpg
