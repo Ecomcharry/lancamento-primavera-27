@@ -2,276 +2,22 @@
 
 
 /* ==========================
-CONFIGURAÇÕES
+VÍDEO AUTOMÁTICO
 ========================== */
 
-let currentSlide = 0;
-let pointerStartX = 0;
-let carouselWasDragged = false;
-let carouselInitialized = false;
-
-
-/* ==========================
-CARROSSEL
-========================== */
-
-const track = document.querySelector(".carousel-track");
-const carouselArea = document.querySelector(".carousel-area");
-const carouselLink = document.querySelector(".carousel-product-link");
-
-const carouselImages = Array.from(
-    document.querySelectorAll(".carousel-track img")
-);
-
-const dots = Array.from(
-    document.querySelectorAll(".dots span")
-);
-
-const previousButton = document.querySelector(".prev");
-const nextButton = document.querySelector(".next");
-
-const totalSlides = carouselImages.length;
-
-
-/* ==========================
-CARREGAR IMAGEM DO CARROSSEL
-========================== */
-
-function loadCarouselImage(index) {
-    const image = carouselImages[index];
-
-    if (!image || !image.dataset.src) {
-        return;
-    }
-
-    image.src = image.dataset.src;
-    image.removeAttribute("data-src");
-}
-
-
-/* Carrega atual, anterior e próxima */
-
-function preloadCarouselImages() {
-    if (totalSlides === 0) {
-        return;
-    }
-
-    const previousIndex =
-        (currentSlide - 1 + totalSlides) % totalSlides;
-
-    const nextIndex =
-        (currentSlide + 1) % totalSlides;
-
-    loadCarouselImage(previousIndex);
-    loadCarouselImage(currentSlide);
-    loadCarouselImage(nextIndex);
-}
-
-
-/* ==========================
-EXIBIR SLIDE
-========================== */
-
-function showSlide() {
-    if (!track || totalSlides === 0) {
-        return;
-    }
-
-    preloadCarouselImages();
-
-    track.style.transform =
-        `translate3d(-${currentSlide * 100}%, 0, 0)`;
-
-    dots.forEach((dot, index) => {
-        dot.classList.toggle(
-            "active",
-            index === currentSlide
-        );
-    });
-}
-
-
-/* ==========================
-INICIAR CARROSSEL
-========================== */
-
-function initializeCarousel() {
-    if (carouselInitialized) {
-        return;
-    }
-
-    carouselInitialized = true;
-
-    showSlide();
-}
-
-
-if (
-    carouselArea &&
-    "IntersectionObserver" in window
-) {
-    const carouselObserver = new IntersectionObserver(
-        (entries, observer) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    initializeCarousel();
-                    observer.disconnect();
-                }
-            });
-        },
-        {
-            rootMargin: "400px 0px",
-            threshold: 0.01
-        }
-    );
-
-    carouselObserver.observe(carouselArea);
-} else {
-    initializeCarousel();
-}
-
-
-/* ==========================
-PRÓXIMA E ANTERIOR
-========================== */
-
-function nextSlide() {
-    initializeCarousel();
-
-    currentSlide =
-        (currentSlide + 1) % totalSlides;
-
-    showSlide();
-}
-
-
-function previousSlide() {
-    initializeCarousel();
-
-    currentSlide =
-        (currentSlide - 1 + totalSlides) % totalSlides;
-
-    showSlide();
-}
-
-
-previousButton?.addEventListener(
-    "click",
-    (event) => {
-        event.preventDefault();
-        previousSlide();
-    }
-);
-
-
-nextButton?.addEventListener(
-    "click",
-    (event) => {
-        event.preventDefault();
-        nextSlide();
-    }
-);
-
-
-/* ==========================
-TECLADO
-========================== */
-
-carouselArea?.addEventListener(
-    "keydown",
-    (event) => {
-        if (event.key === "ArrowLeft") {
-            event.preventDefault();
-            previousSlide();
-        }
-
-        if (event.key === "ArrowRight") {
-            event.preventDefault();
-            nextSlide();
-        }
-    }
-);
-
-
-/* ==========================
-ARRASTAR NO MOBILE
-========================== */
-
-carouselArea?.addEventListener(
-    "pointerdown",
-    (event) => {
-        pointerStartX = event.clientX;
-        carouselWasDragged = false;
-    }
-);
-
-
-carouselArea?.addEventListener(
-    "pointermove",
-    (event) => {
-        const movement =
-            Math.abs(event.clientX - pointerStartX);
-
-        if (movement > 10) {
-            carouselWasDragged = true;
-        }
-    }
-);
-
-
-carouselArea?.addEventListener(
-    "pointerup",
-    (event) => {
-        const distance =
-            event.clientX - pointerStartX;
-
-        if (Math.abs(distance) < 40) {
-            return;
-        }
-
-        if (distance < 0) {
-            nextSlide();
-        } else {
-            previousSlide();
-        }
-    }
-);
-
-
-carouselArea?.addEventListener(
-    "pointercancel",
-    () => {
-        carouselWasDragged = false;
-    }
-);
-
-
-/* Evita abrir o produto ao arrastar */
-
-carouselLink?.addEventListener(
-    "click",
-    (event) => {
-        if (carouselWasDragged) {
-            event.preventDefault();
-            carouselWasDragged = false;
-        }
-    }
-);
-
-
-/* ==========================
-REPRODUÇÃO CONTÍNUA DO VÍDEO
-========================== */
-
-const productVideo = document.querySelector(
-    ".product-video"
-);
+const productVideo =
+    document.querySelector(".product-video");
 
 
 function startProductVideo() {
+
     if (!productVideo) {
         return;
     }
+
+
+    /* Configurações necessárias
+    para autoplay em desktop e mobile */
 
     productVideo.autoplay = true;
     productVideo.loop = true;
@@ -280,55 +26,107 @@ function startProductVideo() {
     productVideo.playsInline = true;
     productVideo.controls = false;
 
-    productVideo.setAttribute("autoplay", "");
-    productVideo.setAttribute("loop", "");
-    productVideo.setAttribute("muted", "");
-    productVideo.setAttribute("playsinline", "");
 
-    productVideo.removeAttribute("controls");
+    productVideo.setAttribute(
+        "autoplay",
+        ""
+    );
 
-    const playPromise = productVideo.play();
+    productVideo.setAttribute(
+        "loop",
+        ""
+    );
 
-    if (playPromise !== undefined) {
+    productVideo.setAttribute(
+        "muted",
+        ""
+    );
+
+    productVideo.setAttribute(
+        "playsinline",
+        ""
+    );
+
+    productVideo.setAttribute(
+        "webkit-playsinline",
+        ""
+    );
+
+
+    productVideo.removeAttribute(
+        "controls"
+    );
+
+
+    const playPromise =
+        productVideo.play();
+
+
+    if (
+        playPromise !== undefined
+    ) {
+
         playPromise.catch(() => {
+
             /*
-            O navegador pode aguardar uma interação
-            antes de liberar o autoplay.
+            Alguns navegadores podem
+            aguardar a primeira interação
+            da pessoa antes de liberar
+            o autoplay.
             */
+
         });
+
     }
+
 }
 
 
-/* Inicia assim que o HTML estiver pronto */
+/* ==========================
+INICIA QUANDO O HTML CARREGA
+========================== */
 
-if (document.readyState === "loading") {
+if (
+    document.readyState === "loading"
+) {
+
     document.addEventListener(
         "DOMContentLoaded",
         startProductVideo,
-        { once: true }
+        {
+            once: true
+        }
     );
+
 } else {
+
     startProductVideo();
+
 }
 
 
-/* Tenta novamente em diferentes etapas do carregamento */
+/* ==========================
+NOVAS TENTATIVAS DURANTE
+O CARREGAMENTO DO VÍDEO
+========================== */
 
 productVideo?.addEventListener(
     "loadedmetadata",
     startProductVideo
 );
 
+
 productVideo?.addEventListener(
     "loadeddata",
     startProductVideo
 );
 
+
 productVideo?.addEventListener(
     "canplay",
     startProductVideo
 );
+
 
 productVideo?.addEventListener(
     "canplaythrough",
@@ -336,19 +134,25 @@ productVideo?.addEventListener(
 );
 
 
-/* Evita que o vídeo permaneça pausado */
+/* ==========================
+SE O VÍDEO PAUSAR
+========================== */
 
 productVideo?.addEventListener(
     "pause",
     () => {
+
         if (!document.hidden) {
             startProductVideo();
         }
+
     }
 );
 
 
-/* Reinicia ao voltar para a página */
+/* ==========================
+QUANDO VOLTAR PARA A PÁGINA
+========================== */
 
 window.addEventListener(
     "pageshow",
@@ -356,19 +160,25 @@ window.addEventListener(
 );
 
 
-/* Reinicia quando a aba volta a ficar visível */
+/* ==========================
+QUANDO VOLTAR PARA A ABA
+========================== */
 
 document.addEventListener(
     "visibilitychange",
     () => {
+
         if (!document.hidden) {
             startProductVideo();
         }
+
     }
 );
 
 
-/* Nova tentativa após a primeira interação do usuário */
+/* ==========================
+PRIMEIRA INTERAÇÃO
+========================== */
 
 const interactionEvents = [
     "touchstart",
@@ -376,13 +186,18 @@ const interactionEvents = [
     "scroll"
 ];
 
-interactionEvents.forEach((eventName) => {
-    window.addEventListener(
-        eventName,
-        startProductVideo,
-        {
-            once: true,
-            passive: true
-        }
-    );
-});
+
+interactionEvents.forEach(
+    (eventName) => {
+
+        window.addEventListener(
+            eventName,
+            startProductVideo,
+            {
+                once: true,
+                passive: true
+            }
+        );
+
+    }
+);
