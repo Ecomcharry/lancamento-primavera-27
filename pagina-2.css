@@ -33,7 +33,9 @@ FONTES
 
 @font-face {
     font-family: "GothamLight";
-    src: url("./fonts/GothamLight.otf") format("opentype");
+
+    src: url("./fonts/GothamLight.otf")
+        format("opentype");
 
     font-weight: 300;
     font-style: normal;
@@ -42,7 +44,9 @@ FONTES
 
 @font-face {
     font-family: "GothamMedium";
-    src: url("./fonts/GothamMedium.otf") format("opentype");
+
+    src: url("./fonts/GothamMedium.otf")
+        format("opentype");
 
     font-weight: 500;
     font-style: normal;
@@ -79,15 +83,19 @@ BANNERS
 
     width: 100%;
 
-    margin-top: 16px;
+    margin-top: 14px;
     padding: 0;
 
     overflow: hidden;
 }
 
+
+/* Primeiro banner sem espaço acima */
+
 .first-banner {
     margin-top: 0;
 }
+
 
 .full-banner picture,
 .full-banner img {
@@ -99,7 +107,7 @@ BANNERS
 
 
 /* ==========================
-IMAGEM 5 + VÍDEO
+DESK-5 + VÍDEO
 DESKTOP
 ========================== */
 
@@ -107,31 +115,39 @@ DESKTOP
     display: grid;
 
     grid-template-columns: 1fr 1fr;
+    grid-template-areas: "imagem video";
 
-    align-items: center;
+    align-items: start;
 
-    width: min(calc(100% - 120px), 1050px);
+    width: min(calc(100% - 120px), 1000px);
 
-    gap: 18px;
+    gap: 16px;
 
-    margin: 24px auto 8px;
+    margin: 24px auto 10px;
     padding: 0;
 }
 
 
-/* IMAGEM */
+/* ==========================
+DESK-5
+========================== */
 
 .media-image {
+    grid-area: imagem;
+
     width: 100%;
+    height: auto;
 
     overflow: hidden;
 
-    background-color: #f3f3f3;
+    background: transparent;
 }
 
 .media-image picture {
     display: block;
+
     width: 100%;
+    height: auto;
 }
 
 .media-image img {
@@ -141,42 +157,50 @@ DESKTOP
     height: auto;
 
     object-fit: contain;
+
+    background: transparent;
 }
 
 
 /* ==========================
-VÍDEO
+VÍDEO DESKTOP
 ========================== */
 
 .media-video {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    grid-area: video;
 
     width: 100%;
+    height: auto;
 
     overflow: hidden;
 
-    background-color: #f3f3f3;
+    background: transparent;
 }
 
 .product-video {
+    position: static;
+
     display: block;
 
     width: 100%;
     height: auto;
 
-    max-height: 620px;
+    max-width: 100%;
+
+    border: 0;
+    outline: 0;
 
     object-fit: contain;
 
-    background-color: #f3f3f3;
+    background: transparent;
 
     pointer-events: none;
 }
 
 
-/* REMOVE CONTROLES NATIVOS */
+/* ==========================
+REMOVE CONTROLES DO VÍDEO
+========================== */
 
 .product-video::-webkit-media-controls {
     display: none !important;
@@ -198,31 +222,56 @@ VÍDEO
 
 
 /* ==========================
-BANNER 8 MENOR
-DESKTOP
+DESK-8
+LARGURA TOTAL + ALTURA MENOR
 ========================== */
 
 .last-banner {
-    width: min(calc(100% - 120px), 1100px);
+    width: 100%;
+    max-width: none;
 
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
     margin-bottom: 30px;
+
+    overflow: hidden;
+}
+
+.last-banner picture {
+    display: block;
+
+    width: 100%;
+    height: 500px;
+}
+
+.last-banner img {
+    display: block;
+
+    width: 100%;
+    height: 500px;
+
+    object-fit: cover;
+    object-position: center;
+
+    max-width: none;
 }
 
 
 /* ==========================
-TABLET E MOBILE
+TABLET / MOBILE
 ========================== */
 
 @media (max-width: 900px) {
+
 
     /* ==========================
     ESPAÇAMENTO ENTRE BANNERS
     ========================== */
 
     .full-banner {
-        margin-top: 10px;
+        width: 100%;
+
+        margin-top: 8px;
     }
 
     .first-banner {
@@ -230,12 +279,21 @@ TABLET E MOBILE
     }
 
 
+    /*
+    REMOVE O ESPAÇO ENTRE
+    MOB-3 E MOB-4
+
+    O quarto <section> da página
+    corresponde ao mob-4.
+    */
+
+    body > section.full-banner:nth-of-type(4) {
+        margin-top: 0;
+    }
+
+
     /* ==========================
     VÍDEO + MOB-5
-
-    ORDEM:
-    VÍDEO
-    MOB-5
     ========================== */
 
     .media-row {
@@ -245,45 +303,73 @@ TABLET E MOBILE
 
         width: 100%;
 
-        gap: 10px;
+        gap: 8px;
 
-        margin: 10px auto 0;
+        margin: 8px 0 0;
         padding: 0;
     }
 
 
-    /* VÍDEO PRIMEIRO */
+    /* ==========================
+    VÍDEO PRIMEIRO
+    ========================== */
 
     .media-video {
         order: 1;
 
-        width: 100%;
+        position: relative;
 
-        background-color: #f3f3f3;
+        width: 100%;
+        height: auto;
+
+        overflow: hidden;
+
+        background: transparent;
     }
 
     .product-video {
+        position: static;
+
+        top: auto;
+        left: auto;
+
         display: block;
 
         width: 100%;
         height: auto;
 
+        max-width: 100%;
         max-height: none;
 
+        margin: 0;
+        padding: 0;
+
         object-fit: contain;
+
+        border: 0;
+        outline: 0;
+
+        background: transparent;
 
         transform: translateZ(0);
         backface-visibility: hidden;
     }
 
 
-    /* MOB-5 DEPOIS */
+    /* ==========================
+    MOB-5 DEPOIS DO VÍDEO
+    ========================== */
 
     .media-image {
         order: 2;
 
         width: 100%;
         height: auto;
+
+        margin: 0;
+        padding: 0;
+
+        background: transparent;
     }
 
     .media-image picture,
@@ -293,12 +379,19 @@ TABLET E MOBILE
         width: 100%;
         height: auto;
 
+        margin: 0;
+        padding: 0;
+
         object-fit: contain;
+
+        background: transparent;
     }
 
 
-    /* BANNER 8 VOLTA A OCUPAR
-    A LARGURA NORMAL NO MOBILE */
+    /* ==========================
+    MOB-8
+    ALTURA NATURAL
+    ========================== */
 
     .last-banner {
         width: 100%;
@@ -306,6 +399,40 @@ TABLET E MOBILE
         margin-left: 0;
         margin-right: 0;
         margin-bottom: 0;
+    }
+
+    .last-banner picture {
+        width: 100%;
+        height: auto;
+    }
+
+    .last-banner img {
+        width: 100%;
+        height: auto;
+
+        object-fit: contain;
+    }
+
+}
+
+
+/* ==========================
+CELULARES PEQUENOS
+========================== */
+
+@media (max-width: 380px) {
+
+    .full-banner {
+        margin-top: 6px;
+    }
+
+    body > section.full-banner:nth-of-type(4) {
+        margin-top: 0;
+    }
+
+    .media-row {
+        gap: 6px;
+        margin-top: 6px;
     }
 
 }
