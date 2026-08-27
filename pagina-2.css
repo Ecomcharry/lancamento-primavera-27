@@ -475,6 +475,27 @@ CELULARES PEQUENOS
 
 }
 
+/* ==========================
+LINKS DAS ÁREAS
+========================== */
+
+.banner-link {
+    display: block;
+
+    width: 100%;
+
+    color: inherit;
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.media-row {
+    color: inherit;
+    text-decoration: none;
+
+    cursor: pointer;
+}
 
 /* ==========================
 REDUÇÃO DE ANIMAÇÕES
