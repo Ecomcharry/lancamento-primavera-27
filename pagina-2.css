@@ -1,3 +1,4 @@
+
 /* ==========================
 RESET
 ========================== */
@@ -16,6 +17,9 @@ html {
 body {
     width: 100%;
     min-height: 100vh;
+
+    margin: 0;
+    padding: 0;
 
     overflow-x: hidden;
 
@@ -89,13 +93,9 @@ BANNERS
     overflow: hidden;
 }
 
-
-/* Primeiro banner sem espaço acima */
-
 .first-banner {
     margin-top: 0;
 }
-
 
 .full-banner picture,
 .full-banner img {
@@ -114,16 +114,16 @@ DESKTOP
 .media-row {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 0.85fr;
     grid-template-areas: "imagem video";
 
-    align-items: start;
+    align-items: center;
 
     width: min(calc(100% - 120px), 1000px);
 
-    gap: 16px;
+    gap: 24px;
 
-    margin: 24px auto 10px;
+    margin: 26px auto 12px;
     padding: 0;
 }
 
@@ -135,8 +135,14 @@ DESK-5
 .media-image {
     grid-area: imagem;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 100%;
-    height: auto;
+
+    margin: 0;
+    padding: 0;
 
     overflow: hidden;
 
@@ -147,7 +153,6 @@ DESK-5
     display: block;
 
     width: 100%;
-    height: auto;
 }
 
 .media-image img {
@@ -155,6 +160,8 @@ DESK-5
 
     width: 100%;
     height: auto;
+
+    margin: 0 auto;
 
     object-fit: contain;
 
@@ -169,8 +176,14 @@ VÍDEO DESKTOP
 .media-video {
     grid-area: video;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     width: 100%;
-    height: auto;
+
+    margin: 0;
+    padding: 0;
 
     overflow: hidden;
 
@@ -182,10 +195,14 @@ VÍDEO DESKTOP
 
     display: block;
 
-    width: 100%;
+    width: 88%;
     height: auto;
 
     max-width: 100%;
+    max-height: 500px;
+
+    margin: 0 auto;
+    padding: 0;
 
     border: 0;
     outline: 0;
@@ -223,16 +240,21 @@ REMOVE CONTROLES DO VÍDEO
 
 /* ==========================
 DESK-8
-LARGURA TOTAL + ALTURA MENOR
+LARGURA TOTAL
+SEM ESPAÇO DEPOIS
 ========================== */
 
 .last-banner {
+    display: block;
+
     width: 100%;
     max-width: none;
 
     margin-left: 0;
     margin-right: 0;
-    margin-bottom: 30px;
+    margin-bottom: 0;
+
+    padding: 0;
 
     overflow: hidden;
 }
@@ -242,6 +264,9 @@ LARGURA TOTAL + ALTURA MENOR
 
     width: 100%;
     height: 500px;
+
+    margin: 0;
+    padding: 0;
 }
 
 .last-banner img {
@@ -250,10 +275,13 @@ LARGURA TOTAL + ALTURA MENOR
     width: 100%;
     height: 500px;
 
-    object-fit: cover;
-    object-position: center;
+    margin: 0;
+    padding: 0;
 
     max-width: none;
+
+    object-fit: cover;
+    object-position: center;
 }
 
 
@@ -265,13 +293,14 @@ TABLET / MOBILE
 
 
     /* ==========================
-    ESPAÇAMENTO ENTRE BANNERS
+    ESPAÇAMENTO DOS BANNERS
     ========================== */
 
     .full-banner {
         width: 100%;
 
         margin-top: 8px;
+        padding: 0;
     }
 
     .first-banner {
@@ -279,13 +308,7 @@ TABLET / MOBILE
     }
 
 
-    /*
-    REMOVE O ESPAÇO ENTRE
-    MOB-3 E MOB-4
-
-    O quarto <section> da página
-    corresponde ao mob-4.
-    */
+    /* SEM ESPAÇO ENTRE MOB-3 E MOB-4 */
 
     body > section.full-banner:nth-of-type(4) {
         margin-top: 0;
@@ -317,10 +340,13 @@ TABLET / MOBILE
     .media-video {
         order: 1;
 
-        position: relative;
+        display: block;
 
         width: 100%;
         height: auto;
+
+        margin: 0;
+        padding: 0;
 
         overflow: hidden;
 
@@ -329,9 +355,6 @@ TABLET / MOBILE
 
     .product-video {
         position: static;
-
-        top: auto;
-        left: auto;
 
         display: block;
 
@@ -357,11 +380,13 @@ TABLET / MOBILE
 
 
     /* ==========================
-    MOB-5 DEPOIS DO VÍDEO
+    MOB-5 DEPOIS
     ========================== */
 
     .media-image {
         order: 2;
+
+        display: block;
 
         width: 100%;
         height: auto;
@@ -390,25 +415,38 @@ TABLET / MOBILE
 
     /* ==========================
     MOB-8
-    ALTURA NATURAL
+    SEM BARRA BRANCA NO FINAL
     ========================== */
 
     .last-banner {
+        display: block;
+
         width: 100%;
 
-        margin-left: 0;
-        margin-right: 0;
-        margin-bottom: 0;
+        margin: 0;
+        padding: 0;
+
+        overflow: hidden;
     }
 
     .last-banner picture {
+        display: block;
+
         width: 100%;
         height: auto;
+
+        margin: 0;
+        padding: 0;
     }
 
     .last-banner img {
+        display: block;
+
         width: 100%;
         height: auto;
+
+        margin: 0;
+        padding: 0;
 
         object-fit: contain;
     }
