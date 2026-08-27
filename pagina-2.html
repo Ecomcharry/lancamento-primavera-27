@@ -11,11 +11,7 @@
 
     <title>Inside the Look | Charry</title>
 
-
-    <!-- ==========================
-    PRÉ-CARREGAMENTO DA PRIMEIRA IMAGEM
-    =========================== -->
-
+    <!-- PRIMEIRA IMAGEM DESKTOP -->
     <link
         rel="preload"
         as="image"
@@ -23,6 +19,7 @@
         media="(min-width: 901px)"
     >
 
+    <!-- PRIMEIRA IMAGEM MOBILE -->
     <link
         rel="preload"
         as="image"
@@ -30,18 +27,13 @@
         media="(max-width: 900px)"
     >
 
-
-    <!-- ==========================
-    PRÉ-CARREGAMENTO DO VÍDEO
-    =========================== -->
-
+    <!-- VÍDEO -->
     <link
         rel="preload"
         as="video"
         href="./images/pagina-2/video.mp4"
         type="video/mp4"
     >
-
 
     <link
         rel="stylesheet"
@@ -63,31 +55,29 @@
     LINHAS ATEMPORAIS
     =========================== -->
 
-    <section class="full-banner first-banner">
+    <section class="full-banner first-banner link-area">
+
+        <picture>
+
+            <source
+                media="(max-width: 900px)"
+                srcset="./images/pagina-2/mob-1.jpg"
+            >
+
+            <img
+                src="./images/pagina-2/desk-1.jpg"
+                alt="Linhas Atemporais Charry"
+                fetchpriority="high"
+                decoding="async"
+            >
+
+        </picture>
 
         <a
             href="https://www.charry.com.br/collections/linhas-atemporais"
-            class="banner-link"
+            class="area-link"
             aria-label="Conhecer Linhas Atemporais Charry"
-        >
-
-            <picture>
-
-                <source
-                    media="(max-width: 900px)"
-                    srcset="./images/pagina-2/mob-1.jpg"
-                >
-
-                <img
-                    src="./images/pagina-2/desk-1.jpg"
-                    alt="Linhas Atemporais Charry"
-                    fetchpriority="high"
-                    decoding="async"
-                >
-
-            </picture>
-
-        </a>
+        ></a>
 
     </section>
 
@@ -97,30 +87,28 @@
     BLAZER RETO LISTRADO
     =========================== -->
 
-    <section class="full-banner">
+    <section class="full-banner link-area">
+
+        <picture>
+
+            <source
+                media="(max-width: 900px)"
+                srcset="./images/pagina-2/mob-2.jpg"
+            >
+
+            <img
+                src="./images/pagina-2/desk-2.jpg"
+                alt="Blazer Reto Listrado com Bolsos"
+                decoding="async"
+            >
+
+        </picture>
 
         <a
             href="https://www.charry.com.br/products/blazer-reto-listrado-com-bolsos?variant=45941083996230"
-            class="banner-link"
+            class="area-link"
             aria-label="Conhecer o Blazer Reto Listrado com Bolsos"
-        >
-
-            <picture>
-
-                <source
-                    media="(max-width: 900px)"
-                    srcset="./images/pagina-2/mob-2.jpg"
-                >
-
-                <img
-                    src="./images/pagina-2/desk-2.jpg"
-                    alt="Blazer Reto Listrado com Bolsos"
-                    decoding="async"
-                >
-
-            </picture>
-
-        </a>
+        ></a>
 
     </section>
 
@@ -130,30 +118,28 @@
     BLAZER RETO LISTRADO
     =========================== -->
 
-    <section class="full-banner">
+    <section class="full-banner link-area">
+
+        <picture>
+
+            <source
+                media="(max-width: 900px)"
+                srcset="./images/pagina-2/mob-3.jpg"
+            >
+
+            <img
+                src="./images/pagina-2/desk-3.jpg"
+                alt="Blazer Reto Listrado com Bolsos"
+                decoding="async"
+            >
+
+        </picture>
 
         <a
             href="https://www.charry.com.br/products/blazer-reto-listrado-com-bolsos?variant=45941083996230"
-            class="banner-link"
+            class="area-link"
             aria-label="Conhecer o Blazer Reto Listrado com Bolsos"
-        >
-
-            <picture>
-
-                <source
-                    media="(max-width: 900px)"
-                    srcset="./images/pagina-2/mob-3.jpg"
-                >
-
-                <img
-                    src="./images/pagina-2/desk-3.jpg"
-                    alt="Blazer Reto Listrado com Bolsos"
-                    decoding="async"
-                >
-
-            </picture>
-
-        </a>
+        ></a>
 
     </section>
 
@@ -163,37 +149,35 @@
     CALÇA WIDE LISTRADA
     =========================== -->
 
-    <section class="full-banner">
+    <section class="full-banner link-area">
+
+        <picture>
+
+            <source
+                media="(max-width: 900px)"
+                srcset="./images/pagina-2/mob-4.jpg"
+            >
+
+            <img
+                src="./images/pagina-2/desk-4.jpg"
+                alt="Calça Wide Listrada com Bolsos"
+                decoding="async"
+            >
+
+        </picture>
 
         <a
             href="https://www.charry.com.br/products/calca-wide-listrada-com-bolsos?variant=45941199765574"
-            class="banner-link"
+            class="area-link"
             aria-label="Conhecer a Calça Wide Listrada com Bolsos"
-        >
-
-            <picture>
-
-                <source
-                    media="(max-width: 900px)"
-                    srcset="./images/pagina-2/mob-4.jpg"
-                >
-
-                <img
-                    src="./images/pagina-2/desk-4.jpg"
-                    alt="Calça Wide Listrada com Bolsos"
-                    decoding="async"
-                >
-
-            </picture>
-
-        </a>
+        ></a>
 
     </section>
 
 
     <!-- ==========================
     ÁREA 5
-    ACESSÓRIOS PRIMAVERA 27
+    VÍDEO + ACESSÓRIOS
 
     DESKTOP:
     desk-5 + vídeo
@@ -202,11 +186,7 @@
     vídeo + mob-5
     =========================== -->
 
-    <a
-        href="https://www.charry.com.br/collections/acessorios-primavera-27"
-        class="media-row"
-        aria-label="Conhecer os Acessórios Primavera 27"
-    >
+    <section class="media-row link-area">
 
 
         <!-- VÍDEO -->
@@ -260,38 +240,45 @@
         </div>
 
 
-    </a>
+        <!-- LINK SOBRE TODA A ÁREA -->
+
+        <a
+            href="https://www.charry.com.br/collections/acessorios-primavera-27"
+            class="area-link"
+            aria-label="Conhecer Acessórios Primavera 27"
+        ></a>
+
+
+    </section>
 
 
     <!-- ==========================
     ÁREA 6
-    BLUSA ESTRUTURADA LISTRADA
+    BLUSA ESTRUTURADA
     =========================== -->
 
-    <section class="full-banner">
+    <section class="full-banner link-area">
+
+        <picture>
+
+            <source
+                media="(max-width: 900px)"
+                srcset="./images/pagina-2/mob-6.jpg"
+            >
+
+            <img
+                src="./images/pagina-2/desk-6.jpg"
+                alt="Blusa Estruturada Listrada"
+                decoding="async"
+            >
+
+        </picture>
 
         <a
             href="https://www.charry.com.br/products/blusa-estruturada-listrada?variant=45941228535878"
-            class="banner-link"
+            class="area-link"
             aria-label="Conhecer a Blusa Estruturada Listrada"
-        >
-
-            <picture>
-
-                <source
-                    media="(max-width: 900px)"
-                    srcset="./images/pagina-2/mob-6.jpg"
-                >
-
-                <img
-                    src="./images/pagina-2/desk-6.jpg"
-                    alt="Blusa Estruturada Listrada"
-                    decoding="async"
-                >
-
-            </picture>
-
-        </a>
+        ></a>
 
     </section>
 
@@ -301,30 +288,28 @@
     LINHAS ATEMPORAIS
     =========================== -->
 
-    <section class="full-banner">
+    <section class="full-banner link-area">
+
+        <picture>
+
+            <source
+                media="(max-width: 900px)"
+                srcset="./images/pagina-2/mob-7.jpg"
+            >
+
+            <img
+                src="./images/pagina-2/desk-7.jpg"
+                alt="Linhas Atemporais Charry"
+                decoding="async"
+            >
+
+        </picture>
 
         <a
             href="https://www.charry.com.br/collections/linhas-atemporais"
-            class="banner-link"
+            class="area-link"
             aria-label="Conhecer Linhas Atemporais Charry"
-        >
-
-            <picture>
-
-                <source
-                    media="(max-width: 900px)"
-                    srcset="./images/pagina-2/mob-7.jpg"
-                >
-
-                <img
-                    src="./images/pagina-2/desk-7.jpg"
-                    alt="Linhas Atemporais Charry"
-                    decoding="async"
-                >
-
-            </picture>
-
-        </a>
+        ></a>
 
     </section>
 
@@ -334,32 +319,30 @@
     WHATSAPP
     =========================== -->
 
-    <section class="full-banner last-banner">
+    <section class="full-banner last-banner link-area">
+
+        <picture>
+
+            <source
+                media="(max-width: 900px)"
+                srcset="./images/pagina-2/mob-8.jpg"
+            >
+
+            <img
+                src="./images/pagina-2/desk-8.jpg"
+                alt="Charry Club"
+                decoding="async"
+            >
+
+        </picture>
 
         <a
             href="https://chat.whatsapp.com/LM0r58rotgbGuj0oB4m6Rk"
             target="_blank"
             rel="noopener noreferrer"
-            class="banner-link"
+            class="area-link"
             aria-label="Entrar no grupo Charry no WhatsApp"
-        >
-
-            <picture>
-
-                <source
-                    media="(max-width: 900px)"
-                    srcset="./images/pagina-2/mob-8.jpg"
-                >
-
-                <img
-                    src="./images/pagina-2/desk-8.jpg"
-                    alt="Entre no grupo Charry no WhatsApp"
-                    decoding="async"
-                >
-
-            </picture>
-
-        </a>
+        ></a>
 
     </section>
 
