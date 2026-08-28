@@ -288,61 +288,26 @@ SEM ESPAÇO NO FINAL
 
 /* ==========================
 ÁREAS CLICÁVEIS
-DESKTOP + MOBILE
 ========================== */
 
-.link-area {
-    position: relative;
-    isolation: isolate;
-}
-
-
-/* LINK TRANSPARENTE SOBRE A ÁREA */
-
-.area-link {
-    position: absolute !important;
-
-    top: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    left: 0 !important;
-
-    display: block !important;
-
-    width: 100% !important;
-    height: 100% !important;
-
-    z-index: 9999 !important;
-
+.clickable-area {
     cursor: pointer;
 
-    pointer-events: auto !important;
     touch-action: manipulation;
-
-    background: transparent;
-
-    color: inherit;
-    text-decoration: none;
 
     -webkit-tap-highlight-color: transparent;
 }
 
-
-/* IMAGENS E VÍDEOS NÃO CAPTURAM
-O CLIQUE OU TOQUE */
-
-.link-area picture,
-.link-area img,
-.link-area video,
-.link-area .media-image,
-.link-area .media-video {
-    pointer-events: none !important;
+.clickable-area img,
+.clickable-area picture,
+.clickable-area video {
+    pointer-events: none;
 }
 
 
 /* ACESSIBILIDADE */
 
-.area-link:focus-visible {
+.clickable-area:focus-visible {
     outline: 2px solid #000000;
     outline-offset: -3px;
 }
@@ -371,8 +336,10 @@ TABLET / MOBILE
     }
 
 
-    /* REMOVE ESPAÇO ENTRE
-    MOB-3 E MOB-4 */
+    /* ==========================
+    REMOVE ESPAÇO ENTRE
+    MOB-3 E MOB-4
+    ========================== */
 
     body > section.full-banner:nth-of-type(4) {
         margin-top: 0;
@@ -441,12 +408,12 @@ TABLET / MOBILE
         transform: translateZ(0);
         backface-visibility: hidden;
 
-        pointer-events: none !important;
+        pointer-events: none;
     }
 
 
     /* ==========================
-    MOB-5 DEPOIS
+    MOB-5 DEPOIS DO VÍDEO
     ========================== */
 
     .media-image {
@@ -480,48 +447,9 @@ TABLET / MOBILE
 
 
     /* ==========================
-    LINKS NO MOBILE
-    ========================== */
-
-    .link-area {
-        position: relative !important;
-        isolation: isolate;
-    }
-
-    .area-link {
-        position: absolute !important;
-
-        top: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-        left: 0 !important;
-
-        display: block !important;
-
-        width: 100% !important;
-        height: 100% !important;
-
-        z-index: 99999 !important;
-
-        pointer-events: auto !important;
-
-        touch-action: manipulation;
-
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    .link-area picture,
-    .link-area img,
-    .link-area video,
-    .link-area .media-image,
-    .link-area .media-video {
-        pointer-events: none !important;
-    }
-
-
-    /* ==========================
     MOB-8
-    SEM BARRA BRANCA NO FINAL
+    ESPAÇO ENTRE MOB-7 E MOB-8
+    SEM BARRA DEPOIS
     ========================== */
 
     .last-banner {
@@ -529,7 +457,11 @@ TABLET / MOBILE
 
         width: 100%;
 
-        margin: 0;
+        margin-top: 8px;
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+
         padding: 0;
 
         overflow: hidden;
@@ -557,6 +489,25 @@ TABLET / MOBILE
         object-fit: contain;
     }
 
+
+    /* ==========================
+    ÁREAS CLICÁVEIS MOBILE
+    ========================== */
+
+    .clickable-area {
+        cursor: pointer;
+
+        touch-action: manipulation;
+
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .clickable-area img,
+    .clickable-area picture,
+    .clickable-area video {
+        pointer-events: none;
+    }
+
 }
 
 
@@ -576,6 +527,13 @@ CELULARES PEQUENOS
 
     .media-row {
         gap: 6px;
+        margin-top: 6px;
+    }
+
+
+    /* MANTÉM ESPAÇO ANTES DO MOB-8 */
+
+    .last-banner {
         margin-top: 6px;
     }
 
