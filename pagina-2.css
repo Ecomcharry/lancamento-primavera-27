@@ -153,6 +153,7 @@ DESK-5
 
 .media-image picture {
     display: block;
+
     width: 100%;
 }
 
@@ -242,7 +243,7 @@ REMOVE CONTROLES DO VÍDEO
 /* ==========================
 DESK-8
 LARGURA TOTAL
-SEM ESPAÇO NO FINAL
+SEM CORTAR
 ========================== */
 
 .last-banner {
@@ -251,9 +252,10 @@ SEM ESPAÇO NO FINAL
     width: 100%;
     max-width: none;
 
-    margin-left: 0;
+    margin-top: 14px;
     margin-right: 0;
     margin-bottom: 0;
+    margin-left: 0;
 
     padding: 0;
 
@@ -264,7 +266,7 @@ SEM ESPAÇO NO FINAL
     display: block;
 
     width: 100%;
-    height: 500px;
+    height: auto;
 
     margin: 0;
     padding: 0;
@@ -274,15 +276,14 @@ SEM ESPAÇO NO FINAL
     display: block;
 
     width: 100%;
-    height: 500px;
+    height: auto;
 
     margin: 0;
     padding: 0;
 
     max-width: none;
 
-    object-fit: cover;
-    object-position: center;
+    object-fit: contain;
 }
 
 
@@ -314,6 +315,55 @@ SEM ESPAÇO NO FINAL
 
 
 /* ==========================
+PUBLICAÇÃO ANTERIOR
+ESTILO POST
+========================== */
+
+.previous-post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    margin: 0;
+    padding: 55px 20px;
+
+    background-color: #ffffff;
+}
+
+.previous-post-link {
+    display: block;
+
+    width: min(420px, 100%);
+
+    margin: 0 auto;
+    padding: 0;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    color: inherit;
+    text-decoration: none;
+}
+
+.previous-post-link img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+
+    object-fit: contain;
+}
+
+
+/* ==========================
 TABLET / MOBILE
 ========================== */
 
@@ -337,7 +387,7 @@ TABLET / MOBILE
 
 
     /* ==========================
-    REMOVE ESPAÇO ENTRE
+    SEM ESPAÇO ENTRE
     MOB-3 E MOB-4
     ========================== */
 
@@ -448,8 +498,8 @@ TABLET / MOBILE
 
     /* ==========================
     MOB-8
-    ESPAÇO ENTRE MOB-7 E MOB-8
-    SEM BARRA DEPOIS
+    SEM CORTAR
+    COM ESPAÇO ANTES
     ========================== */
 
     .last-banner {
@@ -485,6 +535,37 @@ TABLET / MOBILE
 
         margin: 0;
         padding: 0;
+
+        object-fit: contain;
+    }
+
+
+    /* ==========================
+    PUBLICAÇÃO ANTERIOR
+    MOBILE
+    ========================== */
+
+    .previous-post {
+        display: flex;
+        justify-content: center;
+
+        width: 100%;
+
+        margin: 0;
+        padding: 32px 16px;
+
+        background-color: #ffffff;
+    }
+
+    .previous-post-link {
+        width: min(100%, 390px);
+
+        margin: 0 auto;
+    }
+
+    .previous-post-link img {
+        width: 100%;
+        height: auto;
 
         object-fit: contain;
     }
@@ -530,11 +611,12 @@ CELULARES PEQUENOS
         margin-top: 6px;
     }
 
-
-    /* MANTÉM ESPAÇO ANTES DO MOB-8 */
-
     .last-banner {
         margin-top: 6px;
+    }
+
+    .previous-post {
+        padding: 26px 14px;
     }
 
 }
