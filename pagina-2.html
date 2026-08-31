@@ -11,12 +11,24 @@
 
     <title>Inside the Look | Charry</title>
 
+
+    <!-- ==========================
+    PRÉ-CARREGAMENTO
+    PRIMEIRA IMAGEM DESKTOP
+    =========================== -->
+
     <link
         rel="preload"
         as="image"
         href="./images/pagina-2/desk-1.jpg"
         media="(min-width: 901px)"
     >
+
+
+    <!-- ==========================
+    PRÉ-CARREGAMENTO
+    PRIMEIRA IMAGEM MOBILE
+    =========================== -->
 
     <link
         rel="preload"
@@ -25,6 +37,11 @@
         media="(max-width: 900px)"
     >
 
+
+    <!-- ==========================
+    PRÉ-CARREGAMENTO VÍDEO
+    =========================== -->
+
     <link
         rel="preload"
         as="video"
@@ -32,15 +49,18 @@
         type="video/mp4"
     >
 
+
     <link
         rel="stylesheet"
         href="./pagina-2.css"
     >
 
+
     <script
         src="./pagina-2.js"
         defer
     ></script>
+
 </head>
 
 
@@ -175,6 +195,12 @@
     <!-- ==========================
     ÁREA 5
     VÍDEO + ACESSÓRIOS
+
+    DESKTOP:
+    desk-5 + vídeo
+
+    MOBILE:
+    vídeo + mob-5
     =========================== -->
 
     <section
@@ -207,6 +233,8 @@
                     src="./images/pagina-2/video.mp4"
                     type="video/mp4"
                 >
+
+                Seu navegador não suporta a reprodução deste vídeo.
 
             </video>
 
@@ -269,7 +297,9 @@
 
 
     <!-- ==========================
-    BANNER FINAL
+    ÁREA FINAL
+    WHATSAPP
+
     DESKTOP: desk-8.jpg
     MOBILE: mob-8.jpg
     =========================== -->
@@ -297,6 +327,35 @@
             >
 
         </picture>
+
+    </section>
+
+
+    <!-- ==========================
+    PUBLICAÇÕES ANTERIORES
+    =========================== -->
+
+    <section class="previous-posts">
+
+        <div class="previous-posts-title">
+            PUBLICAÇÕES ANTERIORES
+        </div>
+
+
+        <a
+            href="./index.html"
+            class="previous-post-card"
+            aria-label="Ver publicação anterior do Inside the Look"
+        >
+
+            <img
+                src="./images/pagina-2/pagina-1.jpg"
+                alt="Publicação anterior Inside the Look"
+                loading="lazy"
+                decoding="async"
+            >
+
+        </a>
 
     </section>
 
