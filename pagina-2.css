@@ -153,7 +153,6 @@ DESK-5
 
 .media-image picture {
     display: block;
-
     width: 100%;
 }
 
@@ -288,6 +287,35 @@ SEM CORTAR
 
 
 /* ==========================
+BANNER 9
+========================== */
+
+.banner-9 {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 14px;
+    padding: 0;
+
+    overflow: hidden;
+}
+
+.banner-9 picture,
+.banner-9 img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    margin: 0;
+    padding: 0;
+
+    object-fit: contain;
+}
+
+
+/* ==========================
 ÁREAS CLICÁVEIS
 ========================== */
 
@@ -327,6 +355,8 @@ ESTILO POST
     width: 100%;
 
     margin: 0;
+
+    /* MESMO ESPAÇO EM CIMA E EMBAIXO */
     padding: 55px 20px;
 
     background-color: #ffffff;
@@ -499,7 +529,6 @@ TABLET / MOBILE
     /* ==========================
     MOB-8
     SEM CORTAR
-    COM ESPAÇO ANTES
     ========================== */
 
     .last-banner {
@@ -541,6 +570,31 @@ TABLET / MOBILE
 
 
     /* ==========================
+    MOB-9
+    ========================== */
+
+    .banner-9 {
+        width: 100%;
+
+        margin-top: 8px;
+        padding: 0;
+    }
+
+    .banner-9 picture,
+    .banner-9 img {
+        display: block;
+
+        width: 100%;
+        height: auto;
+
+        margin: 0;
+        padding: 0;
+
+        object-fit: contain;
+    }
+
+
+    /* ==========================
     PUBLICAÇÃO ANTERIOR
     MOBILE
     ========================== */
@@ -548,10 +602,13 @@ TABLET / MOBILE
     .previous-post {
         display: flex;
         justify-content: center;
+        align-items: center;
 
         width: 100%;
 
         margin: 0;
+
+        /* MESMO ESPAÇO EM CIMA E EMBAIXO */
         padding: 32px 16px;
 
         background-color: #ffffff;
@@ -564,8 +621,12 @@ TABLET / MOBILE
     }
 
     .previous-post-link img {
+        display: block;
+
         width: 100%;
         height: auto;
+
+        margin: 0;
 
         object-fit: contain;
     }
@@ -612,6 +673,10 @@ CELULARES PEQUENOS
     }
 
     .last-banner {
+        margin-top: 6px;
+    }
+
+    .banner-9 {
         margin-top: 6px;
     }
 
