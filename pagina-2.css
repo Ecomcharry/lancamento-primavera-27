@@ -164,6 +164,7 @@ DESK-5
     height: auto;
 
     margin: 0 auto;
+    padding: 0;
 
     object-fit: contain;
 
@@ -242,7 +243,6 @@ REMOVE CONTROLES DO VÍDEO
 
 /* ==========================
 DESK-8
-LARGURA TOTAL
 SEM CORTAR
 ========================== */
 
@@ -288,8 +288,7 @@ SEM CORTAR
 
 
 /* ==========================
-BANNER 9
-DESKTOP
+DESK-9
 ========================== */
 
 .banner-9 {
@@ -303,7 +302,12 @@ DESKTOP
     overflow: hidden;
 }
 
-.banner-9 picture,
+.banner-9 picture {
+    display: block;
+
+    width: 100%;
+}
+
 .banner-9 img {
     display: block;
 
@@ -359,8 +363,9 @@ DESKTOP
     width: 100%;
 
     margin: 0;
-
     padding: 8px 20px 24px;
+
+    overflow: hidden;
 
     background-color: #ffffff;
 }
@@ -404,7 +409,7 @@ TABLET / MOBILE
 
 
     /* ==========================
-    ESPAÇAMENTO DOS BANNERS
+    BANNERS
     ========================== */
 
     .full-banner {
@@ -531,7 +536,6 @@ TABLET / MOBILE
 
     /* ==========================
     MOB-8
-    SEM CORTAR
     ========================== */
 
     .last-banner {
@@ -574,24 +578,35 @@ TABLET / MOBILE
 
     /* ==========================
     MOB-9
-    TEXTO UM POUCO MAIOR
+    VISÍVEL + LEVE ZOOM
     ========================== */
 
     .banner-9 {
         display: block;
 
+        position: relative;
+        z-index: 1;
+
         width: 100%;
 
         margin-top: 8px;
+        margin-bottom: 0;
+
         padding: 0;
 
         overflow: hidden;
+
+        background-color: #ffffff;
     }
 
     .banner-9 picture {
         display: block;
 
         width: 100%;
+        height: auto;
+
+        margin: 0;
+        padding: 0;
 
         overflow: hidden;
     }
@@ -603,8 +618,7 @@ TABLET / MOBILE
         max-width: none;
         height: auto;
 
-        margin-left: -4%;
-
+        margin: 0 0 0 -4%;
         padding: 0;
 
         object-fit: contain;
@@ -613,23 +627,30 @@ TABLET / MOBILE
 
     /* ==========================
     PUBLICAÇÃO ANTERIOR
-    MAIS PRÓXIMA DO MOB-9
+    SEM COBRIR O MOB-9
     ========================== */
 
     .previous-post {
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
 
         position: relative;
-        z-index: 2;
+        z-index: 1;
 
         width: 100%;
 
-        /* PUXA O GIF PARA CIMA */
-        margin-top: -55px;
+        /*
+        IMPORTANTE:
+        A SEÇÃO NÃO TEM MARGEM NEGATIVA.
+        ASSIM ELA NÃO PASSA POR CIMA DO MOB-9.
+        */
+
+        margin: 0;
 
         padding: 0 16px 20px;
+
+        overflow: hidden;
 
         background-color: #ffffff;
     }
@@ -662,6 +683,15 @@ TABLET / MOBILE
         border: 0;
 
         object-fit: contain;
+
+        /*
+        SOBE APENAS O GIF.
+        O MOB-9 CONTINUA NO LUGAR.
+        */
+
+        transform: translateY(-40px);
+
+        margin-bottom: -40px;
     }
 
 
@@ -700,10 +730,17 @@ CELULARES PEQUENOS
         margin-top: 0;
     }
 
+
+    /* VÍDEO + MOB-5 */
+
     .media-row {
         gap: 6px;
+
         margin-top: 6px;
     }
+
+
+    /* MOB-8 */
 
     .last-banner {
         margin-top: 6px;
@@ -718,6 +755,7 @@ CELULARES PEQUENOS
 
     .banner-9 img {
         width: 108%;
+
         margin-left: -4%;
     }
 
@@ -725,9 +763,15 @@ CELULARES PEQUENOS
     /* PUBLICAÇÃO ANTERIOR */
 
     .previous-post {
-        margin-top: -45px;
+        margin: 0;
 
         padding: 0 14px 18px;
+    }
+
+    .previous-post-link img {
+        transform: translateY(-30px);
+
+        margin-bottom: -30px;
     }
 
 }
