@@ -153,6 +153,7 @@ DESK-5
 
 .media-image picture {
     display: block;
+
     width: 100%;
 }
 
@@ -334,7 +335,9 @@ BANNER 9
 }
 
 
-/* ACESSIBILIDADE */
+/* ==========================
+ACESSIBILIDADE
+========================== */
 
 .clickable-area:focus-visible {
     outline: 2px solid #000000;
@@ -344,7 +347,7 @@ BANNER 9
 
 /* ==========================
 PUBLICAÇÃO ANTERIOR
-ESTILO POST
+MAIS PRÓXIMA DO BANNER 9
 ========================== */
 
 .previous-post {
@@ -356,8 +359,7 @@ ESTILO POST
 
     margin: 0;
 
-    /* MESMO ESPAÇO EM CIMA E EMBAIXO */
-    padding: 55px 20px;
+    padding: 8px 20px 24px;
 
     background-color: #ffffff;
 }
@@ -608,8 +610,7 @@ TABLET / MOBILE
 
         margin: 0;
 
-        /* MESMO ESPAÇO EM CIMA E EMBAIXO */
-        padding: 32px 16px;
+        padding: 6px 16px 20px;
 
         background-color: #ffffff;
     }
@@ -681,7 +682,7 @@ CELULARES PEQUENOS
     }
 
     .previous-post {
-        padding: 26px 14px;
+        padding: 4px 14px 18px;
     }
 
 }
