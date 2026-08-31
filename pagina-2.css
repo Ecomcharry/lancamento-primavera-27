@@ -289,6 +289,7 @@ SEM CORTAR
 
 /* ==========================
 BANNER 9
+DESKTOP
 ========================== */
 
 .banner-9 {
@@ -347,7 +348,7 @@ ACESSIBILIDADE
 
 /* ==========================
 PUBLICAÇÃO ANTERIOR
-MAIS PRÓXIMA DO BANNER 9
+DESKTOP
 ========================== */
 
 .previous-post {
@@ -573,23 +574,37 @@ TABLET / MOBILE
 
     /* ==========================
     MOB-9
+    TEXTO UM POUCO MAIOR
     ========================== */
 
     .banner-9 {
+        display: block;
+
         width: 100%;
 
         margin-top: 8px;
         padding: 0;
+
+        overflow: hidden;
     }
 
-    .banner-9 picture,
-    .banner-9 img {
+    .banner-9 picture {
         display: block;
 
         width: 100%;
+
+        overflow: hidden;
+    }
+
+    .banner-9 img {
+        display: block;
+
+        width: 108%;
+        max-width: none;
         height: auto;
 
-        margin: 0;
+        margin-left: -4%;
+
         padding: 0;
 
         object-fit: contain;
@@ -598,7 +613,7 @@ TABLET / MOBILE
 
     /* ==========================
     PUBLICAÇÃO ANTERIOR
-    MOBILE
+    MAIS PRÓXIMA DO MOB-9
     ========================== */
 
     .previous-post {
@@ -606,19 +621,33 @@ TABLET / MOBILE
         justify-content: center;
         align-items: center;
 
+        position: relative;
+        z-index: 2;
+
         width: 100%;
 
-        margin: 0;
+        /* PUXA O GIF PARA CIMA */
+        margin-top: -55px;
 
-        padding: 6px 16px 20px;
+        padding: 0 16px 20px;
 
         background-color: #ffffff;
     }
 
     .previous-post-link {
+        display: block;
+
         width: min(100%, 390px);
 
         margin: 0 auto;
+        padding: 0;
+
+        overflow: hidden;
+
+        cursor: pointer;
+
+        color: inherit;
+        text-decoration: none;
     }
 
     .previous-post-link img {
@@ -628,6 +657,9 @@ TABLET / MOBILE
         height: auto;
 
         margin: 0;
+        padding: 0;
+
+        border: 0;
 
         object-fit: contain;
     }
@@ -677,12 +709,25 @@ CELULARES PEQUENOS
         margin-top: 6px;
     }
 
+
+    /* MOB-9 */
+
     .banner-9 {
         margin-top: 6px;
     }
 
+    .banner-9 img {
+        width: 108%;
+        margin-left: -4%;
+    }
+
+
+    /* PUBLICAÇÃO ANTERIOR */
+
     .previous-post {
-        padding: 4px 14px 18px;
+        margin-top: -45px;
+
+        padding: 0 14px 18px;
     }
 
 }
