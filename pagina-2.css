@@ -244,25 +244,17 @@ REMOVE CONTROLES DO VÍDEO
 /* ==========================
 BANNER FINAL
 DESK-8
-
-LEVEMENTE MENOR
+MENOR E CENTRALIZADO
 ========================== */
 
 .last-banner {
     display: block;
 
-    /*
-    97% = redução bem pequena.
-    Ficam apenas 1,5% de margem
-    de cada lado.
-    */
-
-    width: 97%;
-    max-width: none;
+    width: 94%;
 
     margin-top: 14px;
     margin-right: auto;
-    margin-bottom: 0;
+    margin-bottom: 14px;
     margin-left: auto;
 
     padding: 0;
@@ -288,8 +280,6 @@ LEVEMENTE MENOR
 
     margin: 0;
     padding: 0;
-
-    max-width: none;
 
     object-fit: contain;
 }
@@ -460,18 +450,17 @@ TABLET / MOBILE
     /* ==========================
     BANNER FINAL
     MOB-8
-
-    LEVEMENTE MENOR
+    MENOR E CENTRALIZADO
     ========================== */
 
     .last-banner {
         display: block;
 
-        width: 97%;
+        width: 95%;
 
         margin-top: 8px;
         margin-right: auto;
-        margin-bottom: 0;
+        margin-bottom: 8px;
         margin-left: auto;
 
         padding: 0;
@@ -539,16 +528,15 @@ CELULARES PEQUENOS
 
     .media-row {
         gap: 6px;
-
         margin-top: 6px;
     }
 
     .last-banner {
-        width: 97%;
+        width: 95%;
 
         margin-top: 6px;
         margin-right: auto;
-        margin-bottom: 0;
+        margin-bottom: 6px;
         margin-left: auto;
     }
 
